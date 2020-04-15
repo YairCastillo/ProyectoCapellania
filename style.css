@@ -1,0 +1,460 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(iglesia.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+
+/* LOGIN BOX*/
+.loginbox{
+    width: 320px;
+    height: 420px;
+    background: #000;
+    color: #fff;
+    opacity: 0.8;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.loginbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"], input[type="email"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.loginbox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #0082E6;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.loginbox input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: rgb(4, 175, 255);
+    color: #000;
+}
+.loginbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.loginbox a:hover
+{
+    color: #0082E6;
+}
+
+
+
+/* SIGNUP BOX*/
+.signupbox{
+    width: 320px;
+    height: 590px;
+    background: #000;
+    color: #fff;
+    opacity: 0.8;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+
+.signupbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.signupbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.signupbox input[type="text"], input[type="password"], input[type="email"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.signupbox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #0082E6;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.signupbox input[type="submit"]:hover
+{
+    cursor: pointer;
+    background:  rgb(4, 175, 255);
+    color: #000;
+}
+.signupbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.signupbox a:hover
+{
+    color: #0082E6;
+}
+
+.signupbox label{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(14, 77, 211);
+}
+
+
+
+
+/* VERFICATION BOX*/
+.verificationbox{
+    width: 320px;
+    height: 280px;
+    background: #000;
+    color: #fff;
+    opacity: 0.8;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+
+.verificationbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.verificationbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.verificationbox input[type="text"], input[type="password"], input[type="email"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.verificationbox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #0082E6;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.verificationbox input[type="submit"]:hover
+{
+    cursor: pointer;
+    background:  rgb(4, 175, 255);
+    color: #000;
+}
+.verificationbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.verificationbox a:hover
+{
+    color: #0082E6;
+}
+
+.verificationbox label{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(14, 77, 211);
+}
+
+/* VERIFY BOX */
+
+.verifybox{
+    width: 320px;
+    height: 250px;
+    background: #000;
+    color: #fff;
+    opacity: 0.8;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+
+.verifybox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    text-align: center;
+}
+
+.verifybox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.verifybox input[type="text"], input[type="password"], input[type="email"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.verifybox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #0082E6;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.verifybox input[type="submit"]:hover
+{
+    cursor: pointer;
+    background:  rgb(4, 175, 255);
+    color: #000;
+}
+.verifybox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+    
+}
+
+.verifybox a:hover
+{
+    color: #0082E6;
+}
+
+.verifybox label{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(14, 77, 211);
+}
+
+/* IDENTIFY BOX*/
+.identifybox{
+    width: 320px;
+    height: 340px;
+    background: #000;
+    color: #fff;
+    opacity: 0.8;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+
+.identifybox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.identifybox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.identifybox input[type="text"], input[type="password"], input[type="email"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.identifybox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #0082E6;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.identifybox input[type="submit"]:hover
+{
+    cursor: pointer;
+    background:  rgb(4, 175, 255);
+    color: #000;
+}
+.identifybox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.identifybox a:hover
+{
+    color: #0082E6;
+}
+
+.identifybox label{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(14, 77, 211);
+}
+
+
+/* NEW PASSWORD BOX*/
+.newpasswordbox{
+    width: 320px;
+    height: 410px;
+    background: #000;
+    color: #fff;
+    opacity: 0.8;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+}
+
+
+.newpasswordbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+
+.newpasswordbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.newpasswordbox input[type="text"], input[type="password"], input[type="email"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.newpasswordbox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #0082E6;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.newpasswordbox input[type="submit"]:hover
+{
+    cursor: pointer;
+    background:  rgb(4, 175, 255);
+    color: #000;
+}
+.newpasswordbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+}
+
+.newpasswordbox a:hover
+{
+    color: #0082E6;
+}
+
+.newpasswordbox label{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: rgb(14, 77, 211);
+}
