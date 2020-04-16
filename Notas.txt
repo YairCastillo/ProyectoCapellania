@@ -11,14 +11,38 @@
 
 3. Agregar un boton para guardar cada pestana de la entrevista (Eunice)
 4. Quitar el campo email de la entrevista inicial (Eunice)
-5. Poner campos para poner el lugar de nacimiento, modificar ids del formulario (Pablo)
+5. Poner campos para poner el lugar de nacimiento (Pablo)
 
 
-* se trae de la base de datos: Carreras, Facultades, Paises
+* se trae de la base de datos: Carreras, Facultades, Paises, estados, municipios de Mexico, 
 
 6. Inicio de capllanes e inicio de alumnos
+    -Capellanes: Perfil
+    -Alumnos: informacion de capellan y servicios de capellania
 
 7. Separar las carpetas
 
 8. Modificar el calendario del alumno
+    -para que no se muestre el boton "administrar eventos predefinidos" y no poder modificar citas de otros alumnos,
+    solo ver las suyas.
+
 9. Barras de navegación
+    -agregar barras de navegación a cada pagina
+    *Barra de Capellanes
+        + INICIO: Mostrar calendario
+        + ALUMNOS: Muestra una lista de alumnos, campo de busqueda (filtros*)
+        + Menu de LOGOUT: Nombre del capellan - CONFIGURACION y CERRAR SESION
+    *Barra de Alumnos
+        +INICIO: Capellan designado
+        +MODIFICAR DATOS
+        +CITAS: lleva al calendario
+
+
+10. cuando ingrese por primera vez un cappelan debe de completar sus datos y una pequena "biografia"
+
+11. Pesatana de datos religiosos
+    -Anadir las 4 preguntas faltantes de la hoja
+    -Agregar campo "A que iglesia asistes"
+
+
+-Eliminar el campo de ENTREVISTAS en la navbar de capellan
