@@ -16,10 +16,9 @@
 
 * se trae de la base de datos: Carreras, Facultades, Paises
 
-* Inicio de capllanes e inicio de alumnos
+6. Inicio de capllanes e inicio de alumnos
 
-* Separar las carpetas
+7. Separar las carpetas
 
-* Modificar el calendario del alumno
-* Barras de navegación
-* 
+8. Modificar el calendario del alumno
+9. Barras de navegación
