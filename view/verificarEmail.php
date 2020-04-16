@@ -1,5 +1,5 @@
 <?php
-   include('verificarEmailRedireccion.php');
+   include('../controller/verificarEmailRedireccion.php');
 
    session_destroy();
 ?>
@@ -11,11 +11,11 @@
   crossorigin="anonymous"></script>
     <meta charset="UTF-8">
 <title>Capellanía | Verificación</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="loadingstyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
 <body>
     <div class="verificationbox">
-    <img src="logo.png" class="avatar">
+    <img src="../assets/logo.png" class="avatar">
         <h1>Verifica tu correo</h1>
         <form method="post">
             <p>Tu cuenta ha sido creada.</br>Por favor, verifícala dando click en el link de activación que ha sido enviado a tu correo electrónico</p>

@@ -1,9 +1,9 @@
 <?php
-   include('verificarSesion.php');
-   include('comprobarVerificacion.php');
-   include('validado.php');
-   include('verificarTipoUsuario.php');
-   include('verificarEntrevistaInicial.php');
+   include('../controller/verificarSesion.php');
+   include('../controller/comprobarVerificacion.php');
+   include('../controller/validado.php');
+   include('../controller/verificarTipoUsuario.php');
+   include('../controller/verificarEntrevistaInicial.php');
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -18,7 +18,7 @@
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="stylesheet" href="css/styles.css">
         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        <link rel="stylesheet" type="text/css" href="loadingstyle.css">
+        <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
         
 
     </head>

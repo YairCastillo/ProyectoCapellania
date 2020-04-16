@@ -6,11 +6,11 @@
   crossorigin="anonymous"></script>
     <meta charset="UTF-8">
 <title>Capellanía | Verificando</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="loadingstyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
 <body>
     <div class="verifybox">
-    <img src="logo.png" class="avatar">
+    <img src="../assets/logo.png" class="avatar">
         <h1>Cuenta Verificada</h1>
         <form method="post">
              <p>

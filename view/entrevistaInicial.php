@@ -1,16 +1,16 @@
 <?php
-  include('verificarSesion.php');
-  include('comprobarVerificacion.php');
-  include('validado.php');
-  include('entrevistaInicialAlerta.php');
+  include('../controller/verificarSesion.php');
+  include('../controller/comprobarVerificacion.php');
+  include('../controller/validado.php');
+  include('../view/entrevistaInicialAlerta.php');
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
-	<script type="text/javascript" src="js/cambiarPestanna.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css"/>
+	<script type="text/javascript" src="../js/cambiarPestanna.js"></script>
     <title></title>
 </head>
 <body>

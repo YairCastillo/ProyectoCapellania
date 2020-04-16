@@ -1,6 +1,6 @@
 <?php
 #ESTE ARCHIVO MUESTRA UNA ALERTA CUANDO EL ALUMNO AUN NO HAYA RELLENADO LOS DATOS INICIALES
-   include('conexion.php');
+   include('../controller/conexion.php');
    $user_check = $_SESSION['login_user'];
 
    $ses_sql = mysqli_query($con,"SELECT usuario from alumnos where usuario = '$user_check' limit 1");
