@@ -50,3 +50,5 @@
 12. Componer rutas
 
 13. Compartir base de datos
+
+*DEBEMOS TENER LA MISMA RUTA PARA REGISTRAR UN NUEVO USUARIO
