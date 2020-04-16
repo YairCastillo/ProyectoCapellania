@@ -15,3 +15,11 @@
 
 
 * se trae de la base de datos: Carreras, Facultades, Paises
+
+* Inicio de capllanes e inicio de alumnos
+
+* Separar las carpetas
+
+* Modificar el calendario del alumno
+* Barras de navegación
+* 
