@@ -1,6 +1,6 @@
 <?php
-include("verificarSesionLogin.php");
-include("conexion.php");
+include("../controller/verificarSesionLogin.php");
+include("../controller/conexion.php");
 $error = "";
 $strEmail = "@um.edu.mx";
 
@@ -115,11 +115,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4="
   crossorigin="anonymous"></script>
 <title>Capellanía | Registrarse</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="loadingstyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
 <body>
     <div class="signupbox">
-    <img src="logo.png" class="avatar">
+    <img src="../assets/logo.png" class="avatar">
         <h1>Resgístrate</h1>
         <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
         <form autocomplete="off" method="post" id="signup_form">

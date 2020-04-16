@@ -1,16 +1,17 @@
 <?php
-  include('verificarSesion.php');
-  include('comprobarVerificacion.php');
-  include('validado.php');
-  include('entrevistaInicialAlerta.php');
+  include('../controller/verificarSesion.php');
+  include('../controller/comprobarVerificacion.php');
+  include('../controller/validado.php');
+  include('../view/entrevistaInicialAlerta.php');
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css"/>
-	<script type="text/javascript" src="js/cambiarPestanna.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css"/>
+	<script type="text/javascript" src="../js/cambiarPestanna.js"></script>
     <title></title>
 </head>
 <body>
@@ -44,8 +45,11 @@
 			<!-- <label for="email">Correo electronico</label>
             	<input type="email" class="form-control" id="correo"  placeholder="Correo electronico"> -->
             <label for="exampleInput1">Fecha de Nacimiento</label>
-            	<input type="date" class="form-control" id="fechaNac">
+              <input type="date" class="form-control" id="fechaNac">
+              <button class="btn btn-success" name="registro" type="submit" id="button"> Guardar </button>
           </div>
+
+          
         <!--<label for="nombre">Nombres</label>
                 <input placeholder="Ingrese su nombre" name="fnombre" type="text"     id="tabla">
         

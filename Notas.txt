@@ -48,3 +48,5 @@
 -Eliminar el campo de ENTREVISTAS en la navbar de capellan
 
 12. Componer rutas
+
+13. Compartir base de datos

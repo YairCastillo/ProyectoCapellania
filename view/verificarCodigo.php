@@ -1,7 +1,7 @@
 <?php
-   include('verificarIdentificacionRedireccion.php');
-   include('comprobarVerificacion.php');
-   include('conexion.php');
+   include('../controller/verificarIdentificacionRedireccion.php');
+   include('../controller/comprobarVerificacion.php');
+   include('../controller/conexion.php');
 
    $error = "";
 
@@ -48,11 +48,11 @@
   crossorigin="anonymous"></script>
     <meta charset="UTF-8">
 <title>Capellanía | Recupera tu cuenta</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" type="text/css" href="loadingstyle.css">
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
 <body>
     <div class="identifybox">
-    <img src="logo.png" class="avatar">
+    <img src="../assets/logo.png" class="avatar">
         <h1>Ingresa el código</h1>
         <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
         <form method="post">
