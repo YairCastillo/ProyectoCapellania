@@ -11,7 +11,7 @@
 
 3. Agregar un boton para guardar cada pestana de la entrevista (Eunice)
 4. Quitar el campo email de la entrevista inicial (Eunice)
-5. Poner campos para poner el lugar de nacimiento (Pablo)
+5. Poner campos para poner el lugar de nacimiento, modificar ids del formulario (Pablo)
 
 
 * se trae de la base de datos: Carreras, Facultades, Paises
