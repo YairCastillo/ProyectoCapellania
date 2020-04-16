@@ -1,0 +1,17 @@
+1. Hacer LOGOUT (Abner)
+    -Aparecer en un desplegable con nombre y flechita
+    -Opciones: 
+        "Configuracion" : cambio de contrasena
+        "Cerrar Sesion" : cerrar la sesion actual
+
+2. Condicionales de la entrevista inicial (Abner)
+    Estado civil
+    Religion
+    ETC
+
+3. Agregar un boton para guardar cada pestana de la entrevista (Eunice)
+4. Quitar el campo email de la entrevista inicial (Eunice)
+5. Poner campos para poner el lugar de nacimiento (Pablo)
+
+
+* se trae de la base de datos: Carreras, Facultades, Paises
