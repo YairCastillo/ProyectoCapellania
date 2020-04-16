@@ -20,7 +20,7 @@
     -Capellanes: Perfil
     -Alumnos: informacion de capellan y servicios de capellania
 
-7. Separar las carpetas
+7. Utilizar verificarSesion una sola vez
 
 8. Modificar el calendario del alumno
     -para que no se muestre el boton "administrar eventos predefinidos" y no poder modificar citas de otros alumnos,
@@ -46,3 +46,5 @@
 
 
 -Eliminar el campo de ENTREVISTAS en la navbar de capellan
+
+12. Componer rutas
