@@ -11,8 +11,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="stylesheet" href="css/styles.css">
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
         <link rel="stylesheet" type="text/css" href="loadingstyle.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        
         
 
     </head>
