@@ -41,8 +41,8 @@
 				<input type="text" class="form-control" id="nombre"  placeholder="Nombre" >
 			<label for="secondname">Apellidos</label>
 				<input type="text" class="form-control" id="apellidos"  placeholder="Apellidos" >
-			<label for="email">Correo electronico</label>
-            	<input type="email" class="form-control" id="correo"  placeholder="Correo electronico">
+			<!-- <label for="email">Correo electronico</label>
+            	<input type="email" class="form-control" id="correo"  placeholder="Correo electronico"> -->
             <label for="exampleInput1">Fecha de Nacimiento</label>
             	<input type="date" class="form-control" id="fechaNac">
           </div>
