@@ -8,11 +8,19 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><script src="js/jquery-3.4.1.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/estilo.css"/>
-	<script type="text/javascript" src="../js/cambiarPestanna.js"></script>
-    <title></title>
+	  <script type="text/javascript" src="../js/cambiarPestanna.js"></script>
+    <title>Entrevista Inicial</title>
 </head>
 <body>
     <!-- Tab links -->
@@ -46,9 +54,11 @@
             	<input type="email" class="form-control" id="correo"  placeholder="Correo electronico"> -->
             <label for="exampleInput1">Fecha de Nacimiento</label>
               <input type="date" class="form-control" id="fechaNac">
-              <button class="btn btn-success" name="registro" type="submit" id="button"> Guardar </button>
+              <br>            
           </div>
-
+              <div class="col text-center">
+                <button class="btn btn-success regular-button" name="registro" type="submit" id="button"> Guardar </button>
+    			    </div>
           
         <!--<label for="nombre">Nombres</label>
                 <input placeholder="Ingrese su nombre" name="fnombre" type="text"     id="tabla">
@@ -111,6 +121,10 @@
               <option>7</option>
               <option>8</option>
             </select>
+            <br>
+            <div class="col text-center">
+                <button class="btn btn-success regular-button" name="registro" type="submit" id="button"> Guardar </button>
+    			    </div>
         </div>
         </form>
 </div>
@@ -179,6 +193,10 @@
           <label for="exampleInput2">Residencia actual</label>
           <input type="text" class="form-control" id="exampleInput2" placeholder="Residencia Actual">
         </div>
+
+              <div class="col text-center">
+                <button class="btn btn-success regular-button" name="registro" type="submit" id="button"> Guardar </button>
+    			    </div>
     </div>
         </form>
 
@@ -220,6 +238,10 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck5">
             <label class="form-check-label" for="exampleCheck5">Tengo hermanos en la UM</label>
           </div>
+              <br>
+              <div class="col text-center">
+                <button class="btn btn-success regular-button" name="registro" type="submit" id="button"> Guardar </button>
+    			    </div>
             </div>
         </form>
 </div>
@@ -272,6 +294,10 @@
                   <input type="checkbox" class="form-check-input" id="exampleCheck8">
                   <label class="form-check-label" for="exampleCheck8">Asisto a la Escuela Sabatica</label>
                 </div>
+                <br>
+              <div class="col text-center">
+                <button class="btn btn-success regular-button" name="registro" type="submit" id="button"> Guardar </button>
+    			    </div>
             </div>
         </form>
 </div>
@@ -341,6 +367,10 @@
                 <label for="exampleInput3">Inviernos Colportados</label>
                 <input type="number" class="form-control" id="exampleInput3" >
               </div>
+              <div class="col text-center">
+                <button class="btn btn-success regular-button" name="registro" type="submit" id="button"> Guardar </button>
+    			    </div>
+
             </div>
         </form>
 </div>
@@ -387,6 +417,10 @@
                 <label for="exampleInput3">Frecuencia semanal de Lectura de la Biblia</label>
                 <input type="number" class="form-control" id="exampleInput3" >
               </div>
+
+              <div class="col text-center">
+                <button class="btn btn-success regular-button" name="registro" type="submit" id="button"> Guardar </button>
+    			    </div>
             </div>
         </form>
 </div>
@@ -466,6 +500,10 @@
                 <label for="exampleInput3">Tratamientos que sigues</label>
                 <input type="text" class="form-control" id="exampleInput3">
               </div>
+
+              <div class="col text-center">
+                <button class="btn btn-success regular-button" name="registro" type="submit" id="button"> Guardar </button>
+    			    </div>
             </div>
         </form>
 </div>
