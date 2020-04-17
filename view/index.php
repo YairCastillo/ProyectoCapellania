@@ -36,7 +36,9 @@
     <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top sticky-top">
         <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon">
+          <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+          </span>
         </button>
                 <div class="collapse navbar-collapse" id="collapse_target">
               <label class="logo">CapellaníaUM</label>

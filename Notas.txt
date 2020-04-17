@@ -18,7 +18,7 @@
 
 6. Inicio de capllanes e inicio de alumnos
     -Capellanes: Perfil  ---- YA ESTÁ
-    -Alumnos: informacion de capellan y servicios de capellania
+    -Alumnos: informacion de capellan y servicios de capellania --- YA ESTÁ
 
 7. Utilizar verificarSesion una sola vez
 
@@ -51,6 +51,6 @@
 
 13. Compartir base de datos
 
-14. Poner el mismo text font  a todas las paginas (Eunice)
+14. Poner el mismo text font  a todas las paginas (Eunice) --- YA ESTÁ
 
 *DEBEMOS TENER LA MISMA RUTA PARA REGISTRAR UN NUEVO USUARIO
