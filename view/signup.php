@@ -114,6 +114,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4="
   crossorigin="anonymous"></script>
 <title>Capellanía | Registrarse</title>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
 <body>
@@ -123,7 +124,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
         <form autocomplete="off" method="post" id="signup_form">
             <p>Nuevo usuario</p>
-            <input type="text" name="username" placeholder="Nombre de usuario" class="form_control" value="<?php echo $username ?>" required>
+            <input type="text" name="username" placeholder="Nuevo usuario" class="form_control" value="<?php echo $username ?>" required>
 
             <p>Correo electrónico*</p>
             <input type="email" name="email" placeholder="Correo electrónico" value="<?php echo $email ?>" required>

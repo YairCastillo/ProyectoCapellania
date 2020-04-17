@@ -20,7 +20,7 @@
     -Capellanes: Perfil  ---- YA ESTÁ
     -Alumnos: informacion de capellan y servicios de capellania --- YA ESTÁ
 
-7. Utilizar verificarSesion una sola vez
+7. Utilizar verificarSesion una sola vez ---- YA ESTÁ
 
 8. Modificar el calendario del alumno
     -para que no se muestre el boton "administrar eventos predefinidos" y no poder modificar citas de otros alumnos,
@@ -41,8 +41,8 @@
 10. cuando ingrese por primera vez un cappelan debe de completar sus datos y una pequena "biografia"
 
 11. Pesatana de datos religiosos ---- YA ESTÁ
-    -Anadir las 4 preguntas faltantes de la hoja
-    -Agregar campo "A que iglesia asistes"
+    -Anadir las 4 preguntas faltantes de la hoja ---- YA ESTÁ
+    -Agregar campo "A que iglesia asistes" ---- YA ESTÁ
 
 
 -Eliminar el campo de ENTREVISTAS en la navbar de capellan

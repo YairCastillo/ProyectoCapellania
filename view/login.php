@@ -10,10 +10,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
      $username = mysqli_real_escape_string($con,$_POST['username']);
      $password = mysqli_real_escape_string($con,$_POST['password']);
      
-     $sql = "SELECT nombre, password, verificado FROM usuarios WHERE nombre = '$username' limit 1";
+     $sql = "SELECT nombre, password, verificado FROM usuarios WHERE nombre = '$username' OR email = '$username' limit 1";
      $result = mysqli_query($con,$sql);
      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
+     $nombre = $row['nombre'];
      $hashed_password = $row['password'];
      $verificado = $row['verificado'];
      //$count = mysqli_num_rows($result);
@@ -21,14 +22,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
      if(password_verify($password, $hashed_password) && $verificado != 1){
 
       session_start();
-      $_SESSION['login_user'] = $username;
+      $_SESSION['login_user'] = $nombre;
       $_SESSION['redirected_to_verificarEmail'] = true;
       header("location: verificarEmail.php");
 
      }else if(password_verify($password, $hashed_password) && $verificado == 1) {
 
        session_start();
-        $_SESSION['login_user'] = $username;
+        $_SESSION['login_user'] = $nombre;
         $_SESSION['redirected_from_identificacion'] = false;
         $_SESSION['redirected_to_verificarEmail'] = false;
         $_SESSION['redirected_from_verificarCodigo'] = false;
@@ -58,8 +59,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1>Iniciar Sesión</h1>
         <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
         <form method="post">
-            <p>Usuario</p>
-            <input type="text" name="username" placeholder="Nombre del usuario" value="<?php echo $username ?>" required>
+            <p>Usuario o correo electrónico</p>
+            <input type="text" name="username" placeholder="Usuario o correo electrónico" value="<?php echo $username ?>" required>
             <p>Contraseña</p>
             <input type="password" name="password" placeholder="Contraseña" autocomplete="new-password" required>
             <input type="submit" name="" value="Ingresar" onClick="this.form.submit(); this.disabled=true; this.value='Cargando...'; ">

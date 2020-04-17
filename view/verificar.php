@@ -6,6 +6,7 @@
   crossorigin="anonymous"></script>
     <meta charset="UTF-8">
 <title>Capellanía | Verificando</title>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
 <body>
@@ -15,7 +16,6 @@
         <form method="post">
              <p>
                <?php
-
                     include('conexion.php');
 
 
@@ -34,7 +34,6 @@
                     }else{
                          header("location:login");
                     }
-
                ?>
                </p>
             <br>

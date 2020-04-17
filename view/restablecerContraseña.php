@@ -52,19 +52,20 @@
   crossorigin="anonymous"></script>
     <meta charset="UTF-8">
 <title>Capellanía | Restablece tu contraseña</title>
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
 <body>
     <div class="newpasswordbox">
     <img src="../assets/logo.png" class="avatar">
-        <h1>Nueva Contraseña</h1>
+        <h1>Restablece tu contraseña</h1>
         <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
         <form method="post">
-            <p>Introduce tu nueva contraseña</p>
+            <p>Nueva contraseña</p>
             <input type="password" name="password" class="form_control" placeholder="Nueva contraseña" required>
 
             <p>Confirma tu contraseña</p>
-            <input type="password" name="confirm_password" class="form_control" placeholder="Confirmar contraseña" required>
+            <input type="password" name="confirm_password" class="form_control" placeholder="Confirma tu contraseña" required>
 
             <input type="submit" name="" value="Aceptar" onClick="this.form.submit(); this.disabled=true; this.value='Cargando...'; ">
             <br>
