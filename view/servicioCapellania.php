@@ -135,7 +135,7 @@
                             Jesucristo por medio de su palabra.</p>
                         <p>Nos esforzaremos para ser un equipo de apoyo y fortalecimiento espiritual para tu vida durante este curso escolar.</p>
                         <p>Te deseamos el mejor de los éxitos: "He manifestado tu nombre a los hombres que del mundo me diste; tuyos eran, 
-                            y me los diste, y han guardado tu palabra."</p>
+                            y me los diste, y han guardado tu palabra" (Juan 17:).</p>
                         <p>¡Excelente, mejorando y a Jesucristo esperando!</p>
                     </td>
                 </tr>

@@ -16,7 +16,7 @@
 
 * se trae de la base de datos: Carreras, Facultades, Paises, estados, municipios de Mexico, 
 
-6. Inicio de capllanes e inicio de alumnos
+6. Inicio de capllanes e inicio de alumnos ---- YA ESTÁ
     -Capellanes: Perfil  ---- YA ESTÁ
     -Alumnos: informacion de capellan y servicios de capellania --- YA ESTÁ
 
@@ -40,7 +40,7 @@
 
 10. cuando ingrese por primera vez un cappelan debe de completar sus datos y una pequena "biografia"
 
-11. Pesatana de datos religiosos
+11. Pesatana de datos religiosos ---- YA ESTÁ
     -Anadir las 4 preguntas faltantes de la hoja
     -Agregar campo "A que iglesia asistes"
 
