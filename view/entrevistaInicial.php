@@ -319,18 +319,66 @@
                 <label for="exampleInput3">Feligresia actual</label>
                 <input type="text" class="form-control" id="exampleInput3" placeholder="Feligresia Actual">
               </div>
-
               <br>
+
+              <label for="exampleFormControlSelect81">Iglesia a la que asistes</label>
+            <select class="form-control" id="exampleFormControlSelect91">
+              <option>Central Universitaria</option>
+              <option>Otra</option>
+            </select>
+            <br>
+
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck7">
                 <label class="form-check-label" for="exampleCheck7">Asisto a los cultos</label>
               </div>
+              <br>
 
-              <div class="form-check">
+            <label for="exampleFormControlSelect812">Culto al que asistes</label>
+            <select class="form-control" id="exampleFormControlSelect912">
+              <option>Primer culto</option>
+              <option>Segundo culto</option>
+            </select>
+            <br>
+
+            
+            <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck8">
                   <label class="form-check-label" for="exampleCheck8">Asisto a la Escuela Sabática</label>
                 </div>
                 <br>
+
+            <label for="exampleFormControlSelect812">Escuela Sabática a la que asistes</label>
+            <select class="form-control" id="exampleFormControlSelect912">
+              <option>Iglesia Universitaria</option>
+              <option>Inglés</option>
+              <option>Francés</option>
+            </select>
+            <br>
+
+            <label for="exampleFormControlSelect812">Actividad espiritual que más te gusta</label>
+            <select class="form-control" id="exampleFormControlSelect912">
+              <option>Sociedad de Jóvenes</option>
+              <option>Retiro espiritual</option>
+              <option>Vigilia</option>
+              <option>Semana de oración</option>
+              <option>Otra</option>
+            </select>
+            <br>
+
+            <div class="form-group">
+                <label for="exampleInput3">Tema de la Biblia que te gustaría conocer más</label>
+                <input type="text" class="form-control" id="exampleInput3" placeholder="Tema">
+              </div>
+
+              <br>
+
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck8">
+                  <label class="form-check-label" for="exampleCheck8">Me gustaría estudiar más la Biblia</label>
+                </div>
+                <br>
+
               <div class="col text-center">
                 <button class="btn btn-success regular-button" name="registro" type="submit" id="button"> Guardar </button>
     			    </div>
