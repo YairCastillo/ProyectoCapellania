@@ -10,15 +10,15 @@
     ETC
 
 
-4. Quitar el campo email de la entrevista inicial (Eunice)
+4. Quitar el campo email de la entrevista inicial (Eunice) ---- YA ESTÁ
 5. Poner campos para poner el lugar de nacimiento (Pablo)  ---- YA ESTÁ
 
 
 * se trae de la base de datos: Carreras, Facultades, Paises, estados, municipios de Mexico, 
 
-6. Inicio de capllanes e inicio de alumnos
-    -Capellanes: Perfil
-    -Alumnos: informacion de capellan y servicios de capellania
+6. Inicio de capllanes e inicio de alumnos ---- YA ESTÁ
+    -Capellanes: Perfil  ---- YA ESTÁ
+    -Alumnos: informacion de capellan y servicios de capellania --- YA ESTÁ
 
 7. Utilizar verificarSesion una sola vez
 
@@ -26,7 +26,7 @@
     -para que no se muestre el boton "administrar eventos predefinidos" y no poder modificar citas de otros alumnos,
     solo ver las suyas.
 
-9. Barras de navegación
+9. Barras de navegación --- YA ESTÁ
     -agregar barras de navegación a cada pagina
     *Barra de Capellanes
         + INICIO: Mostrar calendario
@@ -40,7 +40,7 @@
 
 10. cuando ingrese por primera vez un cappelan debe de completar sus datos y una pequena "biografia"
 
-11. Pesatana de datos religiosos
+11. Pesatana de datos religiosos ---- YA ESTÁ
     -Anadir las 4 preguntas faltantes de la hoja
     -Agregar campo "A que iglesia asistes"
 
@@ -50,5 +50,7 @@
 12. Componer rutas  ----- YA ESTÁ
 
 13. Compartir base de datos
+
+14. Poner el mismo text font  a todas las paginas (Eunice) --- YA ESTÁ
 
 *DEBEMOS TENER LA MISMA RUTA PARA REGISTRAR UN NUEVO USUARIO
