@@ -2,6 +2,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+body{
+  font-family: montserrat; 
+}
+
 label.logo{
     color: white;
     font-size: 35px;
@@ -13,6 +17,8 @@ a.active, a:hover{
     background: #1B9BFF;
     transition: .5s; 
 }
+  
+
 
 /* Style the tab */
 .tab {
@@ -67,19 +73,6 @@ a.active, a:hover{
 
   /*--------------------------------------------------------*/
 
-
-  /* :root {
-    --color-white: #f3f3f3;
-    --color-darkblue: #1b1b32;
-    --color-darkblue-alpha: rgba(27, 27, 50, 0.8);
-    --color-green: #37af65;
-  } */
-  
-  /* *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  } */
   
   body {
     font-family: 'Montserrat', sans-serif;

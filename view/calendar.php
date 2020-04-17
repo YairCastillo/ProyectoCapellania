@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calendario de Eventos</title>
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><script src="js/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <!-- CSS para la barra de navegacion -->
+      <link rel="stylesheet" type="text/css" href="../css/estilo.css"/>
+
+    <!--loadingstyle.css es para el efecto de cargarndo-->
+    <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
+    
+        
+
+    <!--Links para el calendario-->
   <link href="bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="datatables/datatables.min.css" rel="stylesheet">
   <link href="clockpicker/bootstrap-clockpicker.css" rel="stylesheet">
@@ -32,6 +48,30 @@
 </head>
 
 <body>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top sticky-top">
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+			      <div class="collapse navbar-collapse" id="collapse_target">
+                <label class="logo">CapellaníaUM</label>
+                  <ul class="navbar-nav">
+                      <li class="nav-item"><a class="nav-link active" href="calendar">INICIO</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#">ALUMNOS</a></li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                          NOMBRE
+                        </a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item" href="#">Configuración</a>
+                          <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                        </div>
+                      </li>
+                      </div>
+                  </ul>
+            </div>
+        </nav>
+
   <div class="container-fluid">
     <section class="content-header">
       <h1>
@@ -52,7 +92,7 @@
           <div id='listaeventospredefinidos'>
 
             <?php
-            require("conexion.php");
+            require("../controller/conexion.php");
             $datos = mysqli_query($con, "select id_evento,titulo,horainicio,horafin,colortexto,colorfondo from eventospredefinidosusuarios");
             $ep = mysqli_fetch_all($datos, MYSQLI_ASSOC);
             foreach ($ep as $fila)

@@ -9,8 +9,6 @@
     Religion
     ETC
 
-
-4. Quitar el campo email de la entrevista inicial (Eunice)
 5. Poner campos para poner el lugar de nacimiento (Pablo)
 
 
