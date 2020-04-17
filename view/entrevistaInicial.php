@@ -2,12 +2,13 @@
   include('../controller/verificarSesion.php');
   include('../controller/comprobarVerificacion.php');
   include('../controller/validado.php');
-  include('../view/entrevistaInicialAlerta.php');
+  #include('../view/entrevistaInicialAlerta.php');
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<title>Entrevista Inicial</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><script src="js/jquery-3.4.1.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -20,7 +21,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/estilo.css"/>
 	  <script type="text/javascript" src="../js/cambiarPestanna.js"></script>
-    <title>Entrevista Inicial</title>
 </head>
 <body>
     <!-- Tab links -->
@@ -48,11 +48,15 @@
 			<div class="form-group">
             <label for="name">Nombre</label>
 				<input type="text" class="form-control" id="nombre"  placeholder="Nombre" >
+        <br>
+
 			<label for="secondname">Apellidos</label>
 				<input type="text" class="form-control" id="apellidos"  placeholder="Apellidos" >
+        <br>
+
 			<!-- <label for="email">Correo electronico</label>
             	<input type="email" class="form-control" id="correo"  placeholder="Correo electronico"> -->
-            <label for="exampleInput1">Fecha de Nacimiento</label>
+            <label for="exampleInput1">Fecha de nacimiento</label>
               <input type="date" class="form-control" id="fechaNac">
               <br>            
           </div>
@@ -92,7 +96,7 @@
             </div>
         
             <div id="tabla-formulario">
-            <label for="exampleFormControlSelect1">Facultad</label>
+            <label for="exampleFormControlSelect1">Facultad/Escuela</label>
                 <select class="form-control" id="exampleFormControlSelect1">
                     <option>FITEC</option>
                     <option>FACSA</option>
@@ -100,6 +104,7 @@
                     <option>4</option>
                     <option>5</option>
                 </select>
+                <br>
 
             <label for="exampleFormControlSelect2">Carrera</label>
             <select class="form-control" id="exampleFormControlSelect2">
@@ -109,6 +114,7 @@
               <option>4</option>
               <option>5</option>
             </select>
+            <br>
 
         <label for="exampleFormControlSelect3">Semestre</label>
             <select class="form-control" id="exampleFormControlSelect3">
@@ -139,7 +145,7 @@
         
             <div id="tabla-formulario">
             
-        <label for="exampleFormControlSelect4">Estado Civil</label>
+        <label for="exampleFormControlSelect4">Estado civil</label>
             <select class="form-control" id="exampleFormControlSelect4">
               <option>Soltero</option>
               <option>Casado</option>
@@ -162,7 +168,8 @@
             <label class="form-check-label" for="exampleCheck2">Tengo amigo/a especial</label>
           </div>
           <br>
-          <label for="exampleFormControlSelect5">Lugar de Nacimiento</label>
+          <label>Lugar de nacimiento</label>
+          <label for="exampleFormControlSelect5">País</label>
           <select class="form-control" id="exampleFormControlSelect5">
             <option>1</option>
             <option>2</option>
@@ -174,13 +181,41 @@
             <option>8</option>
           </select>
 
+          <label for="exampleFormControlSelect51">Estado</label>
+          <select class="form-control" id="exampleFormControlSelect51">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+
+          <label for="exampleFormControlSelect52">Municipio</label>
+          <select class="form-control" id="exampleFormControlSelect52">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+
+          <br>
+
           <label for="exampleFormControlSelect6">Sexo</label>
             <select class="form-control" id="exampleFormControlSelect6">
               <option>Hombre</option>
               <option>Mujer</option>
             </select>
 
-            <label for="exampleFormControlSelect7">Preferencia Sexual</label>
+            <br>
+
+            <label for="exampleFormControlSelect7">Preferencia sexual</label>
             <select class="form-control" id="exampleFormControlSelect7">
               <option>Heterosexual</option>
               <option>Homosexual</option>
@@ -188,6 +223,7 @@
               <option>Otro</option>
             </select>
 
+            <br>
 
         <div class="form-group">
           <label for="exampleInput2">Residencia actual</label>
@@ -212,7 +248,7 @@
         
             <div id="tabla-formulario">
                 
-        <label for="exampleFormControlSelect8">Estado Civil de tus padres</label>
+        <label for="exampleFormControlSelect8">Estado civil de tus padres</label>
             <select class="form-control" id="exampleFormControlSelect8">
               <option>Casados</option>
               <option>Divorciados</option>
@@ -256,7 +292,7 @@
         
             <div id="tabla-formulario">
                 
-        <label for="exampleFormControlSelect8">Religion</label>
+        <label for="exampleFormControlSelect8">Religión</label>
             <select class="form-control" id="exampleFormControlSelect9">
               <option>ASD</option>
               <option>Catolico</option>
@@ -275,7 +311,7 @@
             
             <br>
               <div class="form-group">
-                <label for="exampleInput2">Fecha de Bautismo</label>
+                <label for="exampleInput2">Fecha de bautismo</label>
                 <input type="date" class="form-control" id="fechaBautismo">
               </div>
 
@@ -292,7 +328,7 @@
 
               <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck8">
-                  <label class="form-check-label" for="exampleCheck8">Asisto a la Escuela Sabatica</label>
+                  <label class="form-check-label" for="exampleCheck8">Asisto a la Escuela Sabática</label>
                 </div>
                 <br>
               <div class="col text-center">
@@ -330,6 +366,7 @@
                 <option>7</option>
                 <option>8</option>
               </select>
+              <br>
 
               <label for="exampleFormControlSelect8">Departamento</label>
               <select class="form-control" id="exampleFormControlSelect9">
@@ -341,6 +378,7 @@
                 <option>7</option>
                 <option>8</option>
               </select>
+              <br>
 
               <div class="form-group">
                 <label for="exampleInput3">Horas de trabajo diario</label>
@@ -360,11 +398,12 @@
               <br>
 
               <div class="form-group">
-                <label for="exampleInput3">Veranos Colportados</label>
+                <label for="exampleInput3">Veranos colportados</label>
                 <input type="number" class="form-control" id="exampleInput3" >
               </div>
+
               <div class="form-group">
-                <label for="exampleInput3">Inviernos Colportados</label>
+                <label for="exampleInput3">Inviernos colportados</label>
                 <input type="number" class="form-control" id="exampleInput3" >
               </div>
               <div class="col text-center">
@@ -391,7 +430,7 @@
               </div>
               <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck13">
-                <label class="form-check-label" for="exampleCheck13">Tengo Leccion de Escuela Sabatica</label>
+                <label class="form-check-label" for="exampleCheck13">Tengo Leccion de Escuela Sabática</label>
               </div>
               <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck14">
@@ -399,22 +438,24 @@
               </div>
               <br>
 
-              <label for="exampleFormControlSelect14">Formato de Biblia</label>
+              <label for="exampleFormControlSelect14">Formato de Biblia que posees</label>
               <select class="form-control" id="exampleFormControlSelect14">
                 <option>Fisica</option>
                 <option>Digital</option>
                 <option>Ambas</option>
               </select>
+              <br>
 
-              <label for="exampleFormControlSelect15">Formato de Leccion de Escuel Sabatica</label>
+              <label for="exampleFormControlSelect15">Formato de Leccion de Escuela Sabática que posees</label>
               <select class="form-control" id="exampleFormControlSelect15">
                 <option>Fisica</option>
                 <option>Digital</option>
                 <option>Ambas</option>
               </select>
+              <br>
 
               <div class="form-group">
-                <label for="exampleInput3">Frecuencia semanal de Lectura de la Biblia</label>
+                <label for="exampleInput3">Días a la semana que lees la Biblia</label>
                 <input type="number" class="form-control" id="exampleInput3" >
               </div>
 
@@ -436,22 +477,22 @@
             <div id="tabla-formulario">
                 
             <div class="form-group">
-                <label for="exampleInput3">Comidas al dia</label>
+                <label for="exampleInput3">Cantidad de comidas al día</label>
                 <input type="number" class="form-control" id="exampleInput3" >
               </div>
             <div class="form-group">
-                <label for="exampleInput3">Dias que comes a la semana</label>
+                <label for="exampleInput3">Cantidad de días que comes a la semana</label>
                 <input type="number" class="form-control" id="exampleInput3" >
             </div>
             <div class="form-group">
-                <label for="exampleInput3">Dias haces ejercicio a la semana</label>
+                <label for="exampleInput3">Cantidad de días que haces ejercicio a la semana</label>
                 <input type="number" class="form-control" id="exampleInput3" >
             </div>
 
             <br>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck12">
-                <label class="form-check-label" for="exampleCheck12">Practico algun deporte</label>
+                <label class="form-check-label" for="exampleCheck12">Practico algún deporte</label>
             </div>
             <br>
 
@@ -470,11 +511,11 @@
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck12">
-                <label class="form-check-label" for="exampleCheck12">Consumo Tabaco</label>
+                <label class="form-check-label" for="exampleCheck12">Consumo tabaco</label>
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="exampleCheck12">
-                <label class="form-check-label" for="exampleCheck12">Consumo drogas</label>
+                <label class="form-check-label" for="exampleCheck12">Consumo droga</label>
             </div>
             <br>
             <label for="exampleFormControlSelect15">Sustancia que consumes</label>

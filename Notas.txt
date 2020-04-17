@@ -11,7 +11,7 @@
 
 
 4. Quitar el campo email de la entrevista inicial (Eunice)
-5. Poner campos para poner el lugar de nacimiento (Pablo)
+5. Poner campos para poner el lugar de nacimiento (Pablo)  ---- YA ESTÁ
 
 
 * se trae de la base de datos: Carreras, Facultades, Paises, estados, municipios de Mexico, 
@@ -47,7 +47,7 @@
 
 -Eliminar el campo de ENTREVISTAS en la navbar de capellan
 
-12. Componer rutas
+12. Componer rutas  ----- YA ESTÁ
 
 13. Compartir base de datos
 
