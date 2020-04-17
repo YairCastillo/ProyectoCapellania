@@ -1,8 +1,11 @@
 <?php
-   include('../controller/verificarEmailRedireccion.php');
+  include('conexion.php');
+  include("../controller/verificarSesion.php");
+  include('../controller/verificarEmailRedireccion.php');
 
-   session_destroy();
+  session_destroy();
 ?>
+
 <html>
 <head>
 <script

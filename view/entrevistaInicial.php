@@ -1,4 +1,5 @@
 <?php
+  include("../controller/conexion.php");
   include('../controller/verificarSesion.php');
   include('../controller/comprobarVerificacion.php');
   include('../controller/validado.php');

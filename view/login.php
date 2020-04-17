@@ -1,6 +1,6 @@
 <?php
-include("../controller/verificarSesionLogin.php");
 include("../controller/conexion.php");
+include("../controller/verificarSesionLogin.php");
 
 $error = "";
 $username = "";
@@ -19,16 +19,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
      //$count = mysqli_num_rows($result);
 
      if(password_verify($password, $hashed_password) && $verificado != 1){
+
       session_start();
       $_SESSION['login_user'] = $username;
-      $_SESSION['redirected_from_signup'] = true;
-      header("location: verificarEmail");
+      $_SESSION['redirected_to_verificarEmail'] = true;
+      header("location: verificarEmail.php");
+
      }else if(password_verify($password, $hashed_password) && $verificado == 1) {
 
        session_start();
         $_SESSION['login_user'] = $username;
         $_SESSION['redirected_from_identificacion'] = false;
-        $_SESSION['redirected_from_signup'] = false;
+        $_SESSION['redirected_to_verificarEmail'] = false;
         $_SESSION['redirected_from_verificarCodigo'] = false;
         $_SESSION['validado'] = true;
         header("location: index");

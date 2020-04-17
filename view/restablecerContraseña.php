@@ -1,6 +1,8 @@
 <?php
-  include("../controller/verificarCodigoRedireccion.php");
   include("../controller/conexion.php");
+  include("../controller/verificarSesion.php");
+  include("../controller/verificarCodigoRedireccion.php");
+
 
   $error = "";
 
@@ -28,9 +30,7 @@
         $sql = "UPDATE usuarios SET password = '$hashed_password' where nombre = '$username'";
 
         if(mysqli_query($con, $sql)){
-          session_start();
           
-          $_SESSION['login_user'] = $username;
           $_SESSION['redirected_from_verificarCodigo'] = false;
           $_SESSION['validado'] = true;
           

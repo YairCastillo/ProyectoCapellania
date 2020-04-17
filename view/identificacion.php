@@ -1,6 +1,6 @@
 <?php
-include("../controller/verificarSesionLogin.php");
 include("../controller/conexion.php");
+include("../controller/verificarSesionLogin.php");
 
 $error ="";
 
@@ -30,8 +30,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                if($verificado != 1){
                  session_start();
                  $_SESSION['login_user'] = $username;
-                 $_SESSION['redirected_from_signup'] = true;
-                 include('comprobarVerificacion.php');
+                 $_SESSION['redirected_to_verificarEmail'] = true;
+                 include('verificarEmail.php');
                }
 
                $username = $row['nombre'];
@@ -47,7 +47,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                $sql = "UPDATE usuarios set token= '$hashed_token', expDate = '$expDate' where nombre = '$username'";
 
                if(mysqli_query($con, $sql)){
-                    session_start();
 
                     $to = $email; // Send email to our user
                     $subject = 'Capellanía UM | Restablecer contraseña'; // Give the email a subject 
@@ -63,9 +62,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                           
                     mail($to, '=?utf-8?B?'.base64_encode($subject).'?=', $message, $headers); // Send our email
                     
+                    session_start();
                     $_SESSION['login_user'] = $username;
                     $_SESSION['redirected_from_identificacion'] = true;
+                    $_SESSION['validado'] = false;
                     header("location: verificarCodigo");
+
                 }else{
                    $error = "¡Oops! Ocurrió un error. Inténtalo de nuevo más tarde.";
                 }

@@ -1,6 +1,7 @@
 <?php
-include("../controller/verificarSesionLogin.php");
 include("../controller/conexion.php");
+include("../controller/verificarSesionLogin.php");
+
 $error = "";
 $strEmail = "@um.edu.mx";
 
@@ -79,7 +80,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "insert into usuarios (nombre, password, tipoUsuario, email, verificado, hash) values('$username', '$hashed_password', '$tipoUsuario', '$email', $verificado, '$hash')";
 
         if(mysqli_query($con, $sql)){
-            session_start();
 
             $to = $email; // Send email to our user
             $subject = 'Capellanía UM | Verificación'; // Give the email a subject 
@@ -95,10 +95,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
             mail($to, '=?utf-8?B?'.base64_encode($subject).'?=', $message, $headers); // Send our email
             
-            
+            session_start();
             $_SESSION['login_user'] = $username;
-            $_SESSION['redirected_from_signup'] = true;
-
+            $_SESSION['redirected_to_verificarEmail'] = true;
             header("location: verificarEmail");
         }else{
            $error = "¡Oops! Ocurrió un error. Inténtalo de nuevo más tarde.";
@@ -124,7 +123,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
         <form autocomplete="off" method="post" id="signup_form">
             <p>Nuevo usuario</p>
-            <input type="text" name="username" placeholder="Nombre del usuario" class="form_control" value="<?php echo $username ?>" required>
+            <input type="text" name="username" placeholder="Nombre de usuario" class="form_control" value="<?php echo $username ?>" required>
 
             <p>Correo electrónico*</p>
             <input type="email" name="email" placeholder="Correo electrónico" value="<?php echo $email ?>" required>

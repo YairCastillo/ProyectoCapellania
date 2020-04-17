@@ -1,7 +1,9 @@
 <?php
+   include('../controller/conexion.php');
+   include("../controller/verificarSesion.php");
    include('../controller/verificarIdentificacionRedireccion.php');
    include('../controller/comprobarVerificacion.php');
-   include('../controller/conexion.php');
+
 
    $error = "";
 
