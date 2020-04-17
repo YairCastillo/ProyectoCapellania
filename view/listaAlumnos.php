@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tipos de NAVBAR</title>
+    <title>Alumnos</title>
 
     <!--links para CDN *copiar desde aqui para poner una navbar-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><script src="js/jquery-3.4.1.js"></script>
@@ -16,21 +16,25 @@
 
     <!-- CSS para la barra de navegacion -->
       <link rel="stylesheet" type="text/css" href="../css/navStyle.css"/>
-</head>
-<body>
-    <!--Barra de Navegacion para capellanes-->
 
-    <nav class="navbar navbar-expand-md fixed-top sticky-top">
+      <!--para la tabla-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="font-family: 'Montserrat', sans-serif;">
+<nav class="navbar navbar-expand-md fixed-top sticky-top">
         <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
           <span class="navbar-toggler-icon">
-            <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+          <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
           </span>
         </button>
                 <div class="collapse navbar-collapse" id="collapse_target">
               <label class="logo">CapellaníaUM</label>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="calendar">INICIO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="listaAlumnos">ALUMNOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calendar">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="listaAlumnos">ALUMNOS</a></li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="capellanes" id="navbardrop" data-toggle="dropdown">
                         NOMBRE
@@ -44,37 +48,38 @@
                 </ul>
           </div>
       </nav>
+      <br>
+      <br>
 
-
-      <!--Barra de Navegacion para alumnos-->
-
-      <nav class="navbar navbar-expand-md fixed-top sticky-top">
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
-          <span class="navbar-toggler-icon">
-            <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
-          </span>
-        </button>
-                <div class="collapse navbar-collapse" id="collapse_target">
-              <label class="logo">CapellaníaUM</label>
-                <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="#">INICIO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="calendar">CITA</a></li>
-                    <li><a href="entrevistaInicial">MODIFICAR MIS DATOS</a></li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        NOMBRE
-                      </a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Configuración</a>
-                        <a class="dropdown-item" href="#">Cerrar Sesión</a>
-                      </div>
-                    </li>
-                    </div>
-                </ul>
-          </div>
-      </nav>
-
-      
+<div class="container">
+  <h2 style="text-align:center">Lista de Alumnos</h2>  
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Matrícula</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Correo</th>
+          <th>Carrera</th>
+          <th>Entevista Inicial</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0000000</td>
+          <td>Nombre</td>
+          <td>Apellidos</td>
+          <td>35</td>
+          <td>New York</td>
+          <td>USA</td>
+          <td>Female</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 </body>
 </html>
