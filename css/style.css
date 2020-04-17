@@ -4,7 +4,7 @@ body{
     background: url(../assets/iglesia.jpg);
     background-size: cover;
     background-position: center;
-    font-family: sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -13,7 +13,7 @@ body{
     width: 320px;
     height: 420px;
     background: #000;
-    color: #fff;
+    color: #fbfcf7;
     opacity: 0.8;
     top: 50%;
     left: 50%;
@@ -54,11 +54,11 @@ h1{
 .loginbox input[type="text"], input[type="password"], input[type="email"]
 {
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #fbfcf7;
     background: transparent;
     outline: none;
     height: 40px;
-    color: #fff;
+    color: #fbfcf7;
     font-size: 16px;
 }
 .loginbox input[type="submit"]
@@ -66,15 +66,15 @@ h1{
     border: none;
     outline: none;
     height: 40px;
-    background: #0082E6;
-    color: #fff;
+    background: #0198d1;
+    color: #fbfcf7;
     font-size: 18px;
     border-radius: 20px;
 }
 .loginbox input[type="submit"]:hover
 {
     cursor: pointer;
-    background: rgb(4, 175, 255);
+    background: #0b7ab1;
     color: #000;
 }
 .loginbox a{
@@ -86,7 +86,7 @@ h1{
 
 .loginbox a:hover
 {
-    color: #0082E6;
+    color: #0b7ab1;
 }
 
 
@@ -96,7 +96,7 @@ h1{
     width: 320px;
     height: 590px;
     background: #000;
-    color: #fff;
+    color: #fbfcf7;
     opacity: 0.8;
     top: 50%;
     left: 50%;
@@ -121,11 +121,11 @@ h1{
 .signupbox input[type="text"], input[type="password"], input[type="email"]
 {
     border: none;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #fbfcf7;
     background: transparent;
     outline: none;
     height: 40px;
-    color: #fff;
+    color: #fbfcf7;
     font-size: 16px;
 }
 .signupbox input[type="submit"]
@@ -133,7 +133,7 @@ h1{
     border: none;
     outline: none;
     height: 40px;
-    background: #0082E6;
+    background: #0198d1;
     color: #fff;
     font-size: 18px;
     border-radius: 20px;
@@ -141,7 +141,7 @@ h1{
 .signupbox input[type="submit"]:hover
 {
     cursor: pointer;
-    background:  rgb(4, 175, 255);
+    background:  #0b7ab1;
     color: #000;
 }
 .signupbox a{
@@ -153,14 +153,14 @@ h1{
 
 .signupbox a:hover
 {
-    color: #0082E6;
+    color: #0b7ab1;
 }
 
 .signupbox label{
     text-decoration: none;
     font-size: 12px;
     line-height: 20px;
-    color: rgb(14, 77, 211);
+    color: #175a8f;
 }
 
 

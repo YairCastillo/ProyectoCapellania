@@ -51,4 +51,6 @@
 
 13. Compartir base de datos
 
+14. Poner el mismo text font  a todas las paginas (Eunice)
+
 *DEBEMOS TENER LA MISMA RUTA PARA REGISTRAR UN NUEVO USUARIO

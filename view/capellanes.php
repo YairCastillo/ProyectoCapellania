@@ -16,11 +16,12 @@
     <!-- CSS para la barra de navegacion 
     <link rel="stylesheet" type="text/css" href="../css/estilo.css"/>-->
 
+    <!--estilo para el perfil-->
+    <link rel="stylesheet" type="text/css" href="../css/capStyle.css">
+    
     <!--loadingstyle.css es para el efecto de cargarndo-->
     <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
 
-    <!--estilo para el perfil-->
-    <link rel="stylesheet" type="text/css" href="../css/capStyle.css">
     
     <!--para abajo es lo que estaba en la pagina inicialmente-->
     <script
@@ -28,12 +29,9 @@
   integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4="
   crossorigin="anonymous"></script>
         
-        
-        
-
     </head>
     <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top sticky-top">
+    <nav class="navbar navbar-expand-md fixed-top sticky-top">
         <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
           <span class="navbar-toggler-icon"></span>
         </button>

@@ -3,21 +3,30 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 body{
-  font-family: montserrat; 
-  background-color: white;
+  font-family: 'Montserrat', sans-serif; 
+  background-color: #fbfcf7;
 }
 
 label.logo{
-    color: white;
+    color: #fbfcf7;
     font-size: 35px;
     padding: 0 100px;
     font-weight: bold;
 }
 
 a.active, a:hover{
-    background: #1B9BFF;
+  background: #0198d1;
     transition: .5s; 
 }
+
+nav{
+  background: #0b7ab1;
+  color: #fbfcf7;
+}
+nav a{
+  color: #fbfcf7;
+}
+  
 
 /* CSS para los containers */
 .container {
@@ -39,11 +48,18 @@ box-shadow: -2px 6px 52px -2px rgba(0,0,0,0.75); */
 }
 
 /*Para la imagen responsive*/
+img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  
+}
 .responsive {
-    max-width: 100%;
+    max-width: 100px;
     height: auto;
   }
 
+ 
 /*Para la tabla*/
 
 th, td {

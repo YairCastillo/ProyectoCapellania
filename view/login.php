@@ -46,6 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   src="https://code.jquery.com/jquery-2.1.4.js"
   integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4="
   crossorigin="anonymous"></script>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 <title>Capellanía | Inicio de Sesión</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
