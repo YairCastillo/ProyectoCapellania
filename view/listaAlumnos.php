@@ -52,7 +52,20 @@
       <br>
 
 <div class="container">
-  <h2 style="text-align:center">Lista de Alumnos</h2>  
+<h2 style="text-align:center">Lista de Alumnos</h2>
+  <!-- Search form -->
+  <div class="row">
+    <div class="col col-md-9">
+    </div>
+    <div class="col col-md-3 input-group mb-3">
+        <input type="text" class="form-control" placeholder="Buscar" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button">
+            <i class="fas fa-search" aria-hidden="true"></i>
+        </button>
+    </div>
+</div>
+    <br>
   <div class="table-responsive">
     <table class="table table-bordered">
       <thead>
