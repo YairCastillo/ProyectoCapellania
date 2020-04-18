@@ -28,11 +28,11 @@
 
 9. Barras de navegación --- YA ESTÁ
     -agregar barras de navegación a cada pagina
-    *Barra de Capellanes
+    *Barra de Capellanes --- YA ESTÁ
         + INICIO: Mostrar calendario
         + ALUMNOS: Muestra una lista de alumnos, campo de busqueda (filtros*)
         + Menu de LOGOUT: Nombre del capellan - CONFIGURACION y CERRAR SESION
-    *Barra de Alumnos
+    *Barra de Alumnos --- YA ESTÁ
         +INICIO: Capellan designado
         +MODIFICAR DATOS
         +CITAS: lleva al calendario
