@@ -13,7 +13,7 @@
   integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4="
   crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-<title>Capellanía | Verificación</title>
+<title>CapellaníaUM | Verifica tu correo</title>
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">

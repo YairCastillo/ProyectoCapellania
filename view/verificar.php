@@ -5,7 +5,7 @@
   integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4="
   crossorigin="anonymous"></script>
     <meta charset="UTF-8">
-<title>Capellanía | Verificando</title>
+<title>CapellaníaUM | Verificando</title>
 <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
@@ -16,24 +16,7 @@
         <form method="post">
              <p>
                <?php
-                    include('conexion.php');
-
-
-                    if(isset($_GET['hash']) && !empty($_GET['hash'])){
-                         $hash = mysqli_escape_string($con, $_GET['hash']);
-
-                         $search = mysqli_query($con, "SELECT hash, verificado FROM usuarios WHERE hash = '$hash' and verificado = 0"); 
-                         $match  = mysqli_num_rows($search);
-
-                         if($match == 1){
-                              mysqli_query($con, "UPDATE usuarios SET verificado='1' WHERE hash = '$hash' and verificado = 0");
-                              echo 'Tu cuenta ha sido activada.<br>Ahora puedes iniciar sesión';
-                         }else{
-                              header("location:login");
-                         }
-                    }else{
-                         header("location:login");
-                    }
+                    include('../model/verificarModel.php');
                ?>
                </p>
             <br>

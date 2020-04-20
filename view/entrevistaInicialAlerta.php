@@ -15,7 +15,7 @@
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Document</title>
+            <title>CapellaníaUM | Entrevista Inicial</title>
         </head>
         <body>
           
@@ -30,7 +30,8 @@
                     </button>
                </div>
                <div class="modal-body">
-                    Por favor, completa los siguientes datos.
+                    Por favor, completa los siguientes datos.<br>
+                    No olvides guardar al finalizar cada sección
                </div>
                <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal" onclick = "$('.modal').hide()">Aceptar</button>
