@@ -54,3 +54,5 @@
 14. Poner el mismo text font  a todas las paginas (Eunice) --- YA ESTÁ
 
 *DEBEMOS TENER LA MISMA RUTA PARA REGISTRAR UN NUEVO USUARIO
+
+15. Redirigir a las rutas correctas segun el tipo de usuario y hacer las validaciones correspondientes

@@ -3,5 +3,8 @@
    if($tipoUsuario == "Capellán"){
         header("location:capellanes");
         die();
+     }else if($tipoUsuario == "Alumno"){
+        header("location:servicioCapellania");
+        die();
      }
 ?>

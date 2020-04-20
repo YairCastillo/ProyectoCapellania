@@ -1,3 +1,10 @@
+<?php
+include("../controller/conexion.php");
+include('../controller/verificarSesion.php');
+include('../controller/comprobarVerificacion.php');
+include('../controller/validado.php');
+include('../controller/verificarEntrevistaInicial.php');
+?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 <head>
