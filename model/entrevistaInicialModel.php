@@ -1,4 +1,18 @@
 <?php
+
+     $sql_facultad = "SELECT idFacultad, nombreFacultad FROM facultad order by nombreFacultad";
+     $query_facultad = mysqli_query($con, $sql_facultad);
+     while ($results[] = mysqli_fetch_object($query_facultad));
+     array_pop($results);
+
+
+     $idFacultad = $_COOKIE['selectedOption'];
+
+     $sql_carrera = "SELECT idCarrera, nombreCarrera FROM carrera where idFacultad = '$idFacultad' order by nombreCarrera";
+     $query_facultad = mysqli_query($con, $sql_facultad);
+     while ($results[] = mysqli_fetch_object($query_facultad));
+     array_pop($results);
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      if (isset($_POST['btnPersonales'])) {
           if(empty(trim($_POST["matricula"])) or empty(trim($_POST["nombre"])) or empty(trim($_POST["apellidos"])) or empty(trim($_POST["fechaNac"]))){

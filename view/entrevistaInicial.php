@@ -54,8 +54,7 @@
   <div id="Personales" class="tabcontent">
     <!--Contenido de la pestaña 1-->
     <!-- ENVIA A LA BASE DE DATOS -->
-    <iframe name="iframe1" style="display:none;"></iframe>
-    <form method="POST" target="iframe1">
+    <form method="POST">
       <div id="formulario">
         <h3>Datos Personales</h3>
       </div>
@@ -80,11 +79,13 @@
         </div>
         <br>
 
+        <!-- 
         <div class="col text-center">
           <button class="btn btn-success regular-button" name="btnPersonales" type="submit" id="btnPersonales">
             Guardar
           </button>
         </div>
+         -->
       </div>
     </form>
   </div>
@@ -92,19 +93,17 @@
   <div id="Academicos" class="tabcontent">
     <!--Contenido de la pestaña 1-->
     <!-- ENVIA A LA BASE DE DATOS -->
-    <form action="registro.php" method="POST">
+    <form method="POST">
       <div id="formulario">
         <h3>Datos Académicos</h3>
       </div>
 
-      <div id="tabla-formulario">
-        <label for="exampleFormControlSelect1">Facultad/Escuela</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-          <option>FITEC</option>
-          <option>FACSA</option>
-          <option>FACEJ</option>
-          <option>4</option>
-          <option>5</option>
+      <div id="tabla-formulario-academicos">
+        <label for="selectFacultad">Facultad/Escuela</label>
+        <select class="form-control" id="selectFacultad" onchange='load_new_content()'>
+        <?php foreach ($results as $option) : ?>
+          <option value="<?php echo $option->idFacultad; ?>"><?php echo $option->nombreFacultad; ?></option>
+        <?php endforeach; ?>
         </select>
         <br>
 
@@ -118,7 +117,7 @@
         </select>
         <br>
 
-        <label for="exampleFormControlSelect3">Semestre</label>
+        <label for="exampleFormControlSelect3">Semestre/Tetramestre</label>
         <select class="form-control" id="exampleFormControlSelect3">
           <option>1</option>
           <option>2</option>

@@ -31,7 +31,6 @@
                </div>
                <div class="modal-body">
                     Por favor, completa los siguientes datos.<br>
-                    No olvides guardar al finalizar cada sección
                </div>
                <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal" onclick = "$('.modal').hide()">Aceptar</button>
