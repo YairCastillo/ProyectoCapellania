@@ -85,10 +85,10 @@
           <td>0000000</td>
           <td>Nombre</td>
           <td>Apellidos</td>
-          <td>35</td>
-          <td>New York</td>
-          <td>USA</td>
-          <td>Female</td>
+          <td>correo@alumno.um.edu.mx</td>
+          <td>Carrera</td>
+          <td>Entrevista</td>
+          <td>opciones</td>
         </tr>
       </tbody>
     </table>

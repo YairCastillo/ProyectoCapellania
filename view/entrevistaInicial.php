@@ -137,7 +137,7 @@
   </div>
 
   <div id="Demograficos" class="tabcontent">
-    <!--Contenido de la pestaña 1-->
+    <!--Contenido de la pestaña 2-->
     <!-- ENVIA A LA BASE DE DATOS -->
     <form action="registro.php" method="POST">
       <div id="formulario">
@@ -146,16 +146,11 @@
 
       <div id="tabla-formulario">
 
-        <label for="exampleFormControlSelect4">Estado civil</label>
-        <select class="form-control" id="exampleFormControlSelect4">
+        <label for="estadoCivil">Estado civil</label>
+        <select class="form-control" id="estadoCivil">
           <option>Soltero</option>
           <option>Casado</option>
           <option>Divorciado</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
         </select>
 
         <br>
@@ -170,16 +165,10 @@
         </div>
         <br>
         <label>Lugar de nacimiento</label>
-        <label for="exampleFormControlSelect5">País</label>
-        <select class="form-control" id="exampleFormControlSelect5">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
+        <br>
+        <label for="selectPais">País</label>
+        <select class="form-control" id="selectPais">
+          <option value="1">1</option>
         </select>
 
         <label for="exampleFormControlSelect51">Estado</label>
@@ -240,7 +229,7 @@
   </div>
 
   <div id="Familiares" class="tabcontent">
-    <!--Contenido de la pestaña 1-->
+    <!--Contenido de la pestaña 3-->
     <!-- ENVIA A LA BASE DE DATOS -->
     <form action="registro.php" method="POST">
       <div id="formulario">
@@ -284,7 +273,7 @@
   </div>
 
   <div id="Religiosos" class="tabcontent">
-    <!--Contenido de la pestaña 1-->
+    <!--Contenido de la pestaña 4-->
     <!-- ENVIA A LA BASE DE DATOS -->
     <form action="registro.php" method="POST">
       <div id="formulario">
@@ -388,7 +377,7 @@
   </div>
 
   <div id="SBecario" class="tabcontent">
-    <!--Contenido de la pestaña 1-->
+    <!--Contenido de la pestaña 5-->
     <!-- ENVIA A LA BASE DE DATOS -->
     <form action="registro.php" method="POST">
       <div id="formulario">
@@ -464,7 +453,7 @@
   </div>
 
   <div id="Devocionales" class="tabcontent">
-    <!--Contenido de la pestaña 1-->
+    <!--Contenido de la pestaña 6-->
     <!-- ENVIA A LA BASE DE DATOS -->
     <form action="registro.php" method="POST">
       <div id="formulario">
@@ -516,7 +505,7 @@
   </div>
 
   <div id="Salud" class="tabcontent">
-    <!--Contenido de la pestaña 1-->
+    <!--Contenido de la pestaña 7-->
     <!-- ENVIA A LA BASE DE DATOS -->
     <form action="registro.php" method="POST">
       <div id="formulario">

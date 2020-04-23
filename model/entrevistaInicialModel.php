@@ -1,5 +1,5 @@
 <?php
-
+     /* Select de Facultades */
      $sql_facultad = "SELECT idFacultad, nombreFacultad FROM facultad order by nombreFacultad";
      $query_facultad = mysqli_query($con, $sql_facultad);
      while ($results[] = mysqli_fetch_object($query_facultad));
@@ -12,6 +12,21 @@
      $query_facultad = mysqli_query($con, $sql_facultad);
      while ($results[] = mysqli_fetch_object($query_facultad));
      array_pop($results);
+
+     /* Select de paises */
+     /* $sql_pais = "SELECT id, paisnombre FROM paises order by paisnombre";
+     $query_pais = mysqli_query($con, $sql_pais);
+     while ($results[] = mysqli_fetch_object($query_facultad));
+     array_pop($results);
+
+
+     $idPais = $_COOKIE['selectedOption'];
+
+     $sql_carrera = "SELECT idCarrera, nombreCarrera FROM carrera where idFacultad = '$idFacultad' order by nombreCarrera";
+     $query_facultad = mysqli_query($con, $sql_facultad);
+     while ($results[] = mysqli_fetch_object($query_facultad));
+     array_pop($results); */
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      if (isset($_POST['btnPersonales'])) {
