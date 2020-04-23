@@ -66,7 +66,8 @@ include('../model/calendarModel.php');
 
 <body>
 
-  <nav class="navbar navbar-expand-md fixed-top sticky-top">
+  <nav class="navbar navbar-expand-md fixed-top sticky-top" style="
+  font-family: 'Montserrat', sans-serif;">
     <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
       <span class="navbar-toggler-icon">
         <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
