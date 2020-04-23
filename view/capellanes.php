@@ -40,7 +40,8 @@
                 <div class="collapse navbar-collapse" id="collapse_target">
               <label class="logo">CapellaníaUM</label>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="calendar">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="capellanes">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calendar">CALENDARIO</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">ALUMNOS</a></li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle active" href="#" id="navbardrop" data-toggle="dropdown">
@@ -66,7 +67,7 @@
             <div class="col-md-8 align-self-center">
                 <table style="width:100%">
                     <tr>
-                      <th style="text-align:center">NOMBRE COMPLETO DEL CAPELLAN</th>
+                      <th style="text-align:center">NOMBRE COMPLETO DEL CAPELLÁN</th>
                     </tr>
                   </table>
             </div>
@@ -82,11 +83,11 @@
                 <table style="width:100%">
                     <tr>
                       <th>FACULTAD:</th>
-                      <td>Aqui va el nombre de la facultad de la cual es capellan</td>
+                      <td>Facultad de Ingeniería y Tecnología</td>
                     </tr>
                     <tr>
                       <th>CORREO:</th>
-                      <td>Aqui va el correo del@capellan</td>
+                      <td>capellan@um.edu.mx</td>
                     </tr>
                     <tr>
                       <th>BIOGRAFÍA:</th>

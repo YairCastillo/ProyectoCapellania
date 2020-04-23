@@ -33,8 +33,9 @@
                 <div class="collapse navbar-collapse" id="collapse_target">
               <label class="logo">CapellaníaUM</label>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="calendar">INICIO</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="listaAlumnos">ALUMNOS</a></li>
+                <li class="nav-item"><a class="nav-link" href="capellanes">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calendar">CALENDARIO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">ALUMNOS</a></li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="capellanes" id="navbardrop" data-toggle="dropdown">
                         NOMBRE
