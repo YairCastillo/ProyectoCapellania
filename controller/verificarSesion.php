@@ -8,7 +8,7 @@
 
    $user_check = $_SESSION['login_user'];
    
-   $ses_sql = mysqli_query($con,"select nombre, verificado, token, expDate, tipoUsuario from usuarios where nombre = '$user_check'");
+   $ses_sql = mysqli_query($con,"select nombre, verificado, email, token, expDate, tipoUsuario from usuarios where nombre = '$user_check'");
    
    $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
    
@@ -19,6 +19,7 @@
    $_SESSION['tipoUsuario'] = $row['tipoUsuario'];
 
    $nombre = $row['nombre'];
+   $email = $row['email'];
    $verificado = $row['verificado'];
    $token = $row['token'];
    $expDate = $row['expDate'];
