@@ -31,7 +31,7 @@ include('../model/capellanesModel.php');
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
   <!-- CSS para la barra de navegacion -->
-    <link rel="stylesheet" type="text/css" href="../css/estilo.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/navstyle.css" />
 
   <!--estilo para el perfil-->
   <link rel="stylesheet" type="text/css" href="../css/capStyle.css">
@@ -56,12 +56,15 @@ include('../model/capellanesModel.php');
     <div class="collapse navbar-collapse" id="collapse_target">
       <label class="logo">CapellaníaUM</label>
       <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="capellanes">INICIO</a></li>
+        <li class="nav-item"><a class="nav-link active" href="capellanes">INICIO</a></li>
+
         <li class="nav-item"><a class="nav-link" href="calendar">CALENDARIO</a></li>
+
         <li class="nav-item"><a class="nav-link" href="listaAlumnos">ALUMNOS</a></li>
+
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" href="capellanes" id="navbardrop" data-toggle="dropdown">
-          <?php echo $nombreCuenta; ?>
+          <a class="nav-link dropdown-toggle" href="capellanes" id="navbardrop" data-toggle="dropdown">
+            <?php echo $nombreCuenta; ?>
           </a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Configuración</a>
@@ -78,8 +81,7 @@ include('../model/capellanesModel.php');
       <div class="col-md-4">
         <!-- Aqui va una foto -->
 
-        <img class="responsive"
-          src="<?php echo $imgPath; ?>" alt="">
+        <img class="responsive" src="<?php echo $imgPath; ?>" alt="">
       </div>
       <div class="col-md-8 align-self-center">
         <table style="width:100%">
@@ -105,7 +107,7 @@ include('../model/capellanesModel.php');
             <th>FACULTAD:</th>
             <td><?php echo $facultad; ?></td>
           </tr>
-          
+
           <tr>
             <th>DESCRIPCIÓN:</th>
             <td><?php echo $descripcion; ?></td>

@@ -2,28 +2,30 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-body{
-  font-family: 'Montserrat', sans-serif; 
+body {
+  font-family: 'Montserrat', sans-serif;
   background-color: #fbfcf7;
 }
 
-label.logo{
-    color: #fbfcf7;
-    font-size: 35px;
-    padding: 0 100px;
-    font-weight: bold;
+label.logo {
+  color: #ffffff;
+  font-size: 35px;
+  padding: 0 100px;
+  font-weight: bold;
+  height: 46px;
 }
 
-a.active, a:hover{
+a.active,
+a:hover {
   background: #0198d1;
-    transition: .5s; 
+  transition: .5s;
 }
 
-nav{
+nav {
   background: #0b7ab1;
+  color: #ffffff;
+}
+
+nav a {
   color: #fbfcf7;
 }
-nav a{
-  color: #fbfcf7;
-}
-  

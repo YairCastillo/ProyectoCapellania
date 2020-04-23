@@ -31,7 +31,7 @@ include('../model/calendarModel.php');
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
   <!-- CSS para la barra de navegacion -->
-  <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
+  <link rel="stylesheet" type="text/css" href="../css/navstyle.css" />
 
   <!--loadingstyle.css es para el efecto de cargarndo-->
   <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
@@ -64,7 +64,7 @@ include('../model/calendarModel.php');
   <script src='../fullcalendar-4.3.1/packages/bootstrap/main.js'></script>
 </head>
 
-<body>
+<body style="font-family: 'Montserrat', sans-serif;">
 
   <nav class="navbar navbar-expand-md fixed-top sticky-top">
     <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
@@ -76,7 +76,7 @@ include('../model/calendarModel.php');
       <label class="logo">CapellaníaUM</label>
       <ul class="navbar-nav">
       <li class="nav-item"><a class="nav-link" href="capellanes">INICIO</a></li>
-        <li class="nav-item"><a class="nav-link" href="calendar">CALENDARIO</a></li>
+        <li class="nav-item"><a class="nav-link active" href="calendar">CALENDARIO</a></li>
         <li class="nav-item"><a class="nav-link" href="listaAlumnos">ALUMNOS</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="capellanes" id="navbardrop" data-toggle="dropdown">
@@ -94,10 +94,7 @@ include('../model/calendarModel.php');
 
   <div class="container-fluid">
     <section class="content-header">
-      <h1>
-        Calendario
-        <small>Panel de control</small>
-      </h1>
+
     </section>
 
     <div class="row">

@@ -1,40 +1,13 @@
-/* CSS Para la navbar */
-
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
-body{
-  font-family: 'Montserrat', sans-serif; 
-  background-color: #fbfcf7;
-}
-
-label.logo{
-    color: #fbfcf7;
-    font-size: 35px;
-    padding: 0 100px;
-    font-weight: bold;
-}
-
-a.active, a:hover{
-  background: #0198d1;
-    transition: .5s; 
-}
-
-nav{
-  background: #0b7ab1;
-  color: #fbfcf7;
-}
-nav a{
-  color: #fbfcf7;
-}
-  
 
 /* CSS para los containers */
 .container {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    background: #cad3dc;
-    z-index: 1;
-  
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background: #cad3dc;
+  z-index: 1;
+
 }
 
 /*Para la imagen responsive*/
@@ -42,19 +15,20 @@ img {
   border-radius: 60%;
   width: 200px;
   height: 200px;
-  display: block; 
+  display: block;
   margin-left: auto;
-  margin-right: auto;  
+  margin-right: auto;
 }
 
 .responsive {
-    max-width: 200px;
-    height: auto;
-  }
+  max-width: 200px;
+  height: auto;
+}
 
- 
+
 /*Para la tabla*/
 
-th, td {
-    padding: 15px;
-  }
+th,
+td {
+  padding: 15px;
+}
