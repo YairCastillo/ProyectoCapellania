@@ -1,78 +1,95 @@
+<?php
+include("../controller/conexion.php");
+include('../controller/verificarSesion.php');
+include('../controller/comprobarVerificacion.php');
+include('../controller/validado.php');
+include('../controller/verificarPerfilInicial.php');
+include('../model/calendarModel.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calendario de Eventos</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"><script src="js/jquery-3.4.1.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="../js/jquery-3.4.1.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
 
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-    <!-- CSS para la barra de navegacion -->
-      <link rel="stylesheet" type="text/css" href="../css/estilo.css"/>
+  <!-- CSS para la barra de navegacion -->
+  <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
 
-    <!--loadingstyle.css es para el efecto de cargarndo-->
-    <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
-    
-        
-
-    <!--Links para el calendario-->
-  <link href="bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="datatables/datatables.min.css" rel="stylesheet">
-  <link href="clockpicker/bootstrap-clockpicker.css" rel="stylesheet">
-  <link href="fullcalendar-4.3.1/packages/core/main.css" rel="stylesheet">
-  <link href="fullcalendar-4.3.1/packages/daygrid/main.css" rel="stylesheet">
-  <link href="fullcalendar-4.3.1/packages/timegrid/main.css" rel="stylesheet">
-  <link href="fullcalendar-4.3.1/packages/list/main.css" rel="stylesheet">
-  <link href="fullcalendar-4.3.1/packages/bootstrap/main.css" rel="stylesheet">
+  <!--loadingstyle.css es para el efecto de cargarndo-->
+  <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
 
 
-  <script src="js/jquery-3.4.1.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="bootstrap-4.3.1/js/bootstrap.min.js"></script>
-  <script src="datatables/datatables.min.js"></script>
-  <script src="clockpicker/bootstrap-clockpicker.js"></script>
-  <script src='js/moment-with-locales.js'></script>
-  <script src='fullcalendar-4.3.1/packages/core/main.js'></script>
-  <script src='fullcalendar-4.3.1/packages/daygrid/main.js'></script>
-  <script src='fullcalendar-4.3.1/packages/timegrid/main.js'></script>
-  <script src='fullcalendar-4.3.1/packages/interaction/main.js'></script>
-  <script src='fullcalendar-4.3.1/packages/list/main.js'></script>
-  <script src='fullcalendar-4.3.1/packages/core/locales/es.js'></script>
-  <script src='fullcalendar-4.3.1/packages/bootstrap/main.js'></script>
+
+  <!--Links para el calendario-->
+  <link href="../bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../datatables/datatables.min.css" rel="stylesheet">
+  <link href="../clockpicker/bootstrap-clockpicker.css" rel="stylesheet">
+  <link href="../fullcalendar-4.3.1/packages/core/main.css" rel="stylesheet">
+  <link href="../fullcalendar-4.3.1/packages/daygrid/main.css" rel="stylesheet">
+  <link href="../fullcalendar-4.3.1/packages/timegrid/main.css" rel="stylesheet">
+  <link href="../fullcalendar-4.3.1/packages/list/main.css" rel="stylesheet">
+  <link href="../fullcalendar-4.3.1/packages/bootstrap/main.css" rel="stylesheet">
+
+
+  <script src="../js/jquery-3.4.1.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../bootstrap-4.3.1/js/bootstrap.min.js"></script>
+  <script src="../datatables/datatables.min.js"></script>
+  <script src="../clockpicker/bootstrap-clockpicker.js"></script>
+  <script src='../js/moment-with-locales.js'></script>
+  <script src='../fullcalendar-4.3.1/packages/core/main.js'></script>
+  <script src='../fullcalendar-4.3.1/packages/daygrid/main.js'></script>
+  <script src='../fullcalendar-4.3.1/packages/timegrid/main.js'></script>
+  <script src='../fullcalendar-4.3.1/packages/interaction/main.js'></script>
+  <script src='../fullcalendar-4.3.1/packages/list/main.js'></script>
+  <script src='../fullcalendar-4.3.1/packages/core/locales/es.js'></script>
+  <script src='../fullcalendar-4.3.1/packages/bootstrap/main.js'></script>
 </head>
 
 <body>
 
-        <nav class="navbar navbar-expand-md fixed-top sticky-top">
-          <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
-            <span class="navbar-toggler-icon">
-            <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
-            </span>
-          </button>
-			      <div class="collapse navbar-collapse" id="collapse_target">
-                <label class="logo">CapellaníaUM</label>
-                  <ul class="navbar-nav">
-                      <li class="nav-item"><a class="nav-link active" href="calendar">INICIO</a></li>
-                      <li class="nav-item"><a class="nav-link" href="#">ALUMNOS</a></li>
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                          NOMBRE
-                        </a>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" href="#">Configuración</a>
-                          <a class="dropdown-item" href="#">Cerrar Sesión</a>
-                        </div>
-                      </li>
-                      </div>
-                  </ul>
-            </div>
-        </nav>
+  <nav class="navbar navbar-expand-md fixed-top sticky-top">
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+      <span class="navbar-toggler-icon">
+        <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+      </span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapse_target">
+      <label class="logo">CapellaníaUM</label>
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="calendar">INICIO</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">ALUMNOS</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="capellanes" id="navbardrop" data-toggle="dropdown">
+          <?php echo $nombreCuenta; ?>
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Configuración</a>
+            <a class="dropdown-item" href="#">Cerrar Sesión</a>
+          </div>
+        </li>
+    </div>
+    </ul>
+    </div>
+  </nav>
 
   <div class="container-fluid">
     <section class="content-header">
@@ -89,7 +106,8 @@
       </div>
 
       <div class="col-2">
-        <div id='external-events' style="margin-bottom:1em; height: 350px; border: 1px solid #000; overflow: auto;padding:1em">
+        <div id='external-events'
+          style="margin-bottom:1em; height: 350px; border: 1px solid #000; overflow: auto;padding:1em">
           <h4 class="text-center">Eventos predefinidos</h4>
           <div id='listaeventospredefinidos'>
 
@@ -107,7 +125,8 @@
           </div>
         </div>
         <hr>
-        <div style="text-align:center"><button type="button" id="BotonEventosPredefinidos" class="btn btn-success">Administrar eventos predefinidos</button>
+        <div style="text-align:center"><button type="button" id="BotonEventosPredefinidos"
+            class="btn btn-success">Administrar eventos predefinidos</button>
         </div>
       </div>
 
@@ -195,7 +214,7 @@
 
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
 
       $('.clockpicker').clockpicker();
 
@@ -211,8 +230,8 @@
           right: 'dayGridMonth,timeGridWeek,timeGridDay'
         },
         editable: true,
-        events: 'datoseventos.php?accion=listar',
-        dateClick: function(info) {
+        events: '../model/datoseventos.php?accion=listar',
+        dateClick: function (info) {
           limpiarFormulario();
           $('#BotonAgregar').show();
           $('#BotonModificar').hide();
@@ -228,7 +247,7 @@
           }
           $("#FormularioEventos").modal();
         },
-        eventClick: function(info) {
+        eventClick: function (info) {
           $('#BotonModificar').show();
           $('#BotonBorrar').show();
           $('#BotonAgregar').hide();
@@ -243,20 +262,7 @@
           $('#ColorTexto').val(info.event.textColor);
           $("#FormularioEventos").modal();
         },
-        eventResize: function(info) {
-          $('#idEvento').val(info.event.id);
-          $('#Titulo').val(info.event.title);
-          $('#FechaInicio').val(moment(info.event.start).format("YYYY-MM-DD"));
-          $('#FechaFin').val(moment(info.event.end).format("YYYY-MM-DD"));
-          $('#HoraInicio').val(moment(info.event.start).format("HH:mm"));
-          $('#HoraFin').val(moment(info.event.end).format("HH:mm"));
-          $('#ColorFondo').val(info.event.backgroundColor);
-          $('#ColorTexto').val(info.event.textColor);
-          $('#Descripcion').val(info.event.extendedProps.descripcion);          
-          let registro = recuperarDatosFormulario();
-          modificarRegistro(registro);
-        },
-        eventDrop: function(info) {
+        eventResize: function (info) {
           $('#idEvento').val(info.event.id);
           $('#Titulo').val(info.event.title);
           $('#FechaInicio').val(moment(info.event.start).format("YYYY-MM-DD"));
@@ -269,7 +275,20 @@
           let registro = recuperarDatosFormulario();
           modificarRegistro(registro);
         },
-        drop: function(info) {
+        eventDrop: function (info) {
+          $('#idEvento').val(info.event.id);
+          $('#Titulo').val(info.event.title);
+          $('#FechaInicio').val(moment(info.event.start).format("YYYY-MM-DD"));
+          $('#FechaFin').val(moment(info.event.end).format("YYYY-MM-DD"));
+          $('#HoraInicio').val(moment(info.event.start).format("HH:mm"));
+          $('#HoraFin').val(moment(info.event.end).format("HH:mm"));
+          $('#ColorFondo').val(info.event.backgroundColor);
+          $('#ColorTexto').val(info.event.textColor);
+          $('#Descripcion').val(info.event.extendedProps.descripcion);
+          let registro = recuperarDatosFormulario();
+          modificarRegistro(registro);
+        },
+        drop: function (info) {
           limpiarFormulario();
           $('#ColorFondo').val(info.draggedEl.dataset.colorfondo);
           $('#ColorTexto').val(info.draggedEl.dataset.colortexto);
@@ -294,7 +313,7 @@
 
       new FullCalendarInteraction.Draggable(document.getElementById('listaeventospredefinidos'), {
         itemSelector: '.fc-event',
-        eventData: function(eventEl) {
+        eventData: function (eventEl) {
           return {
             title: eventEl.innerText.trim()
           }
@@ -302,25 +321,25 @@
       });
 
       //Eventos de botones de la aplicación
-      $('#BotonAgregar').click(function() {
+      $('#BotonAgregar').click(function () {
         let registro = recuperarDatosFormulario();
         agregarRegistro(registro);
         $("#FormularioEventos").modal('hide');
       });
 
-      $('#BotonModificar').click(function() {
+      $('#BotonModificar').click(function () {
         let registro = recuperarDatosFormulario();
         modificarRegistro(registro);
         $("#FormularioEventos").modal('hide');
       });
 
-      $('#BotonBorrar').click(function() {
+      $('#BotonBorrar').click(function () {
         let registro = recuperarDatosFormulario();
         borrarRegistro(registro);
         $("#FormularioEventos").modal('hide');
       });
 
-      $('#BotonEventosPredefinidos').click(function() {
+      $('#BotonEventosPredefinidos').click(function () {
         window.location = "eventospredefinidos";
       });
 
@@ -331,10 +350,10 @@
           type: 'POST',
           url: 'datoseventos.php?accion=agregar',
           data: registro,
-          success: function(msg) {
+          success: function (msg) {
             calendario1.refetchEvents();
           },
-          error: function(error) {
+          error: function (error) {
             alert("Hay un problema:" + error);
           }
         });
@@ -345,10 +364,10 @@
           type: 'POST',
           url: 'datoseventos.php?accion=modificar',
           data: registro,
-          success: function(msg) {
+          success: function (msg) {
             calendario1.refetchEvents();
           },
-          error: function(error) {
+          error: function (error) {
             alert("Hay un problema:" + error);
           }
         });
@@ -359,10 +378,10 @@
           type: 'POST',
           url: 'datoseventos.php?accion=borrar',
           data: registro,
-          success: function(msg) {
+          success: function (msg) {
             calendario1.refetchEvents();
           },
-          error: function(error) {
+          error: function (error) {
             alert("Hay un problema:" + error);
           }
         });
@@ -373,11 +392,11 @@
           type: 'POST',
           url: 'datoseventos.php?accion=agregar',
           data: registro,
-          success: function(msg) {
+          success: function (msg) {
             calendario1.removeAllEvents();
             calendario1.refetchEvents();
           },
-          error: function(error) {
+          error: function (error) {
             alert("Hay un problema:" + error);
           }
         });
