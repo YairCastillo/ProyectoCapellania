@@ -14,7 +14,6 @@ include('../model/listaAlumnosModel.php');
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CapellaníaUM | Alumnos</title>
 
-  <!--links para CDN *copiar desde aqui para poner una navbar-->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <script src="../js/jquery-3.4.1.js"></script>
@@ -24,6 +23,12 @@ include('../model/listaAlumnosModel.php');
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
+  <!--para la tabla-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!--para tabla-->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
   </script>
@@ -31,22 +36,21 @@ include('../model/listaAlumnosModel.php');
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-  <!-- CSS para la barra de navegacion -->
-  <link rel="stylesheet" type="text/css" href="../css/navstyle.css" />
+   <!--loadingstyle.css es para el efecto de cargarndo-->
+   <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
 
-  <!--loadingstyle.css es para el efecto de cargarndo-->
-  <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
+    <!-- CSS para la barra de navegacion -->
+      <link rel="stylesheet" type="text/css" href="../css/navStyle.css"/>
+      
+    
 
+ 
   
-  <!--para la tabla-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body style="font-family: 'Montserrat', sans-serif;">
-  <nav class="navbar navbar-expand-md fixed-top sticky-top">
+<nav class="navbar navbar-expand-md fixed-top sticky-top">
     <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
       <span class="navbar-toggler-icon">
         <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
