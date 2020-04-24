@@ -1,31 +1,23 @@
 <?php
      /* Select de Facultades */
+     $output = "";
      $sql_facultad = "SELECT idFacultad, nombreFacultad FROM facultad order by nombreFacultad";
-     $query_facultad = mysqli_query($con, $sql_facultad);
-     while ($results[] = mysqli_fetch_object($query_facultad));
-     array_pop($results);
+     $result = mysqli_query($con, $sql_facultad);
+     $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+     foreach($row as $item){
+          $output .= '<option value="'.$item['idFacultad'].'">'.$item['nombreFacultad'].'</option>';
+     };
 
-     $idFacultad = $_COOKIE['selectedOption'];
+     /* Select de Paises */
+     $paises = "";
+     $sql_paises = "SELECT * FROM paises order by paisnombre";
+     $result1 = mysqli_query($con, $sql_paises);
+     $row1 = mysqli_fetch_all($result1, MYSQLI_ASSOC);
 
-     $sql_carrera = "SELECT idCarrera, nombreCarrera FROM carrera where idFacultad = '$idFacultad' order by nombreCarrera";
-     $query_facultad = mysqli_query($con, $sql_facultad);
-     while ($results[] = mysqli_fetch_object($query_facultad));
-     array_pop($results);
-
-     /* Select de paises */
-     /* $sql_pais = "SELECT id, paisnombre FROM paises order by paisnombre";
-     $query_pais = mysqli_query($con, $sql_pais);
-     while ($results[] = mysqli_fetch_object($query_facultad));
-     array_pop($results);
-
-
-     $idPais = $_COOKIE['selectedOption'];
-
-     $sql_carrera = "SELECT idCarrera, nombreCarrera FROM carrera where idFacultad = '$idFacultad' order by nombreCarrera";
-     $query_facultad = mysqli_query($con, $sql_facultad);
-     while ($results[] = mysqli_fetch_object($query_facultad));
-     array_pop($results); */
+     foreach($row1 as $item){
+          $paises .= '<option value="'.$item['id'].'">'.$item['paisnombre'].'</option>';
+     };
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
