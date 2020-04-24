@@ -1,3 +1,10 @@
+<?php
+include("../controller/conexion.php");
+include('../controller/verificarSesion.php');
+include('../controller/comprobarVerificacion.php');
+include('../controller/validado.php');
+include('../controller/verificarPerfilInicial.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,27 +13,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Entrevistas de capellanía</title>
 
-  <link href="bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="datatables/datatables.min.css" rel="stylesheet">
-  <link href="clockpicker/bootstrap-clockpicker.css" rel="stylesheet">
+    <!--loadingstyle.css es para el efecto de cargarndo-->
+    <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
 
-  <script src="js/jquery-3.4.1.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="bootstrap-4.3.1/js/bootstrap.min.js"></script>
-  <script src="datatables/datatables.min.js"></script>
-  <script src="clockpicker/bootstrap-clockpicker.js"></script>
-  <script src='js/moment-with-locales.js'></script>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <link href="../bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../datatables/datatables.min.css" rel="stylesheet">
+  <link href="../clockpicker/bootstrap-clockpicker.css" rel="stylesheet">
+
+  <script src="../js/jquery-3.4.1.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../bootstrap-4.3.1/js/bootstrap.min.js"></script>
+  <script src="../datatables/datatables.min.js"></script>
+  <script src="../clockpicker/bootstrap-clockpicker.js"></script>
+  <script src='../js/moment-with-locales.js'></script>
 </head>
 
-<body>
+<body style="font-family: 'Montserrat', sans-serif;">
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 style="text-align:center">Panel de eventos predefinidos</h2>
+        <br>
+        <h2 style="text-align:center">Eventos predefinidos</h2>
         <table class="table table-striped table-bordered table-hover" id="tbleventos">
           <thead>
             <tr>
-              <td>No.</td>
+              <td>ID</td>
               <td>Evento</td>
               <td>Color del<br>texto</td>
               <td>Color del<br> fondo</td>
@@ -42,7 +56,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-
+              <h5 class="modal-title">Nuevo evento predefinido</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -100,59 +114,58 @@
   </div>
 
   <script>
-
     document.addEventListener('DOMContentLoaded', function () {
 
       $('.clockpicker').clockpicker();
-            
+
       let tbleventos = $('#tbleventos').DataTable({
         "ajax": {
-          url: 'datoseventospredefinidos.php?accion=listar',
+          url: '../model/datoseventospredefinidos.php?accion=listar',
           dataSrc: ""
         },
         "columns": [{
-          "data": "id_evento"
-        },
-        {
-          "data": "titulo"
-        },
-        {
-          "data": "colortexto"
-        },
-        {
-          "data": "colorfondo"
-        },
-        {
-          "data": "horainicio"
-        },
-        {
-          "data": "horafin"
-        },
-        {
-          "data": null,
-          "orderable": false
-        }
+            "data": "id_evento"
+          },
+          {
+            "data": "titulo"
+          },
+          {
+            "data": "colortexto"
+          },
+          {
+            "data": "colorfondo"
+          },
+          {
+            "data": "horainicio"
+          },
+          {
+            "data": "horafin"
+          },
+          {
+            "data": null,
+            "orderable": false
+          }
         ],
         columnDefs: [{
-          targets: -1,
-          className: 'dt-body-center',
-          "defaultContent": "<button class='btn btn-sm btn-danger botonborrar'>Eliminar</button>",
-          data: null
-        }, {
-          targets: 1,
-          className: 'dt-body-center'
-        },
-        {
-          targets: 2,
-          className: 'dt-body-center'
-        }
+            targets: -1,
+            className: 'dt-body-center',
+            "defaultContent": "<button class='btn btn-sm btn-danger botonborrar'>Eliminar</button>",
+            data: null
+          }, {
+            targets: 1,
+            className: 'dt-body-center'
+          },
+          {
+            targets: 2,
+            className: 'dt-body-center'
+          }
         ],
         'rowCallback': function (row, data, index) {
           $(row).find('td:eq(1)').css('color', data.colortexto);
           $(row).find('td:eq(1)').css('background-color', data.colorfondo);
         },
         "language": {
-          "url": "datatables/spanish.json",
+          "url": "../datatables/spanish.json",
         },
         "lengthMenu": [
           [10, 25, 50, -1],
@@ -189,7 +202,7 @@
       function agregarRegistro(registro) {
         $.ajax({
           type: 'POST',
-          url: 'datoseventospredefinidos.php?accion=agregar',
+          url: '../model/datoseventospredefinidos.php?accion=agregar',
           data: registro,
           success: function (msg) {
             tbleventos.ajax.reload();
@@ -203,7 +216,7 @@
       function borrarRegistro(registro) {
         $.ajax({
           type: 'POST',
-          url: 'datoseventospredefinidos.php?accion=borrar',
+          url: '../model/datoseventospredefinidos.php?accion=borrar',
           data: registro,
           success: function (msg) {
             tbleventos.ajax.reload();
@@ -237,6 +250,15 @@
       }
 
 
+    });
+  </script>
+
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+  <script>
+    $(window).on("load", function () {
+      $(".loader-wrapper").fadeOut("slow");
     });
   </script>
 

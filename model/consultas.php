@@ -1,7 +1,6 @@
 <?php
      header('Content-Type: application/json');
-     require("conexion.php");
-     $conexion = conectarBD();
+     require("../controller/conexion.php");
      //datos provenientes del formulario de alta de alumnos
     
      /*$matricula = $_POST['matricula'];
@@ -16,31 +15,31 @@
      switch ($_GET['accion']) {
         case 'mostrar_listado':
                $qry = "select matricula,nombre,fechanacimiento, edad from alumno";
-               $result = mysqli_query($conexion, $qry);
+               $result = mysqli_query($con, $qry);
                $resultado = mysqli_fetch_all($result, MYSQLI_ASSOC);// or die(mysqli_error());
                echo json_encode($resultado);
-               mysqli_close($conexion);
+               mysqli_close($con);
              break;
         case 'agregar':
                 $qry = "insert into alumno values('$_POST[matricula]','$_POST[nombre]','$_POST[fechanacimiento]', $_POST[edad])";
-                $respuesta = mysqli_query($conexion, $qry);// or die(mysqli_error());
+                $respuesta = mysqli_query($con, $qry);// or die(mysqli_error());
                 echo json_encode($respuesta);
-                mysqli_close($conexion);                          
+                mysqli_close($cone);                          
                 break;
 
           case 'borrar':
                $qry = "delete from alumno where matricula='$_GET[matricula]'";
-               $respuesta = mysqli_query($conexion, $qry);// or die(mysqli_error());
+               $respuesta = mysqli_query($con, $qry);// or die(mysqli_error());
              
                echo json_encode($respuesta);
-               mysqli_close($conexion);
+               mysqli_close($con);
              break;
           case 'consultar':
                $qry = "select matricula, nombre, fechanacimiento, edad from alumno where matricula='$_GET[matricula]'";
-               $datos = mysqli_query($conexion, $qry);// or die(mysqli_error());
+               $datos = mysqli_query($con, $qry);// or die(mysqli_error());
                $resultado = mysqli_fetch_all($datos, MYSQLI_ASSOC);
                echo json_encode($resultado);
-               mysqli_close($conexion);
+               mysqli_close($con);
              break;
             
           case 'modificar':
@@ -53,9 +52,9 @@
                        edad=45
                        where matricula='0920975'";*/
                   
-               $respuesta = mysqli_query($conexion, $qry);// or die(mysqli_error());
+               $respuesta = mysqli_query($con, $qry);// or die(mysqli_error());
                echo json_encode($respuesta);
-               mysqli_close($conexion);
+               mysqli_close($con);
              break;
         
         

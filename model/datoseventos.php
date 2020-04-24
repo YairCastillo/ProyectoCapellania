@@ -1,9 +1,9 @@
 <?php
 header('Content-Type: application/json');
 
-require("conexion.php");
+require("../controller/conexion.php");
 
-$conexion = conectarBD();
+$conexion = $con;
 
 switch ($_GET['accion']) {
     case 'listar':

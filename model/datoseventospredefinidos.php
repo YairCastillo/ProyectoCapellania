@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-require("conexion.php");
+require("../controller/conexion.php");
 
 
 switch ($_GET['accion']) {

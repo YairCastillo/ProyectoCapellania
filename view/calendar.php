@@ -36,6 +36,9 @@ include('../model/calendarModel.php');
   <!--loadingstyle.css es para el efecto de cargarndo-->
   <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
 
+  <!--loadingstyle.css es para el efecto de cargarndo-->
+  <link rel="stylesheet" type="text/css" href="../css/calendar.css">
+
 
 
   <!--Links para el calendario-->
@@ -76,12 +79,12 @@ include('../model/calendarModel.php');
     <div class="collapse navbar-collapse" id="collapse_target">
       <label class="logo">CapellaníaUM</label>
       <ul class="navbar-nav">
-      <li class="nav-item"><a class="nav-link" href="capellanes">INICIO</a></li>
+        <li class="nav-item"><a class="nav-link" href="capellanes">INICIO</a></li>
         <li class="nav-item"><a class="nav-link active" href="calendar">CALENDARIO</a></li>
         <li class="nav-item"><a class="nav-link" href="listaAlumnos">ALUMNOS</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="capellanes" id="navbardrop" data-toggle="dropdown">
-          <?php echo $nombreCuenta; ?>
+            <?php echo $nombreCuenta; ?>
           </a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Configuración</a>
@@ -100,13 +103,13 @@ include('../model/calendarModel.php');
 
     <div class="row">
 
-      <div class="col-10">
-        <div id="Calendario1" style="border: 1px solid #000;padding:2px"></div>
+      <div id="calendar-container">
+        <div id="Calendario1" style="border: 0px solid #000;padding:50px"></div>
       </div>
 
       <div class="col-2">
         <div id='external-events'
-          style="margin-bottom:1em; height: 350px; border: 1px solid #000; overflow: auto;padding:1em">
+          style="margin-top:7em;margin-bottom:1em; height: 350px; border: 2px solid #0b7ab1; overflow: auto;padding:1em">
           <h4 class="text-center">Eventos predefinidos</h4>
           <div id='listaeventospredefinidos'>
 
@@ -219,9 +222,10 @@ include('../model/calendarModel.php');
 
       let calendario1 = new FullCalendar.Calendar(document.getElementById('Calendario1'), {
         plugins: ['dayGrid', 'timeGrid', 'interaction'],
-        height: 800,
+        height: 700,
         droppable: true,
         locale: 'es',
+        firstDay: 7,
         showNonCurrentDates: false,
         header: {
           left: 'today,prev,next',
@@ -429,7 +433,14 @@ include('../model/calendarModel.php');
 
     });
   </script>
-
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
+  <script>
+    $(window).on("load", function () {
+      $(".loader-wrapper").fadeOut("slow");
+    });
+  </script>
 </body>
 
 </html>
