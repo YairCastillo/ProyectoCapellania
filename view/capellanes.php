@@ -68,7 +68,7 @@ include('../model/capellanesModel.php');
           </a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#">Configuración</a>
-            <a class="dropdown-item" href="#">Cerrar Sesión</a>
+            <a class="dropdown-item" href="../controller/cerrarSesion">Cerrar Sesión</a>
           </div>
         </li>
     </div>
