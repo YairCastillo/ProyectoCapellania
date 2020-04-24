@@ -23,25 +23,7 @@ include('../model/calendarModel.php');
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-  </script>
-
-  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-  <!-- CSS para la barra de navegacion -->
-  <link rel="stylesheet" type="text/css" href="../css/navstyle.css" />
-
-  <!--loadingstyle.css es para el efecto de cargarndo-->
-  <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
-
-  <!--loadingstyle.css es para el efecto de cargarndo-->
-  <link rel="stylesheet" type="text/css" href="../css/calendar.css">
-
-
-
-  <!--Links para el calendario-->
+  <!--Links para el calendario- Abajo -->
   <link href="../bootstrap-4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="../datatables/datatables.min.css" rel="stylesheet">
   <link href="../clockpicker/bootstrap-clockpicker.css" rel="stylesheet">
@@ -65,6 +47,26 @@ include('../model/calendarModel.php');
   <script src='../fullcalendar-4.3.1/packages/list/main.js'></script>
   <script src='../fullcalendar-4.3.1/packages/core/locales/es.js'></script>
   <script src='../fullcalendar-4.3.1/packages/bootstrap/main.js'></script>
+  <!--Para calendario - Arriba-->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
+
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+  <!-- CSS para la barra de navegacion -->
+  <link rel="stylesheet" type="text/css" href="../css/navstyle.css" />
+
+  <!--loadingstyle.css es para el efecto de cargarndo-->
+  <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
+
+  <!--loadingstyle.css es para el efecto de cargarndo-->
+  <link rel="stylesheet" type="text/css" href="../css/calendar.css">
+
+
+
+  
 </head>
 
 <body style="font-family: 'Montserrat', sans-serif;">
