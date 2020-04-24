@@ -79,6 +79,7 @@ include('../model/listaAlumnosModel.php');
 
   <div class="container">
     <h2 style="text-align:center">Lista de Alumnos</h2>
+
     <!-- Search form -->
     <div class="row">
       <div class="col col-md-9">
@@ -100,22 +101,37 @@ include('../model/listaAlumnosModel.php');
               <th>Matrícula</th>
               <th>Nombre</th>
               <th>Apellidos</th>
-              <th>Correo</th>
+              <th>Edad</th>
+              <th>Correo Electrónico</th>
               <th>Carrera</th>
-              <th>Entevista Inicial</th>
               <th>Opciones</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>0000000</td>
-              <td>Nombre</td>
-              <td>Apellidos</td>
-              <td>correo@alumno.um.edu.mx</td>
-              <td>Carrera</td>
-              <td>Entrevista</td>
-              <td>opciones</td>
-            </tr>
+            <?php
+              foreach($row3 as $datosAlumno){
+                foreach($datosAlumno as $dato){
+                  $matriculaAlumno = $dato['matricula'];
+                  $nombreAlumno = $dato['nombre'];
+                  $apellidosAlumno = $dato['apellidos'];
+                  $correoAlumno = $dato['email'];
+                  $edadAlumno = $dato['edad'];
+                  $nombreCarreraAlumno = $dato['nombreCarrera'];
+
+
+                  echo "<tr>
+                  <td>$matriculaAlumno</td>
+                  <td>$nombreAlumno</td>
+                  <td>$apellidosAlumno</td>
+                  <td>$edadAlumno</td>
+                  <td>$correoAlumno</td>
+                  <td>$nombreCarreraAlumno</td>
+                  <td>opciones</td>
+                  </tr>";
+                }
+                
+              }
+            ?>
           </tbody>
         </table>
       </div>

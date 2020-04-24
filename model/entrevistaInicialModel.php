@@ -46,14 +46,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                
                $fechaNac = mysqli_real_escape_string($con, $fechaNac);
                
-               $sql_edad = "SELECT TIMESTAMPDIFF(YEAR, '$fechaNac', CURDATE()) AS edad";
+               #$sql_edad = "SELECT TIMESTAMPDIFF(YEAR, '$fechaNac', CURDATE()) AS edad"; #EDAD NO SE GUARDA, SE CALCULA DEPENDIENDO DE LA FECHA DE NACIMIENTO
 
-               $result = mysqli_query($con,$sql_edad);
+               #$result = mysqli_query($con,$sql_edad);
 
-               $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-               $edad = $row['edad'];
+               #$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+               #$edad = $row['edad'];
 
-               $sql = "INSERT into alumnos (matricula, usuario, nombre, apellidos, fechanacimiento, edad) values ('$matricula','$nombre', '$nombres', '$apellidos', '$fechaNac', $edad)";
+               $sql = "INSERT into alumnos (matricula, usuario, nombre, apellidos, fechanacimiento) values ('$matricula','$nombre', '$nombres', '$apellidos', '$fechaNac')";
                
                if(mysqli_query($con, $sql)){
                }else{
