@@ -1,7 +1,7 @@
 <?php
 	$servidor = 'localhost';
 	$usuario = 'root';
-	$password = '';
+	$password = '123456789';
 	$bd = 'proyectocapellania';
 	$con = mysqli_connect($servidor, $usuario, $password, $bd)
 	or die('Error de conexión al servidor. Revise los parámetros de la conexión.');
