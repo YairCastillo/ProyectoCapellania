@@ -4,6 +4,7 @@ include('../controller/verificarSesion.php');
 include('../controller/comprobarVerificacion.php');
 include('../controller/validado.php');
 include('../controller/verificarEntrevistaInicial.php');
+include('../model/servicioCapellaniaModel.php');
 ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -20,8 +21,8 @@ include('../controller/verificarEntrevistaInicial.php');
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-    <!-- CSS para la barra de navegacion 
-    <link rel="stylesheet" type="text/css" href="../css/estilo.css"/>-->
+    <!-- CSS para la barra de navegacion -->
+    <link rel="stylesheet" type="text/css" href="../css/navStyle.css"/>
 
     <!--estilo para el perfil-->
     <link rel="stylesheet" type="text/css" href="../css/capStyle.css">
@@ -52,11 +53,11 @@ include('../controller/verificarEntrevistaInicial.php');
               <label class="logo">CapellaníaUM</label>
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="servicioCapellania">INICIO</a></li>
-                    <li class="nav-item"><a class="nav-link" href="calendar">CITAS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="entrevistaInicial">MODIFICAR MIS DATOS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calendarioAlumnos">CITAS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="modificarDatos">MODIFICAR MIS DATOS</a></li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        NOMBRE
+                      <?php echo $nombreCuenta; ?>
                       </a>
                       <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Configuración</a>
