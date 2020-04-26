@@ -33,6 +33,31 @@
 
 
 <body>
+<nav class="navbar navbar-expand-md fixed-top sticky-top">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+          <span class="navbar-toggler-icon">
+          <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
+          </span>
+        </button>
+                <div class="collapse navbar-collapse" id="collapse_target">
+              <label class="logo">CapellaníaUM</label>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="servicioCapellania">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link" href="calendarioAlumnos">CITAS</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="modificarDatos">MODIFICAR MIS DATOS</a></li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                      <?php echo $nombreCuenta; ?>
+                      </a>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Configuración</a>
+                        <a class="dropdown-item" href="../controller/cerrarSesion">Cerrar Sesión</a>
+                      </div>
+                    </li>
+                    </div>
+                </ul>
+          </div>
+      </nav>
   <!-- Tab links -->
   <div class="tab">
     <button class="tablinks" onclick="openTab(event, 'Personales')" id="defaultOpen">Personales</button>
