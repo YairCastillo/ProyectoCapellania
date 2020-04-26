@@ -1,5 +1,5 @@
 <?php
-  include('conexion.php');
+  include('../controller/conexion.php');
   include("../controller/verificarSesion.php");
   include('../controller/verificarEmailRedireccion.php');
 
