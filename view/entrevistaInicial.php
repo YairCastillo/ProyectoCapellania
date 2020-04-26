@@ -218,6 +218,140 @@
       }
       return false;
     }
+
+    function postReligiosos(){
+      var usuario = "<?php echo $nombre ?>";
+      var religion = document.getElementById("religion").value;
+      var bautizado = document.getElementById("bautizado").checked;
+      var fechaBautismo = document.getElementById("fechaBautismo").value;
+      var feligresia = document.getElementById("feligresia").value;
+      var iglesia = document.getElementById("iglesia").value;
+      var cultosAsistencia = document.getElementById("cultosAsistencia").checked;
+      var cultos = document.getElementById("cultos").value;
+      var esAsistencia = document.getElementById("esAsistencia").checked;
+      var es = document.getElementById("es").value;
+      var ae = document.getElementById("ae").value;
+
+      if(bautizado == false){
+        bautizado = 0;
+      }else if(bautizado == true){
+        bautizado = 1;
+      }
+
+      if(cultosAsistencia == false){
+        cultosAsistencia = 0;
+      }else if(cultosAsistencia == true){
+        cultosAsistencia = 1;
+      }
+
+      if(esAsistencia == false){
+        esAsistencia = 0;
+      }else if(esAsistencia == true){
+        esAsistencia = 1;
+      }
+
+      if(religion == '' || iglesia =='' || ae == ''){
+        alert('Completa todos los campos');
+      }else if(bautizado == 1 && (fechaBautismo == '' || feligresia == '')){
+        alert('Completa todos los campos');
+      }else if((cultosAsistencia == 1 && cultos == '') || (esAsistencia == 1 && es == '')){
+        alert('Completa todos los campos');
+      }else{
+        $.ajax({
+          type:'post',
+          url:'../model/postReligiosos.php',
+          data:{
+            Usuario:usuario,
+            Religion:religion,
+            Bautizado:bautizado,
+            FechaBautismo:fechaBautismo,
+            Feligresia:feligresia,
+            Iglesia:iglesia,
+            CultosAsistencia:cultosAsistencia,
+            Cultos:cultos,
+            EsAsistencia:esAsistencia,
+            Es:es,
+            Ae:ae
+          },
+          success:function(data){
+            console.log(data);
+            if(data == 'error' || data != ''){
+              alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
+            }else if(data == 'Error. Contestar seccion anterior.'){
+              alert('Contesta la sección anterior');
+            }else{
+              alert('¡Datos guardados!');
+              document.getElementById("sb").click();
+            }
+          }
+        });
+      }
+      return false;
+    }
+
+    function postSB(){
+      var usuario = "<?php echo $nombre ?>";
+      var becado = document.getElementById("becado").checked;
+      var tipoBeca = document.getElementById("tipoBeca").value;
+      var departamento = document.getElementById("departamento").value;
+      var horasTrabajo = document.getElementById("horasTrabajo").value;
+      var colportado = document.getElementById("colportado").checked;
+      var colportadoInter = document.getElementById("colportadoInter").checked;
+      var veranos = document.getElementById("veranos").value;
+      var inviernos = document.getElementById("inviernos").value;
+
+      if(becado == false){
+        becado = 0;
+      }else if(becado == true){
+        becado = 1;
+      }
+
+      if(colportado == false){
+        colportado = 0;
+      }else if(colportado == true){
+        colportado = 1;
+      }
+
+      if(colportadoInter == false){
+        colportadoInter = 0;
+      }else if(colportadoInter == true){
+        colportadoInter = 1;
+      }
+      
+      if(becado == 1 && (tipoBeca == '' || departamento == '')){
+        alert('Completa todos los campos');
+      }else if(colportado == 1 && (veranos == '' || inviernos == '')){
+        alert('Completa todos los campos');
+      }else{
+        $.ajax({
+          type:'post',
+          url:'../model/postSB.php',
+          data:{
+            Usuario:usuario,
+            Becado:becado,
+            TipoBeca:tipoBeca,
+            Departamento:departamento,
+            HorasTrabajo:horasTrabajo,
+            Colportado:colportado,
+            ColportadoInter:colportadoInter,
+            Veranos:veranos,
+            Inviernos:inviernos
+          },
+          success:function(data){
+            console.log(data);
+            if(data == 'error' || data != ''){
+              alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
+            }else if(data == 'Error. Contestar seccion anterior.'){
+              alert('Contesta la sección anterior');
+            }else{
+              alert('¡Datos guardados!');
+              document.getElementById("actDev").click();
+            }
+          }
+        });
+      }
+      return false;
+    }
   </script>
 
 
@@ -636,7 +770,7 @@
   <div id="SBecario" class="tabcontent">
     <!------------------------Contenido de la pestaña 6  (SERVICIO BECARIO)----------------------------------------->
     <!-- ENVIA A LA BASE DE DATOS -->
-    <form method="POST">
+    <form method="POST" onsubmit="return postSB();">
       <div id="formulario">
         <h3>Datos de Servicio Becario</h3>
       </div>
