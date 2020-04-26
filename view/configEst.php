@@ -41,11 +41,11 @@
                     <li class="nav-item"><a class="nav-link" href="calendarioAlumnos">CITAS</a></li>
                     <li class="nav-item"><a class="nav-link" href="modificarDatos">MODIFICAR MIS DATOS</a></li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle active" href="#" id="navbardrop" data-toggle="dropdown">
+                      <a class="nav-link dropdown-toggle active" href="capellanes" id="navbardrop" data-toggle="dropdown">
                       <?php echo $nombreCuenta; ?>
                       </a>
                       <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Configuración</a>
+                        <a class="dropdown-item" href="configEst">Configuración</a>
                         <a class="dropdown-item" href="../controller/cerrarSesion">Cerrar Sesión</a>
                       </div>
                     </li>
@@ -57,7 +57,9 @@
 <div class="container">
             <form action="" method="post">
                     <div id="formulario">
+                        <hr>
                         <h3>Cambio de Contraseña</h3>
+                        <hr>
                     </div>
                 <div class="form-group">
                    
@@ -80,6 +82,19 @@
                             <button class="btn btn-success regular-button" name="btnNewPass" type="submit"
                                 id="btnNewPass">
                                 Guardar
+                            </button>
+                        </div>
+
+                        <div id="formulario">
+                          <hr>
+                          <h3>Eliminar cuenta</h3>
+                          <hr>
+                          <h6>Esta acción es irreversible</h6>
+                        </div>
+                        <div class="col text-center">
+                            <button class="btn btn-danger regular-button" name="btnEliminar" type="submit"
+                                id="btnEliminar">
+                                Eliminar cuenta
                             </button>
                         </div>
             </form>

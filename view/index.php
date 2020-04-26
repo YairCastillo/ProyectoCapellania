@@ -43,15 +43,15 @@
                 <div class="collapse navbar-collapse" id="collapse_target">
               <label class="logo">CapellaníaUM</label>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link active" href="#">INICIO</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="servicioCapellania">INICIO</a></li>
                     <li class="nav-item"><a class="nav-link" href="calendar">CITA</a></li>
-                    <li><a href="entrevistaInicial">MODIFICAR MIS DATOS</a></li>
+                    <li class="nav-item"><a href="entrevistaInicial">MODIFICAR MIS DATOS</a></li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                         NOMBRE
                       </a>
                       <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Configuración</a>
+                        <a class="dropdown-item" href="configEst">Configuración</a>
                         <a class="dropdown-item" href="../controller/cerrarSesion">Cerrar Sesión</a>
                       </div>
                     </li>

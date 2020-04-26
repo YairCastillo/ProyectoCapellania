@@ -46,11 +46,11 @@
                     <li class="nav-item"><a class="nav-link" href="calendarioAlumnos">CITAS</a></li>
                     <li class="nav-item"><a class="nav-link active" href="modificarDatos">MODIFICAR MIS DATOS</a></li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                      <a class="nav-link dropdown-toggle" href="capellanes" id="navbardrop" data-toggle="dropdown">
                       <?php echo $nombreCuenta; ?>
                       </a>
                       <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Configuración</a>
+                        <a class="dropdown-item" href="configEst">Configuración</a>
                         <a class="dropdown-item" href="../controller/cerrarSesion">Cerrar Sesión</a>
                       </div>
                     </li>
