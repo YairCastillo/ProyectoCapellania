@@ -1,6 +1,5 @@
 <?php
      include("../controller/conexion.php");
-     include("../controller/verificarSesionLogin.php");
 
      $matricula= "";
      $nombres="";
