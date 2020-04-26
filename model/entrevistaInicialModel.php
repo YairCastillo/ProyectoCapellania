@@ -1,10 +1,6 @@
 <?php
      include("../controller/conexion.php");
 
-     $matricula= "";
-     $nombre= "";
-     $apellidos= "";
-     $fechaNac= "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      if (isset($_POST['btnPersonales'])) {
