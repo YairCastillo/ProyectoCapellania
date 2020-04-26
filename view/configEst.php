@@ -41,7 +41,7 @@
                     <li class="nav-item"><a class="nav-link" href="calendarioAlumnos">CITAS</a></li>
                     <li class="nav-item"><a class="nav-link" href="modificarDatos">MODIFICAR MIS DATOS</a></li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle active" href="capellanes" id="navbardrop" data-toggle="dropdown">
+                      <a class="nav-link dropdown-toggle active" href="#" id="navbardrop" data-toggle="dropdown">
                       <?php echo $nombreCuenta; ?>
                       </a>
                       <div class="dropdown-menu">

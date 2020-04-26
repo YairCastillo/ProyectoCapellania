@@ -85,7 +85,7 @@ include('../model/calendarModel.php');
         <li class="nav-item"><a class="nav-link active" href="calendar">CALENDARIO</a></li>
         <li class="nav-item"><a class="nav-link" href="listaAlumnos">ALUMNOS</a></li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="capellanes" id="navbardrop" data-toggle="dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
             <?php echo $nombreCuenta; ?>
           </a>
           <div class="dropdown-menu">
