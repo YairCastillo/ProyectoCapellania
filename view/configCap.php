@@ -46,7 +46,7 @@
                       </a>
                       <div class="dropdown-menu">
                         <a class="dropdown-item" href="modificarCap">Configuración</a>
-                        <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                        <a class="dropdown-item" href="../controller/cerrarSesion">Cerrar Sesión</a>
                       </div>
                     </li>
                     </div>
@@ -56,7 +56,9 @@
 <div class="container">
             <form action="" method="post">
                     <div id="formulario">
+                      <hr>
                         <h3>Cambio de Contraseña</h3>
+                      <hr>
                     </div>
                 <div class="form-group">
                    
@@ -78,7 +80,20 @@
                         <div class="col text-center">
                             <button class="btn btn-success regular-button" name="btnNewPass" type="submit"
                                 id="btnNewPass">
-                                Guardar
+                                Cambiar contraseña
+                            </button>
+                        </div>
+
+                        <div id="formulario">
+                          <hr>
+                          <h3>Eliminar cuenta</h3>
+                          <hr>
+                          <h6>Esta acción es irreversible</h6>
+                        </div>
+                        <div class="col text-center">
+                            <button class="btn btn-danger regular-button" name="btnEliminar" type="submit"
+                                id="btnEliminar">
+                                Eliminar cuenta
                             </button>
                         </div>
             </form>
