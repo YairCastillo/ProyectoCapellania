@@ -513,7 +513,7 @@
   <div id="Religiosos" class="tabcontent">
     <!------------------------Contenido de la pestaña 5  (RELIGIOSOS)----------------------------------------->
     <!-- ENVIA A LA BASE DE DATOS -->
-    <form method="POST">
+    <form method="POST" onsubmit="return postReligiosos();">
       <div id="formulario">
         <h3>Datos Religiosos</h3>
       </div>
@@ -1140,25 +1140,13 @@
         $("#esAsistenciaDiv").show();
         $("#esDiv").hide();
 
-      } else if (this.value == 'ninguna' || this.value == '') {
+      } else if (this.value != 'central') {
 
         $("#cultosAsistenciaDiv").hide();
         $("#cultosDiv").hide();
         $("#esAsistenciaDiv").hide();
         $("#esDiv").hide();
 
-      } else if (this.value == 'otranoa') {
-
-        $("#cultosAsistenciaDiv").show();
-        $("#cultosDiv").hide();
-        $("#esAsistenciaDiv").hide();
-        $("#esDiv").hide();
-
-      } else {
-        $("#cultosAsistenciaDiv").show();
-        $("#cultosDiv").hide();
-        $("#esAsistenciaDiv").show();
-        $("#esDiv").hide();
       }
     });
   });
