@@ -349,7 +349,7 @@ include('../model/calendarioAlumnosModel.php');
       function agregarRegistro(registro) {
         $.ajax({
           type: 'POST',
-          url: 'datoseventos.php?accion=agregar',
+          url: '../model/datoseventos.php?accion=agregar',
           data: registro,
           success: function (msg) {
             calendario1.refetchEvents();
@@ -363,7 +363,7 @@ include('../model/calendarioAlumnosModel.php');
       function modificarRegistro(registro) {
         $.ajax({
           type: 'POST',
-          url: 'datoseventos.php?accion=modificar',
+          url: '../model/datoseventos.php?accion=modificar',
           data: registro,
           success: function (msg) {
             calendario1.refetchEvents();
@@ -377,7 +377,7 @@ include('../model/calendarioAlumnosModel.php');
       function borrarRegistro(registro) {
         $.ajax({
           type: 'POST',
-          url: 'datoseventos.php?accion=borrar',
+          url: '../model/datoseventos.php?accion=borrar',
           data: registro,
           success: function (msg) {
             calendario1.refetchEvents();
@@ -391,7 +391,7 @@ include('../model/calendarioAlumnosModel.php');
       function agregarEventoPredefinido(registro) {
         $.ajax({
           type: 'POST',
-          url: 'datoseventos.php?accion=agregar',
+          url: '../model/datoseventos.php?accion=agregar',
           data: registro,
           success: function (msg) {
             calendario1.removeAllEvents();
