@@ -1,7 +1,9 @@
 <?php
      include("../controller/conexion.php");
 
+     $error ="";
 
+/*
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
      if (isset($_POST['btnPersonales'])) {
           if(empty(trim($_POST["matricula"])) or empty(trim($_POST["nombre"])) or empty(trim($_POST["apellidos"])) or empty(trim($_POST["fechaNac"]))){
@@ -30,13 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                $sql = "insert into alumnos (matricula, usuario, nombre, apellidos, fechanacimiento) values ('$matricula','$nombre', '$nombres', '$apellidos', '$fechaNac')";
                
                if(mysqli_query($con, $sql)){
-                    echo 'Guardado';
+
                }else{
-                    echo 'ERROR';
+                    $error = "¡Oops! Ocurrió un error. Inténtalo de nuevo más tarde.";
                }
           }
      }
- }
+ }*/
 
      /* Select de Facultades */
      $output = "";
