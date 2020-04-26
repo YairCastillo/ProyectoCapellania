@@ -82,7 +82,7 @@ include('../model/calendarioAlumnosModel.php');
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link" href="servicioCapellania">INICIO</a></li>
         <li class="nav-item"><a class="nav-link active" href="calendarioAlumnos">CITAS</a></li>
-        <li class="nav-item"><a class="nav-link" href="entrevistaInicial">MODIFICAR MIS DATOS</a></li>
+        <li class="nav-item"><a class="nav-link" href="modificarDatos">MODIFICAR MIS DATOS</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="capellanes" id="navbardrop" data-toggle="dropdown">
             <?php echo $nombreCuenta; ?>

@@ -12,7 +12,7 @@
           $hijoObrero = $_POST['HijoObrero'];
           $hermanos = $_POST['Hermanos'];
 
-          $sql_verificar = "SELECT alumnos.matricula as matricula, datosdemograficos.matricula as damatricula from datosdemograficos
+          $sql_verificar = "SELECT alumnos.matricula as matricula, datosdemograficos.matricula as ddmatricula from datosdemograficos
           INNER JOIN alumnos ON alumnos.matricula = datosdemograficos.matricula and alumnos.usuario = '$usuario' limit 1";
 
           $result = mysqli_query($con,$sql_verificar);
