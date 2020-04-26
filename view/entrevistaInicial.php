@@ -249,7 +249,6 @@
       <div id="formulario">
         <h3>Datos Personales</h3>
       </div>
-      <div style="font-size:20px; color:#cc0000; margin-top:10px"><label id="error" value="error"></label></div>
       <div id="tabla-formulario-personales">
         <div class="form-group">
           <form method="POST" action="entrevistaInicialModel.php">
@@ -323,6 +322,8 @@
           <option value="6">6</option>
           <option value="7">7</option>
           <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
         </select>
         <br>
 
