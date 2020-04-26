@@ -24,7 +24,7 @@
                 $qry = "insert into alumno values('$_POST[matricula]','$_POST[nombre]','$_POST[fechanacimiento]', $_POST[edad])";
                 $respuesta = mysqli_query($con, $qry);// or die(mysqli_error());
                 echo json_encode($respuesta);
-                mysqli_close($cone);                          
+                mysqli_close($con);                          
                 break;
 
           case 'borrar':

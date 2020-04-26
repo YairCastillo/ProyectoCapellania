@@ -252,33 +252,35 @@
       <div style="font-size:20px; color:#cc0000; margin-top:10px"><label id="error" value="error"></label></div>
       <div id="tabla-formulario-personales">
         <div class="form-group">
-          <form method="POST">
+          <form method="POST" action="entrevistaInicialModel.php">
             <label for="matricula">Matrícula</label>
             <input type="text" class="form-control" name="matricula" id="matricula" placeholder="Matrícula" 
             maxlength="7" ondrop="return false" onpaste="return false" onkeypress="return event.charCode>=48 && event.charCode<=57"
-              min="1" required>
+              min="1" value="<?php echo $matricula ?>" required>
             <br>
 
             <label for="nombre">Nombre(s)</label>
-            <input type="text" class="form-control" style="text-transform: capitalize;" id="nombre" name="nombre"
-              placeholder="Nombre(s)" required>
+            <input type="text" class="form-control" style="text-transform: capitalize;" id="nombres" name="nombres"
+              placeholder="Nombre(s)" value="<?php echo $nombres ?>" required>
             <br>
 
             <label for="apellidos">Apellidos</label>
             <input type="text" class="form-control" style="text-transform: capitalize;" id="apellidos" name="apellidos"
-              placeholder="Apellidos" required>
+              placeholder="Apellidos" value="<?php echo $apellidos ?>" required>
             <br>
 
             <label for="fechaNac">Fecha de nacimiento</label>
             <input type="date" class="form-control" name="fechaNac" id="fechaNac" min="1950-01-01" max="9999-12-31"
-            required>
+            value="<?php echo $fechaNac ?>" required>
+        
           </form>    
         </div>
         <br>
 
         <div class="col text-center">
-        <button class="btn btn-success regular-button" type="submit" id="guardarPersonales"> Guardar </button>
-        </div>
+             <button class="btn btn-success regular-button" name="btnPersonales" type="submit" id="btnPersonales"> Guardar </button>
+            </div>
+        
         
       </div>
     </form>
