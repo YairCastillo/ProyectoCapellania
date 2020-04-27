@@ -3,6 +3,7 @@
   include('../controller/verificarSesion.php');
   include('../controller/comprobarVerificacion.php');
   include('../controller/validado.php');
+  include('../controller/verificarCapellan.php');
   include('../view/perfilCapellanAlerta.php');
   include('../model/perfilCapellanModel.php');
 ?>

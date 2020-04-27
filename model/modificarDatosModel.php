@@ -46,13 +46,4 @@
      $apellidos = $row['apellidos'];
      $fechaNac = $row['fechanacimiento'];
 
-     #TRAER DATOS ACADEMICOS
-     $sql = "SELECT * FROM datosacademicos where matricula = '$matricula'";
-     $result = mysqli_query($con,$sql);
-     $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-
-     $idFacultad = $row['idFacultad'];
-     $idCarrera = $row['idCarrera'];
-     $semestre = $row['semestre'];
-     $situacionAcademica = $row['situacionAcademica'];
 ?>

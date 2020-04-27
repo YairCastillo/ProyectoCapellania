@@ -28,553 +28,556 @@
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
-  <link rel="stylesheet" type="text/css" href="../css/navstyle.css" />
+  <link rel="stylesheet" type="text/css" href="../css/navStyle.css" />
   <link rel="stylesheet" type="text/css" href="../css/placeholders.css" />
 
-  <script type = "text/javascript">
-  function postPersonales() {
-     var usuario = "<?php echo $nombre ?>";
-     var matricula = document.getElementById("matricula").value;
-     var nombre = document.getElementById("nombres").value;
-     var apellidos = document.getElementById("apellidos").value;
-     var fechaNac = document.getElementById("fechaNac").value;
+  <script type="text/javascript">
+    function postPersonales() {
+      var usuario = "<?php echo $nombre ?>";
+      var matricula = document.getElementById("matricula").value;
+      var nombre = document.getElementById("nombres").value;
+      var apellidos = document.getElementById("apellidos").value;
+      var fechaNac = document.getElementById("fechaNac").value;
 
-     if (matricula && nombre && apellidos && fechaNac) {
-          $.ajax({
-               type: 'post',
-               url: '../model/postPersonales.php',
-               data: {
-                    Usuario: usuario,
-                    Matricula: matricula,
-                    Nombre: nombre,
-                    Apellidos: apellidos,
-                    FechaNac: fechaNac
-               },
-               success: function (data) {
-                    console.log(data);
-                    if (data == 'error' || data != '') {
-                         alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-                    } else if (data == 'Error. Matricula ya existente') {
-                         alert('La matrícula introducida ya está asociada a una cuenta');
-                    } else {
-                         alert('¡Datos guardados!');
-                         document.getElementById("academicos").click();
-                    }
-               }
-          });
-     }
-     return false;
-}
+      if (matricula && nombre && apellidos && fechaNac) {
+        $.ajax({
+          type: 'post',
+          url: '../model/postPersonales.php',
+          data: {
+            Usuario: usuario,
+            Matricula: matricula,
+            Nombre: nombre,
+            Apellidos: apellidos,
+            FechaNac: fechaNac
+          },
+          success: function (data) {
+            console.log(data);
+            if (data == 'error' || data != '') {
+              alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
+            } else if (data == 'Error. Matricula ya existente') {
+              alert('La matrícula introducida ya está asociada a una cuenta');
+            } else {
+              alert('¡Datos guardados!');
+              document.getElementById("academicos").click();
+            }
+          }
+        });
+      }
+      return false;
+    }
 
-function postAcademicos() {
-     var usuario = "<?php echo $nombre ?>";
-     var facultad = document.getElementById("selectFacultad").value;
-     var carrera = document.getElementById("selectCarrera").value;
-     var semestre = document.getElementById("semestre").value;
-     var situacion = document.getElementById("selectSituacion").value;
+    function postAcademicos() {
+      var usuario = "<?php echo $nombre ?>";
+      var facultad = document.getElementById("selectFacultad").value;
+      var carrera = document.getElementById("selectCarrera").value;
+      var semestre = document.getElementById("semestre").value;
+      var situacion = document.getElementById("selectSituacion").value;
 
-     if (facultad == '' || semestre == '' || situacion == '') {
-          alert('Completa todos los campos');
-     } else if ((facultad != 'ESMUS' && facultad != 'ESPRE' && facultad != 'FATEO') && carrera == '') {
-          alert('Completa todos los campos');
-     } else if (facultad && semestre && situacion) {
-          $.ajax({
-               type: 'post',
-               url: '../model/postAcademicos.php',
-               data: {
-                    Usuario: usuario,
-                    Facultad: facultad,
-                    Carrera: carrera,
-                    Semestre: semestre,
-                    Situacion: situacion
-               },
-               success: function (data) {
-                    if (data == 'error' || data != '') {
-                         alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-                    } else if (data == 'Error. Contestar seccion anterior.') {
-                         alert('Contesta la sección anterior');
-                    } else {
-                         alert('¡Datos guardados!');
-                         document.getElementById("demograficos").click();
-                    }
-               }
-          });
-     }
-     return false;
-}
+      if (facultad == '' || semestre == '' || situacion == '') {
+        alert('Completa todos los campos');
+      } else if ((facultad != 'ESMUS' && facultad != 'ESPRE' && facultad != 'FATEO') && carrera == '') {
+        alert('Completa todos los campos');
+      } else if (facultad && semestre && situacion) {
+        $.ajax({
+          type: 'post',
+          url: '../model/postAcademicos.php',
+          data: {
+            Usuario: usuario,
+            Facultad: facultad,
+            Carrera: carrera,
+            Semestre: semestre,
+            Situacion: situacion
+          },
+          success: function (data) {
+            if (data == 'error' || data != '') {
+              alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
+            } else if (data == 'Error. Contestar seccion anterior.') {
+              alert('Contesta la sección anterior');
+            } else {
+              alert('¡Datos guardados!');
+              document.getElementById("demograficos").click();
+            }
+          }
+        });
+      }
+      return false;
+    }
 
-function postDemograficos() {
-     var usuario = "<?php echo $nombre ?>";
-     var edoCivil = document.getElementById("estadoCivil").value;
-     var novio = document.getElementById("novio").checked;
-     var amigo = document.getElementById("amigoesp").checked;
-     var pais = document.getElementById("selectPais").value;
-     var estado = document.getElementById("selectEstado").value;
-     var municipio = document.getElementById("selectMunicipio").value;
-     var sexo = document.getElementById("sexo").value;
-     var prefSexual = document.getElementById("prefsexual").value;
-     var residencia = document.getElementById("residencia").value;
-     var dormitorio = document.getElementById("dormitorio").value;
-     var direccion = document.getElementById("direccion").value;
+    function postDemograficos() {
+      var usuario = "<?php echo $nombre ?>";
+      var edoCivil = document.getElementById("estadoCivil").value;
+      var novio = document.getElementById("novio").checked;
+      var amigo = document.getElementById("amigoesp").checked;
+      var pais = document.getElementById("selectPais").value;
+      var estado = document.getElementById("selectEstado").value;
+      var municipio = document.getElementById("selectMunicipio").value;
+      var sexo = document.getElementById("sexo").value;
+      var prefSexual = document.getElementById("prefsexual").value;
+      var residencia = document.getElementById("residencia").value;
+      var dormitorio = document.getElementById("dormitorio").value;
+      var direccion = document.getElementById("direccion").value;
 
-     if (novio == false) {
-          novio = 0;
-     } else if (novio == true) {
-          novio = 1;
-     }
+      if (novio == false) {
+        novio = 0;
+      } else if (novio == true) {
+        novio = 1;
+      }
 
-     if (amigo == false) {
-          amigo = 0;
-     } else if (amigo == true) {
-          amigo = 1;
-     }
+      if (amigo == false) {
+        amigo = 0;
+      } else if (amigo == true) {
+        amigo = 1;
+      }
 
 
-     if (edoCivil == '' || pais == '' || estado == '' || sexo == '' || prefSexual == '' || residencia == '') {
-          alert('Completa todos los campos');
-     } else if ((pais == '42' && municipio == '') || (residencia == 'interno' && dormitorio == '') || (residencia ==
-               'externo' && direccion == '')) {
-          alert('Completa todos los campos');
-     } else {
-          $.ajax({
-               type: 'post',
-               url: '../model/postDemograficos.php',
-               data: {
-                    Usuario: usuario,
-                    EdoCivil: edoCivil,
-                    Novio: novio,
-                    Amigo: amigo,
-                    Pais: pais,
-                    Estado: estado,
-                    Municipio: municipio,
-                    Sexo: sexo,
-                    PrefSexual: prefSexual,
-                    Residencia: residencia,
-                    Dormitorio: dormitorio,
-                    Direccion: direccion
-               },
-               success: function (data) {
-                    if (data == 'error' || data != '') {
-                         alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-                    } else if (data == 'Error. Contestar seccion anterior.') {
-                         alert('Contesta la sección anterior');
-                    } else {
-                         alert('¡Datos guardados!');
-                         document.getElementById("familiares").click();
-                    }
-               }
-          });
-     }
-     return false;
-}
+      if (edoCivil == '' || pais == '' || estado == '' || sexo == '' || prefSexual == '' || residencia == '') {
+        alert('Completa todos los campos');
+      } else if ((pais == '42' && municipio == '') || (residencia == 'interno' && dormitorio == '') || (residencia ==
+          'externo' && direccion == '')) {
+        alert('Completa todos los campos');
+      } else {
+        $.ajax({
+          type: 'post',
+          url: '../model/postDemograficos.php',
+          data: {
+            Usuario: usuario,
+            EdoCivil: edoCivil,
+            Novio: novio,
+            Amigo: amigo,
+            Pais: pais,
+            Estado: estado,
+            Municipio: municipio,
+            Sexo: sexo,
+            PrefSexual: prefSexual,
+            Residencia: residencia,
+            Dormitorio: dormitorio,
+            Direccion: direccion
+          },
+          success: function (data) {
+            if (data == 'error' || data != '') {
+              alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
+            } else if (data == 'Error. Contestar seccion anterior.') {
+              alert('Contesta la sección anterior');
+            } else {
+              alert('¡Datos guardados!');
+              document.getElementById("familiares").click();
+            }
+          }
+        });
+      }
+      return false;
+    }
 
-function postFamiliares() {
-     var usuario = "<?php echo $nombre ?>";
-     var ecPadres = document.getElementById("ecpadres").value;
-     var hijoEmpleado = document.getElementById("hijoEmpleado").checked;
-     var hijoObrero = document.getElementById("hijoObrero").checked;
-     var hermanos = document.getElementById("hermanos").checked;
+    function postFamiliares() {
+      var usuario = "<?php echo $nombre ?>";
+      var ecPadres = document.getElementById("ecpadres").value;
+      var hijoEmpleado = document.getElementById("hijoEmpleado").checked;
+      var hijoObrero = document.getElementById("hijoObrero").checked;
+      var hermanos = document.getElementById("hermanos").checked;
 
-     if (hijoEmpleado == false) {
-          hijoEmpleado = 0;
-     } else if (hijoEmpleado == true) {
-          hijoEmpleado = 1;
-     }
+      if (hijoEmpleado == false) {
+        hijoEmpleado = 0;
+      } else if (hijoEmpleado == true) {
+        hijoEmpleado = 1;
+      }
 
-     if (hijoObrero == false) {
-          hijoObrero = 0;
-     } else if (hijoObrero == true) {
-          hijoObrero = 1;
-     }
+      if (hijoObrero == false) {
+        hijoObrero = 0;
+      } else if (hijoObrero == true) {
+        hijoObrero = 1;
+      }
 
-     if (hermanos == false) {
-          hermanos = 0;
-     } else if (hermanos == true) {
-          hermanos = 1;
-     }
+      if (hermanos == false) {
+        hermanos = 0;
+      } else if (hermanos == true) {
+        hermanos = 1;
+      }
 
-     if (ecPadres == '') {
-          alert('Completa todos los campos');
-     } else {
-          $.ajax({
-               type: 'post',
-               url: '../model/postFamiliares.php',
-               data: {
-                    Usuario: usuario,
-                    EcPadres: ecPadres,
-                    HijoEmpleado: hijoEmpleado,
-                    HijoObrero: hijoObrero,
-                    Hermanos: hermanos
-               },
-               success: function (data) {
-                    if (data == 'error' || data != '') {
-                         alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-                    } else if (data == 'Error. Contestar seccion anterior.') {
-                         alert('Contesta la sección anterior');
-                    } else {
-                         alert('¡Datos guardados!');
-                         document.getElementById("religiosos").click();
-                    }
-               }
-          });
-     }
-     return false;
-}
+      if (ecPadres == '') {
+        alert('Completa todos los campos');
+      } else {
+        $.ajax({
+          type: 'post',
+          url: '../model/postFamiliares.php',
+          data: {
+            Usuario: usuario,
+            EcPadres: ecPadres,
+            HijoEmpleado: hijoEmpleado,
+            HijoObrero: hijoObrero,
+            Hermanos: hermanos
+          },
+          success: function (data) {
+            if (data == 'error' || data != '') {
+              alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
+            } else if (data == 'Error. Contestar seccion anterior.') {
+              alert('Contesta la sección anterior');
+            } else {
+              alert('¡Datos guardados!');
+              document.getElementById("religiosos").click();
+            }
+          }
+        });
+      }
+      return false;
+    }
 
-function postReligiosos() {
-     var usuario = "<?php echo $nombre ?>";
-     var religion = document.getElementById("religion").value;
-     var bautizado = document.getElementById("bautizado").checked;
-     var fechaBautismo = document.getElementById("fechaBautismo").value;
-     var feligresia = document.getElementById("feligresia").value;
-     var iglesia = document.getElementById("iglesia").value;
-     var cultosAsistencia = document.getElementById("cultosAsistencia").checked;
-     var cultos = document.getElementById("cultos").value;
-     var esAsistencia = document.getElementById("esAsistencia").checked;
-     var es = document.getElementById("es").value;
-     var ae = document.getElementById("ae").value;
+    function postReligiosos() {
+      var usuario = "<?php echo $nombre ?>";
+      var religion = document.getElementById("religion").value;
+      var bautizado = document.getElementById("bautizado").checked;
+      var fechaBautismo = document.getElementById("fechaBautismo").value;
+      var feligresia = document.getElementById("feligresia").value;
+      var iglesia = document.getElementById("iglesia").value;
+      var cultosAsistencia = document.getElementById("cultosAsistencia").checked;
+      var cultos = document.getElementById("cultos").value;
+      var esAsistencia = document.getElementById("esAsistencia").checked;
+      var es = document.getElementById("es").value;
+      var ae = document.getElementById("ae").value;
 
-     if (bautizado == false) {
-          bautizado = 0;
-     } else if (bautizado == true) {
-          bautizado = 1;
-     }
+      if (bautizado == false) {
+        bautizado = 0;
+      } else if (bautizado == true) {
+        bautizado = 1;
+      }
 
-     if (cultosAsistencia == false) {
-          cultosAsistencia = 0;
-     } else if (cultosAsistencia == true) {
-          cultosAsistencia = 1;
-     }
+      if (cultosAsistencia == false) {
+        cultosAsistencia = 0;
+      } else if (cultosAsistencia == true) {
+        cultosAsistencia = 1;
+      }
 
-     if (esAsistencia == false) {
-          esAsistencia = 0;
-     } else if (esAsistencia == true) {
-          esAsistencia = 1;
-     }
+      if (esAsistencia == false) {
+        esAsistencia = 0;
+      } else if (esAsistencia == true) {
+        esAsistencia = 1;
+      }
 
-     if (religion == '' || iglesia == '' || ae == '') {
-          alert('Completa todos los campos');
-     } else if (bautizado == 1 && (fechaBautismo == '' || feligresia == '')) {
-          alert('Completa todos los campos');
-     } else if ((cultosAsistencia == 1 && cultos == '') || (esAsistencia == 1 && es == '')) {
-          alert('Completa todos los campos');
-     } else {
-          $.ajax({
-               type: 'post',
-               url: '../model/postReligiosos.php',
-               data: {
-                    Usuario: usuario,
-                    Religion: religion,
-                    Bautizado: bautizado,
-                    FechaBautismo: fechaBautismo,
-                    Feligresia: feligresia,
-                    Iglesia: iglesia,
-                    CultosAsistencia: cultosAsistencia,
-                    Cultos: cultos,
-                    EsAsistencia: esAsistencia,
-                    Es: es,
-                    Ae: ae
-               },
-               success: function (data) {
-                    if (data == 'error' || data != '') {
-                         alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-                    } else if (data == 'Error. Contestar seccion anterior.') {
-                         alert('Contesta la sección anterior');
-                    } else {
-                         alert('¡Datos guardados!');
-                         document.getElementById("sb").click();
-                    }
-               }
-          });
-     }
-     return false;
-}
+      if (religion == '' || iglesia == '' || ae == '') {
+        alert('Completa todos los campos');
+      } else if (bautizado == 1 && (fechaBautismo == '' || feligresia == '')) {
+        alert('Completa todos los campos');
+      } else if ((cultosAsistencia == 1 && cultos == '') || (esAsistencia == 1 && es == '')) {
+        alert('Completa todos los campos');
+      } else {
+        $.ajax({
+          type: 'post',
+          url: '../model/postReligiosos.php',
+          data: {
+            Usuario: usuario,
+            Religion: religion,
+            Bautizado: bautizado,
+            FechaBautismo: fechaBautismo,
+            Feligresia: feligresia,
+            Iglesia: iglesia,
+            CultosAsistencia: cultosAsistencia,
+            Cultos: cultos,
+            EsAsistencia: esAsistencia,
+            Es: es,
+            Ae: ae
+          },
+          success: function (data) {
+            if (data == 'error' || data != '') {
+              alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
+            } else if (data == 'Error. Contestar seccion anterior.') {
+              alert('Contesta la sección anterior');
+            } else {
+              alert('¡Datos guardados!');
+              document.getElementById("sb").click();
+            }
+          }
+        });
+      }
+      return false;
+    }
 
-function postSB() {
-     var usuario = "<?php echo $nombre ?>";
-     var becado = document.getElementById("becado").checked;
-     var tipoBeca = document.getElementById("tipoBeca").value;
-     var departamento = document.getElementById("departamento").value;
-     var horasTrabajo = document.getElementById("horasTrabajo").value;
-     var colportado = document.getElementById("colportado").checked;
-     var colportadoInter = document.getElementById("colportadoInter").checked;
-     var veranos = document.getElementById("veranos").value;
-     var inviernos = document.getElementById("inviernos").value;
+    function postSB() {
+      var usuario = "<?php echo $nombre ?>";
+      var becado = document.getElementById("becado").checked;
+      var tipoBeca = document.getElementById("tipoBeca").value;
+      var departamento = document.getElementById("departamento").value;
+      var horasTrabajo = document.getElementById("horasTrabajo").value;
+      var colportado = document.getElementById("colportado").checked;
+      var colportadoInter = document.getElementById("colportadoInter").checked;
+      var veranos = document.getElementById("veranos").value;
+      var inviernos = document.getElementById("inviernos").value;
 
-     if (becado == false) {
-          becado = 0;
-     } else if (becado == true) {
-          becado = 1;
-     }
+      if (becado == false) {
+        becado = 0;
+      } else if (becado == true) {
+        becado = 1;
+      }
 
-     if (colportado == false) {
-          colportado = 0;
-     } else if (colportado == true) {
-          colportado = 1;
-     }
+      if (colportado == false) {
+        colportado = 0;
+      } else if (colportado == true) {
+        colportado = 1;
+      }
 
-     if (colportadoInter == false) {
-          colportadoInter = 0;
-     } else if (colportadoInter == true) {
-          colportadoInter = 1;
-     }
+      if (colportadoInter == false) {
+        colportadoInter = 0;
+      } else if (colportadoInter == true) {
+        colportadoInter = 1;
+      }
 
-     if (becado == 1 && (tipoBeca == '' || departamento == '')) {
-          alert('Completa todos los campos');
-     } else if (colportado == 1 && (veranos == '' || inviernos == '')) {
-          alert('Completa todos los campos');
-     } else {
-          $.ajax({
-               type: 'post',
-               url: '../model/postSB.php',
-               data: {
-                    Usuario: usuario,
-                    Becado: becado,
-                    TipoBeca: tipoBeca,
-                    Departamento: departamento,
-                    HorasTrabajo: horasTrabajo,
-                    Colportado: colportado,
-                    ColportadoInter: colportadoInter,
-                    Veranos: veranos,
-                    Inviernos: inviernos
-               },
-               success: function (data) {
-                    if (data == 'error' || data != '') {
-                         alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-                    } else if (data == 'Error. Contestar seccion anterior.') {
-                         alert('Contesta la sección anterior');
-                    } else {
-                         alert('¡Datos guardados!');
-                         document.getElementById("actDev").click();
-                    }
-               }
-          });
-     }
-     return false;
-}
+      if (becado == 1 && (tipoBeca == '' || departamento == '')) {
+        alert('Completa todos los campos');
+      } else if (colportado == 1 && (veranos == '' || inviernos == '')) {
+        alert('Completa todos los campos');
+      } else {
+        $.ajax({
+          type: 'post',
+          url: '../model/postSB.php',
+          data: {
+            Usuario: usuario,
+            Becado: becado,
+            TipoBeca: tipoBeca,
+            Departamento: departamento,
+            HorasTrabajo: horasTrabajo,
+            Colportado: colportado,
+            ColportadoInter: colportadoInter,
+            Veranos: veranos,
+            Inviernos: inviernos
+          },
+          success: function (data) {
+            if (data == 'error' || data != '') {
+              alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
+            } else if (data == 'Error. Contestar seccion anterior.') {
+              alert('Contesta la sección anterior');
+            } else {
+              alert('¡Datos guardados!');
+              document.getElementById("actDev").click();
+            }
+          }
+        });
+      }
+      return false;
+    }
 
-function postDevocionales() {
-     var usuario = "<?php echo $nombre ?>";
-     var biblia = document.getElementById("biblia").checked;
-     var lecciones = document.getElementById("lecciones").checked;
-     var planestudio = document.getElementById("planestudio").checked;
-     var formatoBiblia = document.getElementById("formatoBiblia").value;
-     var formatoEs = document.getElementById("formatoEs").value;
-     var diasLecturaBiblia = document.getElementById("diasLecturaBiblia").value;
-     var tema = document.getElementById("tema").value;
-     var estudiarMas = document.getElementById("estudiarMas").checked;
+    function postDevocionales() {
+      var usuario = "<?php echo $nombre ?>";
+      var biblia = document.getElementById("biblia").checked;
+      var lecciones = document.getElementById("lecciones").checked;
+      var planestudio = document.getElementById("planestudio").checked;
+      var formatoBiblia = document.getElementById("formatoBiblia").value;
+      var formatoEs = document.getElementById("formatoEs").value;
+      var diasLecturaBiblia = document.getElementById("diasLecturaBiblia").value;
+      var tema = document.getElementById("tema").value;
+      var estudiarMas = document.getElementById("estudiarMas").checked;
 
-     if (biblia == false) {
-          biblia = 0;
-     } else if (biblia == true) {
-          biblia = 1;
-     }
+      if (biblia == false) {
+        biblia = 0;
+      } else if (biblia == true) {
+        biblia = 1;
+      }
 
-     if (lecciones == false) {
-          lecciones = 0;
-     } else if (lecciones == true) {
-          lecciones = 1;
-     }
+      if (lecciones == false) {
+        lecciones = 0;
+      } else if (lecciones == true) {
+        lecciones = 1;
+      }
 
-     if (planestudio == false) {
-          planestudio = 0;
-     } else if (planestudio == true) {
-          planestudio = 1;
-     }
+      if (planestudio == false) {
+        planestudio = 0;
+      } else if (planestudio == true) {
+        planestudio = 1;
+      }
 
-     if (estudiarMas == false) {
-          estudiarMas = 0;
-     } else if (estudiarMas == true) {
-          estudiarMas = 1;
-     }
+      if (estudiarMas == false) {
+        estudiarMas = 0;
+      } else if (estudiarMas == true) {
+        estudiarMas = 1;
+      }
 
-     if (tema == '') {
-          alert('Completa todos los campos');
-     } else if ((biblia == 1 && (formatoBiblia == '' || diasLecturaBiblia == '')) || (lecciones == 1 && formatoEs ==
-               '')) {
-          alert('Completa todos los campos');
-     } else {
-          $.ajax({
-               type: 'post',
-               url: '../model/postDevocionales.php',
-               data: {
-                    Usuario: usuario,
-                    Biblia: biblia,
-                    Lecciones: lecciones,
-                    Planestudio: planestudio,
-                    FormatoBiblia: formatoBiblia,
-                    FormatoEs: formatoEs,
-                    DiasLecturaBiblia: diasLecturaBiblia,
-                    Tema: tema,
-                    EstudiarMas: estudiarMas
-               },
-               success: function (data) {
-                    if (data == 'error' || data != '') {
-                         alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-                    } else if (data == 'Error. Contestar seccion anterior.') {
-                         alert('Contesta la sección anterior');
-                    } else {
-                         alert('¡Datos guardados!');
-                         document.getElementById("actJA").click();
-                    }
-               }
-          });
-     }
-     return false;
-}
+      if (tema == '') {
+        alert('Completa todos los campos');
+      } else if ((biblia == 1 && (formatoBiblia == '' || diasLecturaBiblia == '')) || (lecciones == 1 && formatoEs ==
+          '')) {
+        alert('Completa todos los campos');
+      } else {
+        $.ajax({
+          type: 'post',
+          url: '../model/postDevocionales.php',
+          data: {
+            Usuario: usuario,
+            Biblia: biblia,
+            Lecciones: lecciones,
+            Planestudio: planestudio,
+            FormatoBiblia: formatoBiblia,
+            FormatoEs: formatoEs,
+            DiasLecturaBiblia: diasLecturaBiblia,
+            Tema: tema,
+            EstudiarMas: estudiarMas
+          },
+          success: function (data) {
+            if (data == 'error' || data != '') {
+              alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
+            } else if (data == 'Error. Contestar seccion anterior.') {
+              alert('Contesta la sección anterior');
+            } else {
+              alert('¡Datos guardados!');
+              document.getElementById("actJA").click();
+            }
+          }
+        });
+      }
+      return false;
+    }
 
-function postJA() {
-     var usuario = "<?php echo $nombre ?>";
-     var perteneceClub = document.getElementById("perteneceClub").checked;
-     var tipoClub = document.getElementById("tipoClub").value;
-     var lider = document.getElementById("lider").checked;
-     var aspirante = document.getElementById("aspirante").checked;
-     var planMisionero = document.getElementById("planMisionero").checked;
-     var lugarPlan = document.getElementById("lugarPlan").value;
+    function postJA() {
+      var usuario = "<?php echo $nombre ?>";
+      var perteneceClub = document.getElementById("perteneceClub").checked;
+      var tipoClub = document.getElementById("tipoClub").value;
+      var lider = document.getElementById("lider").checked;
+      var aspirante = document.getElementById("aspirante").checked;
+      var planMisionero = document.getElementById("planMisionero").checked;
+      var lugarPlan = document.getElementById("lugarPlan").value;
 
-     if (perteneceClub == false) {
-          perteneceClub = 0;
-     } else if (perteneceClub == true) {
-          perteneceClub = 1;
-     }
+      if (perteneceClub == false) {
+        perteneceClub = 0;
+      } else if (perteneceClub == true) {
+        perteneceClub = 1;
+      }
 
-     if (lider == false) {
-          lider = 0;
-     } else if (lider == true) {
-          lider = 1;
-     }
+      if (lider == false) {
+        lider = 0;
+      } else if (lider == true) {
+        lider = 1;
+      }
 
-     if (aspirante == false) {
-          aspirante = 0;
-     } else if (aspirante == true) {
-          aspirante = 1;
-     }
+      if (aspirante == false) {
+        aspirante = 0;
+      } else if (aspirante == true) {
+        aspirante = 1;
+      }
 
-     if (planMisionero == false) {
-          planMisionero = 0;
-     } else if (planMisionero == true) {
-          planMisionero = 1;
-     }
+      if (planMisionero == false) {
+        planMisionero = 0;
+      } else if (planMisionero == true) {
+        planMisionero = 1;
+      }
 
-     if (perteneceClub == 1 && tipoClub == '') {
-          alert('Completa todos los campos');
-     } else if (planMisionero == 1 && lugarPlan == '') {
-          alert('Completa todos los campos');
-     } else {
-          $.ajax({
-               type: 'post',
-               url: '../model/postJA.php',
-               data: {
-                    Usuario: usuario,
-                    PerteneceClub: perteneceClub,
-                    TipoClub: tipoClub,
-                    Lider: lider,
-                    Aspirante: aspirante,
-                    PlanMisionero: planMisionero,
-                    LugarPlan: lugarPlan
-               },
-               success: function (data) {
-                    if (data == 'error' || data != '') {
-                         alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-                    } else if (data == 'Error. Contestar seccion anterior.') {
-                         alert('Contesta la sección anterior');
-                    } else {
-                         alert('¡Datos guardados!');
-                         document.getElementById("salud").click();
-                    }
-               }
-          });
-     }
-     return false;
-}
+      if (perteneceClub == 1 && tipoClub == ''){
+        alert('Completa todos los campos');
+      }else if(planMisionero == 1 && lugarPlan == ''){
+        alert('Completa todos los campos');
+        }else{
+        $.ajax({
+          type: 'post',
+          url: '../model/postJA.php',
+          data: {
+            Usuario: usuario,
+            PerteneceClub: perteneceClub,
+            TipoClub: tipoClub,
+            Lider: lider,
+            Aspirante: aspirante,
+            PlanMisionero: planMisionero,
+            LugarPlan: lugarPlan
+          },
+          success: function (data) {
+            if (data == 'error' || data != '') {
+              alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
+            } else if (data == 'Error. Contestar seccion anterior.') {
+              alert('Contesta la sección anterior');
+            } else {
+              alert('¡Datos guardados!');
+              document.getElementById("salud").click();
+            }
+          }
+        });
+      }
+      return false;
+    }
 
-function postSalud() {
-     var usuario = "<?php echo $nombre ?>";
-     var comidasalDia = document.getElementById("comidasalDia").value;
-     var diasComidaSemana = document.getElementById("diasComidaSemana").value;
-     var diasEjercicioSemana = document.getElementById("diasEjercicioSemana").value;
-     var practicaDeporte = document.getElementById("practicaDeporte").checked;
-     var deporte = document.getElementById("deporte").value;
-     var alcohol = document.getElementById("alcohol").checked;
-     var tabaco = document.getElementById("tabaco").checked;
-     var droga = document.getElementById("droga").checked;
-     var sustancia = document.getElementById("sustancia").value;
-     var padeceEnfermedad = document.getElementById("padeceEnfermedad").checked;
-     var enfermedad = document.getElementById("enfermedad").value;
-     var tratamientos = document.getElementById("tratamientos").value;
+    function postSalud() {
+      var usuario = "<?php echo $nombre ?>";
+      var comidasalDia = document.getElementById("comidasalDia").value;
+      var diasComidaSemana = document.getElementById("diasComidaSemana").value;
+      var diasEjercicioSemana = document.getElementById("diasEjercicioSemana").value;
+      var practicaDeporte = document.getElementById("practicaDeporte").checked;
+      var deporte = document.getElementById("deporte").value;
+      var alcohol = document.getElementById("alcohol").checked;
+      var tabaco = document.getElementById("tabaco").checked;
+      var droga = document.getElementById("droga").checked;
+      var sustancia = document.getElementById("sustancia").value;
+      var padeceEnfermedad = document.getElementById("padeceEnfermedad").checked;
+      var enfermedad = document.getElementById("enfermedad").value;
+      var tratamientos = document.getElementById("tratamientos").value;
 
-     if (practicaDeporte == false) {
-          practicaDeporte = 0;
-     } else if (practicaDeporte == true) {
-          practicaDeporte = 1;
-     }
+      if (practicaDeporte == false) {
+        practicaDeporte = 0;
+      } else if (practicaDeporte == true) {
+        practicaDeporte = 1;
+      }
 
-     if (alcohol == false) {
-          alcohol = 0;
-     } else if (alcohol == true) {
-          alcohol = 1;
-     }
+      if (alcohol == false) {
+        alcohol = 0;
+      } else if (alcohol == true) {
+        alcohol = 1;
+      }
 
-     if (tabaco == false) {
-          tabaco = 0;
-     } else if (tabaco == true) {
-          tabaco = 1;
-     }
+      if (tabaco == false) {
+        tabaco = 0;
+      } else if (tabaco == true) {
+        tabaco = 1;
+      }
 
-     if (droga == false) {
-          droga = 0;
-     } else if (droga == true) {
-          droga = 1;
-     }
+      if (droga == false) {
+        droga = 0;
+      } else if (droga == true) {
+        droga = 1;
+      }
 
-     if (padeceEnfermedad == false) {
-          padeceEnfermedad = 0;
-     } else if (padeceEnfermedad == true) {
-          padeceEnfermedad = 1;
-     }
+      if (padeceEnfermedad == false) {
+        padeceEnfermedad = 0;
+      } else if (padeceEnfermedad == true) {
+        padeceEnfermedad = 1;
+      }
 
-     if (practicaDeporte == 1 && deporte == '') {
-          alert('Completa todos los campos');
-     } else if (droga == 1 && sustancia == '') {
-          alert('Completa todos los campos');
-     } else if (padeceEnfermedad == 1 && (enfermedad == '' || tratamientos == '')) {
-          alert('Completa todos los campos');
-     } else if (comidasalDia == '' || diasComidaSemana == '' || diasEjercicioSemana == '') {
-          alert('Completa todos los campos');
-     } else {
-          $.ajax({
-               type: 'post',
-               url: '../model/postSalud.php',
-               data: {
-                    Usuario: usuario,
-                    ComidasalDia: comidasalDia,
-                    DiasComidaSemana: diasComidaSemana,
-                    DiasEjercicioSemana: diasEjercicioSemana,
-                    PracticaDeporte: practicaDeporte,
-                    Deporte: deporte,
-                    Alcohol: alcohol,
-                    Tabaco: tabaco,
-                    Droga: droga,
-                    Sustancia: sustancia,
-                    PadeceEnfermedad: padeceEnfermedad,
-                    Enfermedad: enfermedad,
-                    Tratamientos: tratamientos
-               },
-               success: function (data) {
-                    if (data == 'error' || data != '') {
-                         alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-                    } else if (data == 'Error. Contestar seccion anterior.') {
-                         alert('Contesta la sección anterior');
-                    } else {
-                         alert('¡Datos guardados!');
-                         window.location.replace("servicioCapellania");
-                    }
-               }
-          });
-     }
-     return false;
-}
+      if (practicaDeporte == 1 && deporte == ''){
+        alert('Completa todos los campos');
+      }else if(droga == 1 && sustancia == ''){
+        alert('Completa todos los campos');
+      }else if(padeceEnfermedad == 1 && (enfermedad == '' || tratamientos == '')){
+        alert('Completa todos los campos');
+      }else if(comidasalDia == ''|| diasComidaSemana == '' || diasEjercicioSemana == ''){
+        alert('Completa todos los campos');
+      }else{
+        $.ajax({
+          type: 'post',
+          url: '../model/postSalud.php',
+          data: {
+            Usuario: usuario,
+            ComidasalDia: comidasalDia,
+            DiasComidaSemana: diasComidaSemana,
+            DiasEjercicioSemana:diasEjercicioSemana,
+            PracticaDeporte: practicaDeporte,
+            Deporte: deporte,
+            Alcohol: alcohol,
+            Tabaco: tabaco,
+            Droga:droga,
+            Sustancia:sustancia,
+            PadeceEnfermedad:padeceEnfermedad,
+            Enfermedad:enfermedad,
+            Tratamientos:tratamientos
+          },
+          success: function (data) {
+            if (data == 'error' || data != '') {
+              alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
+            } else if (data == 'Error. Contestar seccion anterior.') {
+              alert('Contesta la sección anterior');
+            } else {
+              alert('¡Datos guardados!');
+              window.location.replace("servicioCapellania");
+            }
+          }
+        });
+      }
+      return false;
+    }
   </script>
+
+
+
 </head>
 
 
@@ -604,6 +607,7 @@ function postSalud() {
                 </ul>
           </div>
       </nav>
+
   <!-- Tab links -->
   <div class="tab">
     <button class="tablinks" onclick="openTab(event, 'Personales')" id="defaultOpen">Personales</button>
@@ -1141,7 +1145,7 @@ function postSalud() {
 
         <div class="form-group" style="display:none" id="lugarPlanDiv">
           <label for="lugarPlan">Lugar donde te gustaría participar</label>
-          <input type="text" style="text-transform: none;" class="form-control" id="lugarPlan" name="lugarPlan"
+          <input type="text" class="form-control" id="lugarPlan" name="lugarPlan"
             placeholder="Escribe el lugar donde te gustaría participar">
         </div>
 
@@ -1318,7 +1322,7 @@ function postSalud() {
 
         <div class="form-group" style="display:none" id="tratamientosDiv">
           <label for="tratamientos">Tratamiento(s) que sigues</label>
-          <textarea class="form-control"  id="tratamientos" placeholder="Describe el(los) tratamiento(s) que sigues"
+          <textarea class="form-control" id="tratamientos" placeholder="Describe el(los) tratamiento(s) que sigues"
             style="min-height: 65px;"></textarea>
         </div>
 

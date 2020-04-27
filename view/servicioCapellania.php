@@ -76,7 +76,7 @@ include('../model/servicioCapellaniaModel.php');
         </div>
         <div class="col col-md-6 align-self-center">
             <!--Imagen del servicio de capellania-->
-            <img class="responsive" src="https://ucasur.org/inicio/wp-content/uploads/2018/04/304841_508807139133647_846231736_n.jpg" alt="">
+            <img class="responsive" src="../assets/logo.png" alt="">
         </div>
     </div>
     <div class="row">
@@ -130,16 +130,16 @@ include('../model/servicioCapellaniaModel.php');
         <div class="col col-md-6">
         <table style="width:100%">
                 <tr>
-                    <td style="text-align:left"><?php echo $descripcion; ?></td>
+                    <td style="text-align:center"><?php echo $descripcion; ?></td>
                 </tr>
             </table>
         </div>
         <div class="col col-md-6 align-self-center">
             <table style="width:100%">
                 <tr>
-                    <td style="text-align:left">
-                        <p>Nos llena de alegría y entusiasmo saber que Dios te ha traído a este lugarpara que puedas cumplir con los
-                            propósitos del ceilo. Definitivamente tu vida cambiará por completo y tu carácter podrá ser más semejante 
+                    <td style="text-align:center">
+                        <p>Nos llena de alegría y entusiasmo saber que Dios te ha traído a este lugar para que puedas cumplir con los
+                            propósitos del cielo. Definitivamente tu vida cambiará por completo y tu carácter podrá ser más semejante 
                             al de Cristo, ya que el fin primario de la Universidad de Montemorelos, es tener un encuentro salvador con 
                             Jesucristo por medio de su palabra.</p>
                         <p>Nos esforzaremos para ser un equipo de apoyo y fortalecimiento espiritual para tu vida durante este curso escolar.</p>

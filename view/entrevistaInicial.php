@@ -3,6 +3,7 @@
   include('../controller/verificarSesion.php');
   include('../controller/comprobarVerificacion.php');
   include('../controller/validado.php');
+  include('../controller/verificarAlumno.php');
   include('../view/entrevistaInicialAlerta.php');
   include('../model/entrevistaInicialModel.php');
 ?>
