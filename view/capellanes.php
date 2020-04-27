@@ -126,6 +126,13 @@ include('../model/capellanesModel.php');
       </div>
     </div>
   </div>
+
+  <hr>
+  <div class="col text-center">
+      <button class="btn btn-primary regular-button" name="btnModificar" href="editarPerfil" id="btnModificar">
+        Editar perfil
+      </button>
+  </div>
   <section></section>
   <div class="loader-wrapper">
     <span class="loader"><span class="loader-inner"></span></span>
