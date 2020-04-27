@@ -1088,14 +1088,26 @@
           <label for="tipoClub">Club o ministerio al que perteneces o apoyas</label>
           <select class="form-control" id="tipoClub" name="tipoClub">
             <option value="">Selecciona el club o ministerio al que perteneces o apoyas</option>
+            <option value="dirMJ">Directiva MJ</option>
             <option value="aventureros">Aventureros</option>
             <option value="conquistadores">Conquistadores</option>
-            <option value="guias">Guías Mayores</option>
+            <option value="gmj">Guías Mayores Junior</option>
+            <option value="gmu">Guías Mayores Universitarios</option>
             <option value="gma">Guías Mayores Avanzados</option>
+            <option value="gmi">Guías Mayores Instructores</option>
             <option value="medallones">Medallones</option>
-            <option value="lideres">Líderes</option>
-            <option value="santuario">Santuario</option>
+            <option value="lideres">Líderes Juveniles</option>
+            <option value="aalmaa">AALMMA</option>
+            <option value="abda">ABDA</option>
+            <option value="crah">CRAH</option>
             <option value="drama">Drama mudo</option>
+            <option value="expresion">Expresión Celestial</option>
+            <option value="handmine">Handmine</option>
+            <option value="jam">JAM</option>
+            <option value="kerusso">Kerusso</option>
+            <option value="moasam">MOASAM</option>
+            <option value="santuario">Santuario</option>
+            <option value="sensum">SensUM</option>
             <option value="otro">Otro</option>
           </select>
           <br>
