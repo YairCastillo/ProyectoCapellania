@@ -36,21 +36,24 @@ include('../model/listaAlumnosModel.php');
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
-   <!--loadingstyle.css es para el efecto de cargarndo-->
-   <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
+  <!--loadingstyle.css es para el efecto de cargarndo-->
+  <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
 
-    <!-- CSS para la barra de navegacion -->
-      <link rel="stylesheet" type="text/css" href="../css/navStyle.css"/>
-      
-    
+  <!-- CSS para la barra de navegacion -->
+  <link rel="stylesheet" type="text/css" href="../css/navStyle.css" />
+  <link rel="stylesheet" type="text/css" href="../css/calendar.css">
+  <link href="../datatables/datatables.min.css" rel="stylesheet">
+  <script src="../datatables/datatables.min.js"></script>
 
- 
-  
+
+
+
+
 
 </head>
 
 <body style="font-family: 'Montserrat', sans-serif;">
-<nav class="navbar navbar-expand-md fixed-top sticky-top">
+  <nav class="navbar navbar-expand-md fixed-top sticky-top">
     <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
       <span class="navbar-toggler-icon">
         <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i>
@@ -88,18 +91,9 @@ include('../model/listaAlumnosModel.php');
     <div class="row">
       <div class="col col-md-9">
       </div>
-      <div class="col col-md-3 input-group mb-3">
-        <input type="text" class="form-control" placeholder="Buscar" aria-label="Recipient's username"
-          aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="button">
-            <i class="fas fa-search" aria-hidden="true"></i>
-          </button>
-        </div>
-      </div>
       <br>
-      <div class="table-responsive">
-        <table class="table table-bordered">
+      <div class="table-responsive" id = "table-container">
+        <table class="table table-bordered" id="tblListaAlumnos">
           <thead>
             <tr>
               <th>Matrícula</th>
@@ -108,7 +102,7 @@ include('../model/listaAlumnosModel.php');
               <th>Edad</th>
               <th>Correo Electrónico</th>
               <th>Carrera</th>
-              <th>Opciones</th>
+              <th>Entrevista Inicial</th>
             </tr>
           </thead>
           <tbody>
@@ -130,7 +124,7 @@ include('../model/listaAlumnosModel.php');
                   <td>$edadAlumno</td>
                   <td>$correoAlumno</td>
                   <td>$nombreCarreraAlumno</td>
-                  <td>opciones</td>
+                  <td><a class='fas fa-eye' href='verEntrevista'></a></td>
                   </tr>";
                 }
                 
@@ -140,6 +134,23 @@ include('../model/listaAlumnosModel.php');
         </table>
       </div>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+
+        let tblListaAlumnos = $('#tblListaAlumnos').DataTable({
+          "language": {
+            "url": "../datatables/spanish.json",
+          }
+        });
+
+      });
+    </script>
+
+
+
+
+
     <div class="loader-wrapper">
       <span class="loader"><span class="loader-inner"></span></span>
     </div>
