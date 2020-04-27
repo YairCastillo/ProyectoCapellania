@@ -91,7 +91,7 @@
                         <div class="col text-center">
                             <button class="btn btn-success regular-button" style="position: absolute;" name="btnDatosCap" type="submit"
                                 id="btnDatosCap">
-                                Guardar
+                                Actualizar perfil
                             </button>
                         </div>
                     </div>
