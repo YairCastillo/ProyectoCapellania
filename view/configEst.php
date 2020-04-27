@@ -1,3 +1,12 @@
+<?php
+include("../controller/conexion.php");
+include('../controller/verificarSesion.php');
+include('../controller/comprobarVerificacion.php');
+include('../controller/validado.php');
+include('../controller/verificarEntrevistaInicial.php');
+include('../model/configEstModel.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,10 +31,14 @@
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
   <!-- CSS para la barra de navegacion -->
-  <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
+  <link rel="stylesheet" type="text/css" href="../css/navstyle.css" />
 
   <!--loadingstyle.css es para el efecto de cargarndo-->
   <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
+
+    <!--para abajo es lo que estaba en la pagina inicialmente-->
+    <script src="https://code.jquery.com/jquery-2.1.4.js" integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4="
+    crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-md fixed-top sticky-top">
@@ -99,5 +112,15 @@
                         </div>
             </form>
 </div>
+
+<section></section>
+<div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <script>
+        $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
 </body>
 </html>

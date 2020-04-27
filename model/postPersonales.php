@@ -41,13 +41,7 @@
                     if($count2 == 1){
                          $error = 'Error. Matricula ya existente';
                     }else{
-                         $sql_borrar = "DELETE from alumnos where matricula = '$matriculaAnterior'";
-
-                         if(mysqli_query($con,$sql_borrar)){
-                              $sql = "INSERT into alumnos (matricula, usuario, nombre, apellidos, fechanacimiento) values ('$matricula','$usuario', '$nombre', '$apellidos', '$fechaNac')";
-                         }else{
-                              $error = 'error';
-                         }
+                         $sql = "UPDATE alumnos SET matricula = '$matricula', nombre = '$nombre', apellidos = '$apellidos', fechanacimiento = '$fechaNac' where matricula = '$matriculaAnterior'";
                     }
                }else{
                     $sql = "UPDATE alumnos Set nombre = '$nombre', apellidos = '$apellidos', fechanacimiento = '$fechaNac' where matricula = '$matricula'";
@@ -64,13 +58,7 @@
                     if($count3 == 1){
                          $error = 'Error. Matricula ya existente';
                     }else{
-                         $sql_borrar2 = "DELETE from alumnos where matricula = '$matriculaAnterior'";
-
-                         if(mysqli_query($con,$sql_borrar2)){
-                              $sql = "INSERT into alumnos (matricula, usuario, nombre, apellidos, fechanacimiento) values ('$matricula','$usuario', '$nombre', '$apellidos', '$fechaNac')";
-                         }else{
-                              $error = 'error';
-                         }
+                         $sql = "INSERT into alumnos (matricula, usuario, nombre, apellidos, fechanacimiento) values ('$matricula','$usuario', '$nombre', '$apellidos', '$fechaNac')";
                     }
           }
 

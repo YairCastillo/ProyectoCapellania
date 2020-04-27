@@ -52,11 +52,11 @@
                                         $sql = "INSERT INTO datosreligiosos (matricula, religion, bautizadoASD, fechaBautismo, feligresiaActual, iglesia, AsistenciaCulto, AsistenciaEscSab, ae) values ('$matricula','$religion', $bautizado, '$fechaBautismo', '$feligresia', '$iglesia','$cultosAsistencia', '$esAsistencia', '$ae')";
                                    }
                               }
-                         }else if($cultosAsistencia != 'central'){
+                         }else if($iglesia != 'central'){
                               $sql = "INSERT INTO datosreligiosos (matricula, religion, bautizadoASD, fechaBautismo, feligresiaActual, iglesia, ae) values ('$matricula', '$religion', $bautizado, '$fechaBautismo', '$feligresia', '$iglesia', '$ae')";
                          }
                     }else if($bautizado == 0){
-                         $sql = "INSERT INTO datosreligiosos (matricula, religion, iglesia, ae) values ('$matricula', '$religion', '$iglesia', '$ae')";
+                         $sql = "INSERT INTO datosreligiosos (matricula, bautizadoASD, religion, iglesia, ae) values ('$matricula', $bautizado,$religion', '$iglesia', '$ae')";
                     }
                }else{
                     if($bautizado == 1){
@@ -66,21 +66,21 @@
                                         $sql = "UPDATE datosreligiosos set religion = '$religion', bautizadoASD = $bautizado, fechaBautismo = '$fechaBautismo', feligresiaActual = '$feligresia', iglesia = '$iglesia', AsistenciaCulto = '$cultosAsistencia', culto = '$cultos', AsistenciaEscSab = '$esAsistencia', es = '$es', ae = '$ae' where matricula = '$matricula'";
 
                                    }else if($esAsistencia == 0){
-                                        $sql = "UPDATE datosreligiosos set religion = '$religion', bautizadoASD = $bautizado, fechaBautismo = '$fechaBautismo', feligresiaActual = '$feligresia', iglesia = '$iglesia', AsistenciaCulto = '$cultosAsistencia', culto = '$cultos', AsistenciaEscSab = '$esAsistencia', ae = '$ae' where matricula = '$matricula'";
+                                        $sql = "UPDATE datosreligiosos set religion = '$religion', bautizadoASD = $bautizado, fechaBautismo = '$fechaBautismo', feligresiaActual = '$feligresia', iglesia = '$iglesia', AsistenciaCulto = '$cultosAsistencia', culto = '$cultos', AsistenciaEscSab = '$esAsistencia', es = null, ae = '$ae' where matricula = '$matricula'";
                                    }
                               }else if($cultosAsistencia == 0){
                                    if($esAsistencia == 1){
-                                        $sql = "UPDATE datosreligiosos set religion = '$religion', bautizadoASD = $bautizado, fechaBautismo = '$fechaBautismo', feligresiaActual = '$feligresia', iglesia = '$iglesia', AsistenciaCulto = '$cultosAsistencia', AsistenciaEscSab = '$esAsistencia', es = '$es', ae = '$ae' where matricula = '$matricula'";
+                                        $sql = "UPDATE datosreligiosos set religion = '$religion', bautizadoASD = $bautizado, fechaBautismo = '$fechaBautismo', feligresiaActual = '$feligresia', iglesia = '$iglesia', AsistenciaCulto = '$cultosAsistencia', culto = null, AsistenciaEscSab = '$esAsistencia', es = '$es', ae = '$ae' where matricula = '$matricula'";
 
                                    }else if($esAsistencia == 0){
-                                        $sql = "UPDATE datosreligiosos set religion = '$religion', bautizadoASD = $bautizado, fechaBautismo = '$fechaBautismo', feligresiaActual = '$feligresia', iglesia = '$iglesia', AsistenciaCulto = '$cultosAsistencia', AsistenciaEscSab = '$esAsistencia', ae = '$ae' where matricula = '$matricula'";
+                                        $sql = "UPDATE datosreligiosos set religion = '$religion', bautizadoASD = $bautizado, fechaBautismo = '$fechaBautismo', feligresiaActual = '$feligresia', iglesia = '$iglesia', AsistenciaCulto = '$cultosAsistencia', cultos = null, AsistenciaEscSab = '$esAsistencia', es = null, ae = '$ae' where matricula = '$matricula'";
                                    }
                               }
                          }else if($cultosAsistencia != 'central'){
-                              $sql = "UPDATE datosreligiosos set religion = '$religion', bautizadoASD = $bautizado, fechaBautismo = '$fechaBautismo', feligresiaActual = '$feligresia', iglesia = '$iglesia', ae = '$ae' where matricula = '$matricula'";
+                              $sql = "UPDATE datosreligiosos set religion = '$religion', bautizadoASD = $bautizado, fechaBautismo = '$fechaBautismo', feligresiaActual = '$feligresia', iglesia = '$iglesia', AsistenciaCulto = null, AsistenciaEscSab = null, culto = null, es = null, ae = '$ae' where matricula = '$matricula'";
                          }
                     }else if($bautizado == 0){
-                         $sql = "UPDATE datosreligiosos set religion = '$religion', iglesia = '$iglesia', ae = '$ae' where matricula = '$matricula'";
+                         $sql = "UPDATE datosreligiosos set religion = '$religion', iglesia = '$iglesia', ae = '$ae', bautizadoASD = $bautizado, fechaBautismo = null, feligresiaActual = null, AsistenciaCulto = null, AsistenciaEscSab = null, culto = null, es = null   where matricula = '$matricula'";
                     }
                }
           }else{

@@ -54,13 +54,13 @@
                          if($colportado == 1){
                               $sql = "UPDATE serviciobecario set esBecado = $becado, tipoBeca = '$tipoBeca', departamento = '$departamento', horasTrabajoDiario = $horasTrabajo, haColportado = $colportado, colportajeInter = $colportadoInter, cuantosVeranos = $veranos, cuantosInviernos = $inviernos where matricula ='$matricula'";
                          }else if($colportado == 0){
-                              $sql = "UPDATE serviciobecario set esBecado = $becado, tipoBeca = '$tipoBeca', departamento = '$departamento', horasTrabajoDiario = $horasTrabajo, haColportado = $colportado where matricula ='$matricula'";
+                              $sql = "UPDATE serviciobecario set esBecado = $becado, tipoBeca = '$tipoBeca', departamento = '$departamento', horasTrabajoDiario = $horasTrabajo, haColportado = $colportado, colportajeInter = $colportadoInter, cuantosVeranos = null, cuantosInviernos = null  where matricula ='$matricula'";
                          }
                     }else if($becado == 0){
                          if($colportado == 1){
-                              $sql = "UPDATE serviciobecario set esBecado = $becado, haColportado = $colportado, colportajeInter = $colportadoInter, cuantosVeranos = $veranos, cuantosInviernos = $inviernos where matricula ='$matricula'";
+                              $sql = "UPDATE serviciobecario set esBecado = $becado, tipoBeca = null, departamento = null, haColportado = $colportado, colportajeInter = $colportadoInter, cuantosVeranos = $veranos, cuantosInviernos = $inviernos where matricula ='$matricula'";
                          }else if($colportado == 0){
-                              $sql = "UPDATE serviciobecario set esBecado = $becado, haColportado = $colportado, colportajeInter = $colportadoInter where matricula ='$matricula'";
+                              $sql = "UPDATE serviciobecario set esBecado = $becado, tipoBeca = null, departamento = null, horasTrabajoDiario = null, haColportado = $colportado, colportajeInter = $colportadoInter, cuantosVeranos = null, cuantosInviernos = null where matricula ='$matricula'";
                          }
                     }
                }

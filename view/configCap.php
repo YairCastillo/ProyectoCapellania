@@ -1,5 +1,13 @@
+<?php
+include("../controller/conexion.php");
+include('../controller/verificarSesion.php');
+include('../controller/comprobarVerificacion.php');
+include('../controller/validado.php');
+include('../controller/verificarPerfilInicial.php');
+include('../model/configCapModel.php');
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,10 +30,14 @@
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
   <!-- CSS para la barra de navegacion -->
-  <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
+  <link rel="stylesheet" type="text/css" href="../css/navstyle.css" />
 
   <!--loadingstyle.css es para el efecto de cargarndo-->
   <link rel="stylesheet" type="text/css" href="../css/loadingstyle.css">
+
+  <!--para abajo es lo que estaba en la pagina inicialmente-->
+  <script src="https://code.jquery.com/jquery-2.1.4.js" integrity="sha256-siFczlgw4jULnUICcdm9gjQPZkw/YPDqhQ9+nAOScE4="
+    crossorigin="anonymous"></script>
 </head>
 <body>
 <nav class="navbar navbar-expand-md fixed-top sticky-top">
@@ -41,7 +53,7 @@
                     <li class="nav-item"><a class="nav-link" href="calendar">CALENDARIO</a></li>
                     <li class="nav-item"><a class="nav-link" href="listaAlumnos">ALUMNOS</a></li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                      <a class="nav-link active dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                         <?php echo $nombreCuenta; ?>
                       </a>
                       <div class="dropdown-menu">
@@ -98,5 +110,14 @@
                         </div>
             </form>
 </div>
+<section></section>
+<div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <script>
+        $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
 </body>
 </html>

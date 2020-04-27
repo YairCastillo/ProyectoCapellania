@@ -37,7 +37,7 @@
                     }
                }else{
                     if($idCarrera == ''){
-                         $sql = "UPDATE datosacademicos set idFacultad = '$idFacultad', semestre = '$semestre', situacionAcademica = '$situacion' where matricula ='$matricula'";
+                         $sql = "UPDATE datosacademicos set idFacultad = '$idFacultad', idCarrera = null, semestre = '$semestre', situacionAcademica = '$situacion' where matricula ='$matricula'";
                     }else{
                          $sql = "UPDATE datosacademicos set idFacultad = '$idFacultad', idCarrera = '$idCarrera', semestre = '$semestre', situacionAcademica = '$situacion' where matricula ='$matricula'";
                     }

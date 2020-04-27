@@ -110,7 +110,7 @@ include('../model/calendarioAlumnosModel.php');
 
       <div class="col-2">
         <div id='external-events'
-          style="margin-top:7em;margin-bottom:1em; height: 350px; border: 2px solid #0b7ab1; overflow: auto;padding:1em">
+          style="margin-top:7em;margin-bottom:1em; height: 350px; border: 2px solid #DADFE2; overflow: auto;padding:1em">
           <h4 class="text-center">Eventos predefinidos</h4>
           <div id='listaeventospredefinidos'>
 

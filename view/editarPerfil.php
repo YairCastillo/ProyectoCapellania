@@ -3,8 +3,7 @@
   include('../controller/verificarSesion.php');
   include('../controller/comprobarVerificacion.php');
   include('../controller/validado.php');
-  include('../view/perfilCapellanAlerta.php');
-  include('../model/perfilCapellanModel.php');
+  include('../model/editarPerfilModel.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,7 +89,7 @@
                         </div>
                         <br>
                         <div class="col text-center">
-                            <button class="btn btn-success regular-button" name="btnDatosCap" type="submit"
+                            <button class="btn btn-success regular-button" style="position: absolute;" name="btnDatosCap" type="submit"
                                 id="btnDatosCap">
                                 Guardar
                             </button>

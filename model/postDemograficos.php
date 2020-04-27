@@ -38,141 +38,68 @@
                $count2 = mysqli_num_rows($result2);
 
                if($count2 == 0){
-                    if($novio != 0 && $amigo == 0){
+                    if($edoCivil == 'Soltero'){
                          if($pais == 42){
                               if($residencia == 'interno'){
-
-                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, tieneNovioa, pais,estado, municipio, sexo, preferenciaSexual,residencia, dormitorio) values ('$matricula', '$edoCivil', $novio, $pais, $estado, $municipio, '$sexo', '$prefSexual', '$residencia', '$dormitorio')";
-
+                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, tieneNovioa, tieneAmigoEspecial, pais, estado, municipio, sexo, preferenciaSexual,residencia, dormitorio) values ('$matricula', '$edoCivil', $novio, $amigo, $pais, $estado, $municipio, '$sexo', '$prefSexual', '$residencia', '$dormitorio')";
                               }else if($residencia == 'externo'){
-
-                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, tieneNovioa, pais,estado, municipio, sexo, preferenciaSexual,residencia, direccion) values ('$matricula', '$edoCivil', $novio, $pais, $estado, $municipio, '$sexo', '$prefSexual', '$residencia', '$direccion')";
-
+                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, tieneNovioa, tieneAmigoEspecial, pais,estado, municipio, sexo, preferenciaSexual,residencia, direccion) values ('$matricula', '$edoCivil', $novio, $amigo, $pais, $estado, $municipio, '$sexo', '$prefSexual', '$residencia', '$direccion')";
                               }
                          }else if($pais != 42){
                               if($residencia == 'interno'){
-
-                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, tieneNovioa, pais,estado, sexo, preferenciaSexual,residencia, dormitorio) values ('$matricula', '$edoCivil', $novio, $pais, $estado, '$sexo', '$prefSexual', '$residencia', '$dormitorio')";
-
+                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, tieneNovioa, tieneAmigoEspecial, pais, estado, sexo, preferenciaSexual,residencia, dormitorio) values ('$matricula', '$edoCivil', $novio, $amigo, $pais, $estado, '$sexo', '$prefSexual', '$residencia', '$dormitorio')";
                               }else if($residencia == 'externo'){
-
-                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, tieneNovioa, pais,estado, sexo, preferenciaSexual,residencia, direccion) values ('$matricula', '$edoCivil', $novio, $pais, $estado, '$sexo', '$prefSexual', '$residencia', '$direccion')";
+                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, tieneNovioa, tieneAmigoEspecial, pais,estado, sexo, preferenciaSexual,residencia, direccion) values ('$matricula', '$edoCivil', $novio, $amigo, $pais, $estado, '$sexo', '$prefSexual', '$residencia', '$direccion')";
                               }
                          }
-                    }else if($novio == 0 && $amigo != 0){
+                    }else if($edoCivil != 'Soltero'){
                          if($pais == 42){
                               if($residencia == 'interno'){
-
-                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, tieneAmigoEspecial, pais,estado, municipio, sexo, preferenciaSexual,residencia, dormitorio) values ('$matricula', '$edoCivil', $amigo, $pais, $estado, $municipio, '$sexo', '$prefSexual', '$residencia', '$dormitorio')";
-
+                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, pais, estado, municipio, sexo, preferenciaSexual,residencia, dormitorio) values ('$matricula', '$edoCivil', $pais, $estado, $municipio, '$sexo', '$prefSexual', '$residencia', '$dormitorio')";
                               }else if($residencia == 'externo'){
-
-                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, tieneAmigoEspecial, pais,estado, municipio, sexo, preferenciaSexual,residencia, direccion) values ('$matricula', '$edoCivil', $novio, $pais, $estado, '$sexo', '$prefSexual', '$residencia', '$direccion')";
-
-                              }
-                         }else if($pais != 42){
-                              if($residencia == 'interno'){
-
-                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, tieneAmigoEspecial, pais,estado, sexo, preferenciaSexual,residencia, dormitorio) values ('$matricula', '$edoCivil', $amigo, $pais, $estado, '$sexo', '$prefSexual', '$residencia', '$dormitorio')";
-
-                              }else if($residencia == 'externo'){
-                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, tieneAmigoEspecial, pais,estado, sexo, preferenciaSexual,residencia, direccion) values ('$matricula', '$edoCivil', $amigo, $pais, $estado, '$sexo', '$prefSexual', '$residencia', '$direccion')";
-                              }
-                         }
-                    }else if($novio == 0 && $amigo == 0){
-                         if($pais == 42){
-                              if($residencia == 'interno'){ 
-
-                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, pais,estado, municipio, sexo, preferenciaSexual,residencia, dormitorio) values ('$matricula', '$edoCivil', $pais, $estado, $municipio, '$sexo', '$prefSexual', '$residencia', '$dormitorio')";
-
-                              }else if($residencia == 'externo'){
-
                                    $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, pais,estado, municipio, sexo, preferenciaSexual,residencia, direccion) values ('$matricula', '$edoCivil', $pais, $estado, $municipio, '$sexo', '$prefSexual', '$residencia', '$direccion')";
                               }
                          }else if($pais != 42){
                               if($residencia == 'interno'){
-
-                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, pais,estado, sexo, preferenciaSexual,residencia, dormitorio) values ('$matricula', '$edoCivil', $pais, $estado, $municipio, '$sexo', '$prefSexual', '$residencia', '$dormitorio')";
-
+                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, pais, estado, sexo, preferenciaSexual,residencia, dormitorio) values ('$matricula', '$edoCivil', $pais, $estado, '$sexo', '$prefSexual', '$residencia', '$dormitorio')";
                               }else if($residencia == 'externo'){
-
-                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, pais,estado, sexo, preferenciaSexual,residencia, direccion) values ('$matricula', '$edoCivil', $pais, $estado, $municipio, '$sexo', '$prefSexual', '$residencia', '$direccion')";
-
+                                   $sql = "INSERT INTO datosdemograficos (matricula, estadoCivil, pais,estado, sexo, preferenciaSexual,residencia, direccion) values ('$matricula', '$edoCivil', $pais, $estado, '$sexo', '$prefSexual', '$residencia', '$direccion')";
                               }
                          }
                     }
-
                }else{
+                    if($edoCivil == 'Soltero'){
+                              if($pais == 42){
+                                   if($residencia == 'interno'){
+                                        $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneNovioa = $novio, tieneAmigoEspecial = $amigo, pais = $pais, estado = $estado, municipio = $municipio, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', dormitorio = '$dormitorio', direccion = null where matricula = '$matricula'";
 
+                                   }else if($residencia == 'externo'){
+                                        $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneNovioa = $novio, tieneAmigoEspecial = $amigo, pais = $pais, estado = $estado, municipio = $municipio, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', direccion = '$direccion' , dormitorio = null where matricula = '$matricula'";
+                                   }
+                              }else if($pais != 42){
+                                   if($residencia == 'interno'){
+                                        $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneNovioa = $novio, tieneAmigoEspecial = $amigo, pais = $pais, estado = $estado, municipio = null, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', dormitorio = '$dormitorio', direccion = null where matricula = '$matricula'";
 
-                    if($novio != 0 && $amigo == 0){
-                         if($pais == 42){
-                              if($residencia == 'interno'){
-
-                                   $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneNovioa = $novio, pais = $pais, estado = $estado, municipio = $municipio, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', dormitorio = '$dormitorio' where matricula = '$matricula'";
-
-                              }else if($residencia == 'externo'){
-
-                                   $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneNovioa = $novio, pais = $pais, estado = $estado, municipio = $municipio, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', direccion = '$direccion' where matricula = '$matricula'";
-
+                                   }else if($residencia == 'externo'){
+                                        $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneNovioa = $novio, tieneAmigoEspecial = $amigo, pais = $pais, estado = $estado, municipio = null, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', dormitorio = null, direccion = '$direccion' where matricula = '$matricula'";
+                                   }
                               }
-                         }else if($pais != 42){
-                              if($residencia == 'interno'){
+                         }else if($edoCivil != 'Soltero'){
+                              if($pais == 42){
+                                   if($residencia == 'interno'){
+                                        $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneNovioa = null, tieneAmigoEspecial = null, pais = $pais, estado = $estado, municipio = '$municipio', sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', dormitorio = '$dormitorio', direccion = null where matricula = '$matricula'";
 
-                                   $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneNovioa = $novio, pais = $pais, estado = $estado, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', dormitorio = '$dormitorio' where matricula = '$matricula'";
-
-                              }else if($residencia == 'externo'){
-
-                                   $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneNovioa = $novio, pais = $pais, estado = $estado, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', direccion = '$direccion' where matricula = '$matricula'";
-
-                              }
-                         }
-                    }else if($novio == 0 && $amigo != 0){
-                         if($pais == 42){
-                              if($residencia == 'interno'){
-
-                                   $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneAmigoEspecial = $amigo, pais = $pais, estado = $estado, municipio = $municipio, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', dormitorio = '$dormitorio' where matricula = '$matricula'";
-
-                              }else if($residencia == 'externo'){
-
-                                   $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneAmigoEspecial = $amigo, pais = $pais, estado = $estado, municipio = $municipio, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', direccion = '$direccion' where matricula = '$matricula'";
-
-                              }
-                         }else if($pais != 42){
-                              if($residencia == 'interno'){
-
-                                   $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneAmigoEspecial = $amigo, pais = $pais, estado = $estado, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', dormitorio = '$dormitorio' where matricula = '$matricula'";
-
-                              }else if($residencia == 'externo'){
-
-                                   $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneAmigoEspecial = $amigo, pais = $pais, estado = $estado, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', direccion = '$direccion' where matricula = '$matricula'";
-
+                                   }else if($residencia == 'externo'){
+                                        $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneNovioa = null, tieneAmigoEspecial = null, pais = $pais, estado = $estado, municipio = '$municipio', sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', dormitorio = null, direccion = '$direccion' where matricula = '$matricula'";
+                                   }
+                              }else if($pais != 42){
+                                   if($residencia == 'interno'){
+                                        $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneNovioa = null, tieneAmigoEspecial = null, pais = $pais, estado = $estado, municipio = null, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', dormitorio = '$dormitorio', direccion = null where matricula = '$matricula'";
+                                   }else if($residencia == 'externo'){
+                                        $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', tieneNovioa = null, tieneAmigoEspecial = null, pais = $pais, estado = $estado, municipio = null, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', dormitorio = null, direccion = '$direccion' where matricula = '$matricula'";
+                                   }
                               }
                          }
-                    }else if($novio == 0 && $amigo == 0){
-                         if($pais == 42){
-                              if($residencia == 'interno'){
-
-                                   $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', pais = $pais, estado = $estado, municipio = $municipio, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', dormitorio = '$dormitorio' where matricula = '$matricula'";
-
-                              }else if($residencia == 'externo'){
-
-                                   $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', pais = $pais, estado = $estado, municipio = $municipio, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', direccion = '$direccion' where matricula = '$matricula'";
-
-                              }
-                         }else if($pais != 42){
-                              if($residencia == 'interno'){
-
-                                   $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', pais = $pais, estado = $estado, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', dormitorio = '$dormitorio' where matricula = '$matricula'";
-
-                              }else if($residencia == 'externo'){
-
-                                   $sql = "UPDATE datosdemograficos set estadoCivil = '$edoCivil', pais = $pais, estado = $estado, sexo = '$sexo', preferenciaSexual = '$prefSexual', residencia ='$residencia', direccion = '$direccion' where matricula = '$matricula'";
-
-                              }
-                         }
-                    }
-
                }
           }else{
                $error = "Error. Contestar seccion anterior.";

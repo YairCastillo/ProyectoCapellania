@@ -3,7 +3,7 @@
   include('../controller/verificarSesion.php');
   include('../controller/comprobarVerificacion.php');
   include('../controller/validado.php');
-  #include('../view/entrevistaInicialAlerta.php');
+  include('../view/entrevistaInicialAlerta.php');
   include('../model/entrevistaInicialModel.php');
 ?>
 
@@ -32,30 +32,31 @@
   <link rel="stylesheet" type="text/css" href="../css/placeholders.css" />
 
   <script type="text/javascript">
-    function postPersonales(){
+    function postPersonales() {
       var usuario = "<?php echo $nombre ?>";
       var matricula = document.getElementById("matricula").value;
-      var nombre = document.getElementById("nombre").value;
+      var nombre = document.getElementById("nombres").value;
       var apellidos = document.getElementById("apellidos").value;
       var fechaNac = document.getElementById("fechaNac").value;
 
-      if(matricula && nombre && apellidos && fechaNac){
+      if (matricula && nombre && apellidos && fechaNac) {
         $.ajax({
-          type:'post',
-          url:'../model/postPersonales.php',
-          data:{
-            Usuario:usuario,
-            Matricula:matricula,
-            Nombre:nombre,
-            Apellidos:apellidos,
-            FechaNac:fechaNac
+          type: 'post',
+          url: '../model/postPersonales.php',
+          data: {
+            Usuario: usuario,
+            Matricula: matricula,
+            Nombre: nombre,
+            Apellidos: apellidos,
+            FechaNac: fechaNac
           },
-          success:function(data){
-            if(data == 'error' || data != ''){
+          success: function (data) {
+            console.log(data);
+            if (data == 'error' || data != '') {
               alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-            }else if(data == 'Error. Matricula ya existente'){
+            } else if (data == 'Error. Matricula ya existente') {
               alert('La matrícula introducida ya está asociada a una cuenta');
-            }else{
+            } else {
               alert('¡Datos guardados!');
               document.getElementById("academicos").click();
             }
@@ -65,34 +66,34 @@
       return false;
     }
 
-    function postAcademicos(){
+    function postAcademicos() {
       var usuario = "<?php echo $nombre ?>";
       var facultad = document.getElementById("selectFacultad").value;
       var carrera = document.getElementById("selectCarrera").value;
       var semestre = document.getElementById("semestre").value;
       var situacion = document.getElementById("selectSituacion").value;
 
-      if(facultad == '' || semestre == '' || situacion == ''){
+      if (facultad == '' || semestre == '' || situacion == '') {
         alert('Completa todos los campos');
-      }else if((facultad != 'ESMUS' && facultad != 'ESPRE' && facultad != 'FATEO') && carrera == ''){
+      } else if ((facultad != 'ESMUS' && facultad != 'ESPRE' && facultad != 'FATEO') && carrera == '') {
         alert('Completa todos los campos');
-      }else if(facultad && semestre && situacion){
+      } else if (facultad && semestre && situacion) {
         $.ajax({
-          type:'post',
-          url:'../model/postAcademicos.php',
-          data:{
-            Usuario:usuario,
-            Facultad:facultad,
-            Carrera:carrera,
-            Semestre:semestre,
-            Situacion:situacion
+          type: 'post',
+          url: '../model/postAcademicos.php',
+          data: {
+            Usuario: usuario,
+            Facultad: facultad,
+            Carrera: carrera,
+            Semestre: semestre,
+            Situacion: situacion
           },
-          success:function(data){
-            if(data == 'error' || data != ''){
+          success: function (data) {
+            if (data == 'error' || data != '') {
               alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-            }else if(data == 'Error. Contestar seccion anterior.'){
+            } else if (data == 'Error. Contestar seccion anterior.') {
               alert('Contesta la sección anterior');
-            }else{
+            } else {
               alert('¡Datos guardados!');
               document.getElementById("demograficos").click();
             }
@@ -102,7 +103,7 @@
       return false;
     }
 
-    function postDemograficos(){
+    function postDemograficos() {
       var usuario = "<?php echo $nombre ?>";
       var edoCivil = document.getElementById("estadoCivil").value;
       var novio = document.getElementById("novio").checked;
@@ -116,47 +117,48 @@
       var dormitorio = document.getElementById("dormitorio").value;
       var direccion = document.getElementById("direccion").value;
 
-      if(novio == false){
+      if (novio == false) {
         novio = 0;
-      }else if(novio == true){
+      } else if (novio == true) {
         novio = 1;
       }
 
-      if(amigo == false){
+      if (amigo == false) {
         amigo = 0;
-      }else if(amigo == true){
+      } else if (amigo == true) {
         amigo = 1;
       }
 
 
-      if(edoCivil == '' || pais == '' || estado == '' || sexo == '' || prefSexual == '' || residencia == ''){
+      if (edoCivil == '' || pais == '' || estado == '' || sexo == '' || prefSexual == '' || residencia == '') {
         alert('Completa todos los campos');
-      }else if((pais == '42' && municipio == '') || (residencia == 'interno' && dormitorio == '') || (residencia == 'externo' && direccion == '')){
+      } else if ((pais == '42' && municipio == '') || (residencia == 'interno' && dormitorio == '') || (residencia ==
+          'externo' && direccion == '')) {
         alert('Completa todos los campos');
-      }else{
+      } else {
         $.ajax({
-          type:'post',
-          url:'../model/postDemograficos.php',
-          data:{
-            Usuario:usuario,
-            EdoCivil:edoCivil,
-            Novio:novio,
-            Amigo:amigo,
-            Pais:pais,
-            Estado:estado,
-            Municipio:municipio,
-            Sexo:sexo,
-            PrefSexual:prefSexual,
-            Residencia:residencia,
-            Dormitorio:dormitorio,
-            Direccion:direccion
+          type: 'post',
+          url: '../model/postDemograficos.php',
+          data: {
+            Usuario: usuario,
+            EdoCivil: edoCivil,
+            Novio: novio,
+            Amigo: amigo,
+            Pais: pais,
+            Estado: estado,
+            Municipio: municipio,
+            Sexo: sexo,
+            PrefSexual: prefSexual,
+            Residencia: residencia,
+            Dormitorio: dormitorio,
+            Direccion: direccion
           },
-          success:function(data){
-            if(data == 'error' || data != ''){
+          success: function (data) {
+            if (data == 'error' || data != '') {
               alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-            }else if(data == 'Error. Contestar seccion anterior.'){
+            } else if (data == 'Error. Contestar seccion anterior.') {
               alert('Contesta la sección anterior');
-            }else{
+            } else {
               alert('¡Datos guardados!');
               document.getElementById("familiares").click();
             }
@@ -166,50 +168,50 @@
       return false;
     }
 
-    function postFamiliares(){
+    function postFamiliares() {
       var usuario = "<?php echo $nombre ?>";
       var ecPadres = document.getElementById("ecpadres").value;
       var hijoEmpleado = document.getElementById("hijoEmpleado").checked;
       var hijoObrero = document.getElementById("hijoObrero").checked;
       var hermanos = document.getElementById("hermanos").checked;
 
-      if(hijoEmpleado == false){
+      if (hijoEmpleado == false) {
         hijoEmpleado = 0;
-      }else if(hijoEmpleado == true){
+      } else if (hijoEmpleado == true) {
         hijoEmpleado = 1;
       }
 
-      if(hijoObrero == false){
+      if (hijoObrero == false) {
         hijoObrero = 0;
-      }else if(hijoObrero == true){
+      } else if (hijoObrero == true) {
         hijoObrero = 1;
       }
 
-      if(hermanos == false){
+      if (hermanos == false) {
         hermanos = 0;
-      }else if(hermanos == true){
+      } else if (hermanos == true) {
         hermanos = 1;
       }
 
-      if(ecPadres == ''){
+      if (ecPadres == '') {
         alert('Completa todos los campos');
-      }else{
+      } else {
         $.ajax({
-          type:'post',
-          url:'../model/postFamiliares.php',
-          data:{
-            Usuario:usuario,
-            EcPadres:ecPadres,
-            HijoEmpleado:hijoEmpleado,
-            HijoObrero:hijoObrero,
-            Hermanos:hermanos
+          type: 'post',
+          url: '../model/postFamiliares.php',
+          data: {
+            Usuario: usuario,
+            EcPadres: ecPadres,
+            HijoEmpleado: hijoEmpleado,
+            HijoObrero: hijoObrero,
+            Hermanos: hermanos
           },
-          success:function(data){
-            if(data == 'error' || data != ''){
+          success: function (data) {
+            if (data == 'error' || data != '') {
               alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-            }else if(data == 'Error. Contestar seccion anterior.'){
+            } else if (data == 'Error. Contestar seccion anterior.') {
               alert('Contesta la sección anterior');
-            }else{
+            } else {
               alert('¡Datos guardados!');
               document.getElementById("religiosos").click();
             }
@@ -219,7 +221,7 @@
       return false;
     }
 
-    function postReligiosos(){
+    function postReligiosos() {
       var usuario = "<?php echo $nombre ?>";
       var religion = document.getElementById("religion").value;
       var bautizado = document.getElementById("bautizado").checked;
@@ -232,54 +234,53 @@
       var es = document.getElementById("es").value;
       var ae = document.getElementById("ae").value;
 
-      if(bautizado == false){
+      if (bautizado == false) {
         bautizado = 0;
-      }else if(bautizado == true){
+      } else if (bautizado == true) {
         bautizado = 1;
       }
 
-      if(cultosAsistencia == false){
+      if (cultosAsistencia == false) {
         cultosAsistencia = 0;
-      }else if(cultosAsistencia == true){
+      } else if (cultosAsistencia == true) {
         cultosAsistencia = 1;
       }
 
-      if(esAsistencia == false){
+      if (esAsistencia == false) {
         esAsistencia = 0;
-      }else if(esAsistencia == true){
+      } else if (esAsistencia == true) {
         esAsistencia = 1;
       }
 
-      if(religion == '' || iglesia =='' || ae == ''){
+      if (religion == '' || iglesia == '' || ae == '') {
         alert('Completa todos los campos');
-      }else if(bautizado == 1 && (fechaBautismo == '' || feligresia == '')){
+      } else if (bautizado == 1 && (fechaBautismo == '' || feligresia == '')) {
         alert('Completa todos los campos');
-      }else if((cultosAsistencia == 1 && cultos == '') || (esAsistencia == 1 && es == '')){
+      } else if ((cultosAsistencia == 1 && cultos == '') || (esAsistencia == 1 && es == '')) {
         alert('Completa todos los campos');
-      }else{
+      } else {
         $.ajax({
-          type:'post',
-          url:'../model/postReligiosos.php',
-          data:{
-            Usuario:usuario,
-            Religion:religion,
-            Bautizado:bautizado,
-            FechaBautismo:fechaBautismo,
-            Feligresia:feligresia,
-            Iglesia:iglesia,
-            CultosAsistencia:cultosAsistencia,
-            Cultos:cultos,
-            EsAsistencia:esAsistencia,
-            Es:es,
-            Ae:ae
+          type: 'post',
+          url: '../model/postReligiosos.php',
+          data: {
+            Usuario: usuario,
+            Religion: religion,
+            Bautizado: bautizado,
+            FechaBautismo: fechaBautismo,
+            Feligresia: feligresia,
+            Iglesia: iglesia,
+            CultosAsistencia: cultosAsistencia,
+            Cultos: cultos,
+            EsAsistencia: esAsistencia,
+            Es: es,
+            Ae: ae
           },
-          success:function(data){
-            console.log(data);
-            if(data == 'error' || data != ''){
+          success: function (data) {
+            if (data == 'error' || data != '') {
               alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-            }else if(data == 'Error. Contestar seccion anterior.'){
+            } else if (data == 'Error. Contestar seccion anterior.') {
               alert('Contesta la sección anterior');
-            }else{
+            } else {
               alert('¡Datos guardados!');
               document.getElementById("sb").click();
             }
@@ -289,7 +290,7 @@
       return false;
     }
 
-    function postSB(){
+    function postSB() {
       var usuario = "<?php echo $nombre ?>";
       var becado = document.getElementById("becado").checked;
       var tipoBeca = document.getElementById("tipoBeca").value;
@@ -300,52 +301,273 @@
       var veranos = document.getElementById("veranos").value;
       var inviernos = document.getElementById("inviernos").value;
 
-      if(becado == false){
+      if (becado == false) {
         becado = 0;
-      }else if(becado == true){
+      } else if (becado == true) {
         becado = 1;
       }
 
-      if(colportado == false){
+      if (colportado == false) {
         colportado = 0;
-      }else if(colportado == true){
+      } else if (colportado == true) {
         colportado = 1;
       }
 
-      if(colportadoInter == false){
+      if (colportadoInter == false) {
         colportadoInter = 0;
-      }else if(colportadoInter == true){
+      } else if (colportadoInter == true) {
         colportadoInter = 1;
       }
-      
-      if(becado == 1 && (tipoBeca == '' || departamento == '')){
+
+      if (becado == 1 && (tipoBeca == '' || departamento == '')) {
         alert('Completa todos los campos');
-      }else if(colportado == 1 && (veranos == '' || inviernos == '')){
+      } else if (colportado == 1 && (veranos == '' || inviernos == '')) {
+        alert('Completa todos los campos');
+      } else {
+        $.ajax({
+          type: 'post',
+          url: '../model/postSB.php',
+          data: {
+            Usuario: usuario,
+            Becado: becado,
+            TipoBeca: tipoBeca,
+            Departamento: departamento,
+            HorasTrabajo: horasTrabajo,
+            Colportado: colportado,
+            ColportadoInter: colportadoInter,
+            Veranos: veranos,
+            Inviernos: inviernos
+          },
+          success: function (data) {
+            if (data == 'error' || data != '') {
+              alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
+            } else if (data == 'Error. Contestar seccion anterior.') {
+              alert('Contesta la sección anterior');
+            } else {
+              alert('¡Datos guardados!');
+              document.getElementById("actDev").click();
+            }
+          }
+        });
+      }
+      return false;
+    }
+
+    function postDevocionales() {
+      var usuario = "<?php echo $nombre ?>";
+      var biblia = document.getElementById("biblia").checked;
+      var lecciones = document.getElementById("lecciones").checked;
+      var planestudio = document.getElementById("planestudio").checked;
+      var formatoBiblia = document.getElementById("formatoBiblia").value;
+      var formatoEs = document.getElementById("formatoEs").value;
+      var diasLecturaBiblia = document.getElementById("diasLecturaBiblia").value;
+      var tema = document.getElementById("tema").value;
+      var estudiarMas = document.getElementById("estudiarMas").checked;
+
+      if (biblia == false) {
+        biblia = 0;
+      } else if (biblia == true) {
+        biblia = 1;
+      }
+
+      if (lecciones == false) {
+        lecciones = 0;
+      } else if (lecciones == true) {
+        lecciones = 1;
+      }
+
+      if (planestudio == false) {
+        planestudio = 0;
+      } else if (planestudio == true) {
+        planestudio = 1;
+      }
+
+      if (estudiarMas == false) {
+        estudiarMas = 0;
+      } else if (estudiarMas == true) {
+        estudiarMas = 1;
+      }
+
+      if (tema == '') {
+        alert('Completa todos los campos');
+      } else if ((biblia == 1 && (formatoBiblia == '' || diasLecturaBiblia == '')) || (lecciones == 1 && formatoEs ==
+          '')) {
+        alert('Completa todos los campos');
+      } else {
+        $.ajax({
+          type: 'post',
+          url: '../model/postDevocionales.php',
+          data: {
+            Usuario: usuario,
+            Biblia: biblia,
+            Lecciones: lecciones,
+            Planestudio: planestudio,
+            FormatoBiblia: formatoBiblia,
+            FormatoEs: formatoEs,
+            DiasLecturaBiblia: diasLecturaBiblia,
+            Tema: tema,
+            EstudiarMas: estudiarMas
+          },
+          success: function (data) {
+            if (data == 'error' || data != '') {
+              alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
+            } else if (data == 'Error. Contestar seccion anterior.') {
+              alert('Contesta la sección anterior');
+            } else {
+              alert('¡Datos guardados!');
+              document.getElementById("actJA").click();
+            }
+          }
+        });
+      }
+      return false;
+    }
+
+    function postJA() {
+      var usuario = "<?php echo $nombre ?>";
+      var perteneceClub = document.getElementById("perteneceClub").checked;
+      var tipoClub = document.getElementById("tipoClub").value;
+      var lider = document.getElementById("lider").checked;
+      var aspirante = document.getElementById("aspirante").checked;
+      var planMisionero = document.getElementById("planMisionero").checked;
+      var lugarPlan = document.getElementById("lugarPlan").value;
+
+      if (perteneceClub == false) {
+        perteneceClub = 0;
+      } else if (perteneceClub == true) {
+        perteneceClub = 1;
+      }
+
+      if (lider == false) {
+        lider = 0;
+      } else if (lider == true) {
+        lider = 1;
+      }
+
+      if (aspirante == false) {
+        aspirante = 0;
+      } else if (aspirante == true) {
+        aspirante = 1;
+      }
+
+      if (planMisionero == false) {
+        planMisionero = 0;
+      } else if (planMisionero == true) {
+        planMisionero = 1;
+      }
+
+      if (perteneceClub == 1 && tipoClub == ''){
+        alert('Completa todos los campos');
+      }else if(planMisionero == 1 && lugarPlan == ''){
+        alert('Completa todos los campos');
+        }else{
+        $.ajax({
+          type: 'post',
+          url: '../model/postJA.php',
+          data: {
+            Usuario: usuario,
+            PerteneceClub: perteneceClub,
+            TipoClub: tipoClub,
+            Lider: lider,
+            Aspirante: aspirante,
+            PlanMisionero: planMisionero,
+            LugarPlan: lugarPlan
+          },
+          success: function (data) {
+            if (data == 'error' || data != '') {
+              alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
+            } else if (data == 'Error. Contestar seccion anterior.') {
+              alert('Contesta la sección anterior');
+            } else {
+              alert('¡Datos guardados!');
+              document.getElementById("salud").click();
+            }
+          }
+        });
+      }
+      return false;
+    }
+
+    function postSalud() {
+      var usuario = "<?php echo $nombre ?>";
+      var comidasalDia = document.getElementById("comidasalDia").value;
+      var diasComidaSemana = document.getElementById("diasComidaSemana").value;
+      var diasEjercicioSemana = document.getElementById("diasEjercicioSemana").value;
+      var practicaDeporte = document.getElementById("practicaDeporte").checked;
+      var deporte = document.getElementById("deporte").value;
+      var alcohol = document.getElementById("alcohol").checked;
+      var tabaco = document.getElementById("tabaco").checked;
+      var droga = document.getElementById("droga").checked;
+      var sustancia = document.getElementById("sustancia").value;
+      var padeceEnfermedad = document.getElementById("padeceEnfermedad").checked;
+      var enfermedad = document.getElementById("enfermedad").value;
+      var tratamientos = document.getElementById("tratamientos").value;
+
+      if (practicaDeporte == false) {
+        practicaDeporte = 0;
+      } else if (practicaDeporte == true) {
+        practicaDeporte = 1;
+      }
+
+      if (alcohol == false) {
+        alcohol = 0;
+      } else if (alcohol == true) {
+        alcohol = 1;
+      }
+
+      if (tabaco == false) {
+        tabaco = 0;
+      } else if (tabaco == true) {
+        tabaco = 1;
+      }
+
+      if (droga == false) {
+        droga = 0;
+      } else if (droga == true) {
+        droga = 1;
+      }
+
+      if (padeceEnfermedad == false) {
+        padeceEnfermedad = 0;
+      } else if (padeceEnfermedad == true) {
+        padeceEnfermedad = 1;
+      }
+
+      if (practicaDeporte == 1 && deporte == ''){
+        alert('Completa todos los campos');
+      }else if(droga == 1 && sustancia == ''){
+        alert('Completa todos los campos');
+      }else if(padeceEnfermedad == 1 && (enfermedad == '' || tratamientos == '')){
+        alert('Completa todos los campos');
+      }else if(comidasalDia == ''|| diasComidaSemana == '' || diasEjercicioSemana == ''){
         alert('Completa todos los campos');
       }else{
         $.ajax({
-          type:'post',
-          url:'../model/postSB.php',
-          data:{
-            Usuario:usuario,
-            Becado:becado,
-            TipoBeca:tipoBeca,
-            Departamento:departamento,
-            HorasTrabajo:horasTrabajo,
-            Colportado:colportado,
-            ColportadoInter:colportadoInter,
-            Veranos:veranos,
-            Inviernos:inviernos
+          type: 'post',
+          url: '../model/postSalud.php',
+          data: {
+            Usuario: usuario,
+            ComidasalDia: comidasalDia,
+            DiasComidaSemana: diasComidaSemana,
+            DiasEjercicioSemana:diasEjercicioSemana,
+            PracticaDeporte: practicaDeporte,
+            Deporte: deporte,
+            Alcohol: alcohol,
+            Tabaco: tabaco,
+            Droga:droga,
+            Sustancia:sustancia,
+            PadeceEnfermedad:padeceEnfermedad,
+            Enfermedad:enfermedad,
+            Tratamientos:tratamientos
           },
-          success:function(data){
-            console.log(data);
-            if(data == 'error' || data != ''){
+          success: function (data) {
+            if (data == 'error' || data != '') {
               alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
-            }else if(data == 'Error. Contestar seccion anterior.'){
+            } else if (data == 'Error. Contestar seccion anterior.') {
               alert('Contesta la sección anterior');
-            }else{
+            } else {
               alert('¡Datos guardados!');
-              document.getElementById("actDev").click();
+              window.location.replace("servicioCapellania");
             }
           }
         });
@@ -368,8 +590,8 @@
     <button class="tablinks" onclick="openTab(event, 'Familiares')" id="familiares">Familiares</button>
     <button class="tablinks" onclick="openTab(event, 'Religiosos')" id="religiosos">Religiosos</button>
     <button class="tablinks" onclick="openTab(event, 'SBecario')" id="sb">Servicio Becario</button>
-    <button class="tablinks" onclick="openTab(event, 'Devocionales')" id = "actDev">Actividades Devocionales</button>
-    <button class="tablinks" onclick="openTab(event, 'ActividadesJA')" id = "actJA">Actividades JA</button>
+    <button class="tablinks" onclick="openTab(event, 'Devocionales')" id="actDev">Actividades Devocionales</button>
+    <button class="tablinks" onclick="openTab(event, 'ActividadesJA')" id="actJA">Actividades JA</button>
     <button class="tablinks" onclick="openTab(event, 'Salud')" id="salud">Salud</button>
   </div>
   <br><br>
@@ -387,9 +609,10 @@
         <div class="form-group">
           <form method="POST" action="entrevistaInicialModel.php">
             <label for="matricula">Matrícula</label>
-            <input type="text" class="form-control" name="matricula" id="matricula" placeholder="Matrícula" 
-            maxlength="7" ondrop="return false" onpaste="return false" onkeypress="return event.charCode>=48 && event.charCode<=57"
-              min="1" value="<?php echo $matricula ?>" required>
+            <input type="text" class="form-control" name="matricula" id="matricula" placeholder="Matrícula"
+              maxlength="7" ondrop="return false" onpaste="return false"
+              onkeypress="return event.charCode>=48 && event.charCode<=57" min="1" value="<?php echo $matricula ?>"
+              required>
             <br>
 
             <label for="nombre">Nombre(s)</label>
@@ -404,17 +627,18 @@
 
             <label for="fechaNac">Fecha de nacimiento</label>
             <input type="date" class="form-control" name="fechaNac" id="fechaNac" min="1950-01-01" max="9999-12-31"
-            value="<?php echo $fechaNac ?>" required>
-        
-          </form>    
+              value="<?php echo $fechaNac ?>" required>
+
+          </form>
         </div>
         <br>
 
         <div class="col text-center">
-             <button class="btn btn-success regular-button" name="btnPersonales" type="submit" id="btnPersonales"> Guardar </button>
-            </div>
-        
-        
+          <button class="btn btn-success regular-button" name="btnPersonales" type="submit" id="btnPersonales"> Guardar
+          </button>
+        </div>
+
+
       </div>
     </form>
   </div>
@@ -447,7 +671,7 @@
 
         <label for="semestre">Semestre/Tetramestre</label>
         <select class="form-control" id="semestre" name="semestre">
-         <option value="">Selecciona el semestre/tetramestre que estás cursando</option>
+          <option value="">Selecciona el semestre/tetramestre que estás cursando</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -585,7 +809,7 @@
 
         <div class="form-group" id="direccionDiv" style="display:none">
           <label for="direccion">Dirección</label>
-          <input type="text" class="form-control" id="direccion" name="direccion"
+          <input type="text" style="text-transform: none;" class="form-control" id="direccion" name="direccion"
             placeholder="Escribe la dirección de tu residencia actual">
         </div>
 
@@ -847,7 +1071,7 @@
   <div id="ActividadesJA" class="tabcontent">
     <!------------------------Contenido de la pestaña 7  (ACTIVIDADES JA)----------------------------------------->
     <!-- ENVIA A LA BASE DE DATOS -->
-    <form method="POST">
+    <form method="POST" onsubmit="return postJA();">
       <div id="formulario">
         <h3>Datos sobre Actividades JA</h3>
       </div>
@@ -860,7 +1084,7 @@
         </div>
 
         <div id="tipoClubDiv" style="display:none">
-        <br>
+          <br>
           <label for="tipoClub">Club o ministerio al que perteneces o apoyas</label>
           <select class="form-control" id="tipoClub" name="tipoClub">
             <option value="">Selecciona el club o ministerio al que perteneces o apoyas</option>
@@ -882,7 +1106,7 @@
           <label class="form-check-label" for="lider">Soy líder</label>
         </div>
 
-        <div class="form-check"  style="display:none" id="aspiranteDiv">
+        <div class="form-check" style="display:none" id="aspiranteDiv">
           <input type="checkbox" class="form-check-input" id="aspirante" name="aspirante">
           <label class="form-check-label" for="aspirante">Soy aspirante</label>
         </div>
@@ -894,13 +1118,14 @@
         </div>
 
         <div class="form-group" style="display:none" id="lugarPlanDiv">
-            <label for="lugarPlan">Lugar donde te gustaría participar</label>
-            <input type="text" class="form-control" id="lugarPlan" name="lugarPlan" placeholder="Escribe el lugar donde te gustaría participar">
-          </div>
+          <label for="lugarPlan">Lugar donde te gustaría participar</label>
+          <input type="text" class="form-control" id="lugarPlan" name="lugarPlan"
+            placeholder="Escribe el lugar donde te gustaría participar">
+        </div>
 
-          <div class="col text-center">
-            <button class="btn btn-success regular-button" name="registro" type="submit" id="button"> Guardar </button>
-          </div>
+        <div class="col text-center">
+          <button class="btn btn-success regular-button" name="registro" type="submit" id="button"> Guardar </button>
+        </div>
       </div>
     </form>
   </div>
@@ -909,7 +1134,7 @@
   <div id="Devocionales" class="tabcontent">
     <!------------------------Contenido de la pestaña 7  (ACTIVIDADES DEVOCIONALES)----------------------------------------->
     <!-- ENVIA A LA BASE DE DATOS -->
-    <form method="POST">
+    <form method="POST" onsubmit="return postDevocionales();">
       <div id="formulario">
         <h3>Datos sobre Actividades Devocionales</h3>
       </div>
@@ -929,10 +1154,10 @@
           <input type="checkbox" class="form-check-input" id="planestudio" name="planestudio">
           <label class="form-check-label" for="planestudio">Tengo un plan de estudio devocional</label>
         </div>
-        
+
 
         <div id="formatoBibliaDiv" style="display:none">
-        <br>
+          <br>
           <label for="formatoBiblia">Formato de Biblia que posees</label>
           <select class="form-control" id="formatoBiblia" name="formatoBiblia">
             <option value="">Selecciona el formato en el que posees tu Biblia</option>
@@ -943,44 +1168,43 @@
         </div>
 
         <div id="formatoEsDiv" style="display:none">
-        <br>
+          <br>
           <label for="formatoEs">Formato de Lección de Escuela Sabática que posees</label>
           <select class="form-control" id="formatoEs" name="formatoEs">
-          <option value="">Selecciona el formato en el que posees tu Lección de Escuela Sabática</option>
+            <option value="">Selecciona el formato en el que posees tu Lección de Escuela Sabática</option>
             <option value="fisica">Física</option>
             <option value="digital">Digital</option>
             <option value="ambos">Ambos</option>
           </select>
         </div>
 
-          <div class="form-group" style="display:none" id="diasLecturaBibliaDiv">
+        <div class="form-group" style="display:none" id="diasLecturaBibliaDiv">
           <br>
-            <label for="diasLecturaBiblia">Días a la semana que lees la Biblia</label>
-            <input type="text" class="form-control" name="diasLecturaBiblia" id="diasLecturaBiblia" value="0"
-              placeholder="Días a la semana que lees la Biblia" maxlength="1" ondrop="return false"
-              onpaste="return false" onkeypress="return event.charCode>=48 && event.charCode<=57" min="1"
-              onClick="this.select();" required>
-            </div>
-            
+          <label for="diasLecturaBiblia">Días a la semana que lees la Biblia</label>
+          <input type="text" class="form-control" name="diasLecturaBiblia" id="diasLecturaBiblia" value="0"
+            placeholder="Días a la semana que lees la Biblia" maxlength="1" ondrop="return false" onpaste="return false"
+            onkeypress="return event.charCode>=48 && event.charCode<=57" min="1" onClick="this.select();" required>
+        </div>
 
-          <div class="form-group">
+
+        <div class="form-group">
           <br>
-            <label for="tema">Tema de la Biblia que te gustaría conocer más</label>
-            <input type="text" class="form-control" id="tema" name="tema" placeholder="Escribe un tema">
-          </div>
+          <label for="tema">Tema de la Biblia que te gustaría conocer más</label>
+          <input type="text" style="text-transform: none;" class="form-control" id="tema" name="tema" placeholder="Escribe un tema">
+        </div>
 
 
-          <div class="form-check">
+        <div class="form-check">
           <br>
-            <input type="checkbox" class="form-check-input" id="estudiarMas" name="estudiarMas">
-            <label class="form-check-label" for="estudiarMas">Me gustaría estudiar más la Biblia</label>
-          </div>
-          <br>
+          <input type="checkbox" class="form-check-input" id="estudiarMas" name="estudiarMas">
+          <label class="form-check-label" for="estudiarMas">Me gustaría estudiar más la Biblia</label>
+        </div>
+        <br>
 
 
-          <div class="col text-center">
-            <button class="btn btn-success regular-button" name="registro" type="submit" id="button"> Guardar </button>
-          </div>
+        <div class="col text-center">
+          <button class="btn btn-success regular-button" name="registro" type="submit" id="button"> Guardar </button>
+        </div>
       </div>
     </form>
   </div>
@@ -990,7 +1214,7 @@
   <div id="Salud" class="tabcontent">
     <!------------------------Contenido de la pestaña 8  (SALUD)----------------------------------------->
     <!-- ENVIA A LA BASE DE DATOS -->
-    <form method="POST">
+    <form method="POST" onsubmit="return postSalud();">
       <div id="formulario">
         <h3>Datos de Salud</h3>
       </div>
@@ -1027,17 +1251,17 @@
         </div>
 
         <div id="deporteDiv" style="display:none"><br>
-        <label for="deporte">Deporte que practicas</label>
-        <select class="form-control" id="deporte">
-        <option value="">Selecciona el deporte que practicas</option>
-          <option value="futbol">Fútbol</option>
-          <option value="basquetbol">Básquetbol</option>
-          <option value="voleibol">Vóleibol</option>
-          <option value="beisbol">Béisbol</option>
-          <option value="otro">Otro</option>
-        </select>
-        <br>
-      </div>
+          <label for="deporte">Deporte que practicas</label>
+          <select class="form-control" id="deporte">
+            <option value="">Selecciona el deporte que practicas</option>
+            <option value="futbol">Fútbol</option>
+            <option value="basquetbol">Básquetbol</option>
+            <option value="voleibol">Vóleibol</option>
+            <option value="beisbol">Béisbol</option>
+            <option value="otro">Otro</option>
+          </select>
+          <br>
+        </div>
 
         <div class="form-check">
           <input type="checkbox" class="form-check-input" id="alcohol" name="alcohol">
@@ -1053,11 +1277,11 @@
         </div>
 
         <div id="sustanciaDiv" style="display:none">
-        <br>
-        <label for="sustancia">Sustancia(s) que consumes</label>
-        <input type="text" class="form-control" id="sustancia" name="sustancia" placeholder="Sustancia que consumes">
-        <br>
-      </div>
+          <br>
+          <label for="sustancia">Sustancia(s) que consumes</label>
+          <input type="text" style="text-transform: none;" class="form-control" id="sustancia" name="sustancia" placeholder="Sustancia que consumes">
+          <br>
+        </div>
 
         <div class="form-check">
           <input type="checkbox" class="form-check-input" id="padeceEnfermedad" name="padeceEnfermedad">
@@ -1066,7 +1290,7 @@
         <br>
         <div class="form-group" style="display:none" id="enfermedadDiv">
           <label for="enfermedad">Enfermedad(es) que padeces</label>
-          <input type="text" class="form-control" id="enfermedad" name="enfermedad"
+          <input type="text" style="text-transform: none;" class="form-control" id="enfermedad" name="enfermedad"
             placeholder="Enfermedad(es) que padeces">
         </div>
 
@@ -1352,7 +1576,7 @@
         $("#planestudioDiv").show();
 
       } else if (this.checked == false) {
-        if(document.getElementById("lecciones").checked == false){
+        if (document.getElementById("lecciones").checked == false) {
           $("#planestudioDiv").hide();
           document.getElementById("planestudio").checked = false;
         }
@@ -1370,7 +1594,7 @@
         $("#formatoEsDiv").show();
         $("#planestudioDiv").show();
       } else if (this.checked == false) {
-        if(document.getElementById("biblia").checked == false){
+        if (document.getElementById("biblia").checked == false) {
           $("#planestudioDiv").hide();
           document.getElementById("planestudio").checked = false;
         }
