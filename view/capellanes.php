@@ -142,6 +142,14 @@ include('../model/capellanesModel.php');
       $(".loader-wrapper").fadeOut("slow");
     });
   </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      $('#btnModificar').click(function () {
+        window.location = "editarPerfil";
+      });
+    });
+  </script>
 </body>
 
 </html>

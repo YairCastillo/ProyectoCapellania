@@ -128,7 +128,8 @@ include('../model/calendarioAlumnosModel.php');
           </div>
         </div>
         <hr>
-
+        <div style="text-align:center">*Para agendar una cita da click sobre cualquier día
+        </div>
     </div>
   </div>
 
@@ -204,8 +205,8 @@ include('../model/calendarioAlumnosModel.php');
 
           <button type="button" id="BotonAgregar" class="btn btn-success">Agregar</button>
           <button type="button" id="BotonModificar" class="btn btn-success">Modificar</button>
-          <button type="button" id="BotonBorrar" class="btn btn-success">Borrar</button>
-          <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+          <button type="button" id="BotonBorrar" class="btn btn-danger">Borrar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 
         </div>
       </div>
