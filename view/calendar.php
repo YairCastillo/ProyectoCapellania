@@ -132,6 +132,10 @@ include('../model/calendarModel.php');
         <div style="text-align:center"><button type="button" id="BotonEventosPredefinidos"
             class="btn btn-success">Administrar eventos predefinidos</button>
         </div>
+        <hr>
+        <div style="text-align:center">*Para agendar una cita da click sobre cualquier día<br><br>
+        *Para agregar un evento predefinido arrástralo a cualquier día
+        </div>
       </div>
 
     </div>
@@ -209,8 +213,8 @@ include('../model/calendarModel.php');
 
           <button type="button" id="BotonAgregar" class="btn btn-success">Agregar</button>
           <button type="button" id="BotonModificar" class="btn btn-success">Modificar</button>
-          <button type="button" id="BotonBorrar" class="btn btn-success">Borrar</button>
-          <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+          <button type="button" id="BotonBorrar" class="btn btn-danger">Borrar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
 
         </div>
       </div>

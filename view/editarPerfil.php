@@ -3,6 +3,8 @@
   include('../controller/verificarSesion.php');
   include('../controller/comprobarVerificacion.php');
   include('../controller/validado.php');
+  include('../controller/verificarCapellan.php');
+  include('../controller/verificarPerfilInicial.php');
   include('../model/editarPerfilModel.php');
 ?>
 <!DOCTYPE html>
@@ -32,7 +34,9 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
     <link rel="stylesheet" type="text/css" href="../css/estilo.css" />
+    
     <link rel="stylesheet" type="text/css" href="../css/placeholders.css" />
+
 
 </head>
 
@@ -44,7 +48,13 @@
                     <div>
                         <h3>Datos del Capellán</h3>
                     </div>
-                    <div style="font-size:20px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
+                    <?php if($error != ''){ ?>
+                    <div style="font-size:20px; color:#cc0000; margin-top:5px"><label id="error"><?php echo $error; ?></label></div>
+                    <?php } ?>
+
+                    <?php if($success != ''){ ?>
+                        <div style="font-size:20px; color:#0BC302; margin-top:5px"><label id="success"><?php echo $success; ?></label></div>
+                    <?php } ?>
                     <div>
                         <div class="form-group">
 
@@ -53,21 +63,22 @@
                             <input type="file" name="foto" id="foto" accept="image/x-png,image/jpeg"
                                 onchange="readURL(this);" required>
                             <br><br>
-                            <img class="rounded-circle" id="imageViewer" src="#" alt="imagen" style="display:none" />
+                            <img class="rounded-circle" id="imageViewer" src="" alt="imagen" style="display:none" />
                             <br>
 
                             <label for="nombre">Nombre completo</label>
                             <input type="text" class="form-control" style="text-transform: capitalize;" name="nombre"
-                                id="nombre" placeholder="Nombre completo" required>
+                                id="nombre" placeholder="Nombre completo" value="<?php echo $nombreCapellan; ?>" required>
                             <br>
 
                             <label for="matricula">Matrícula</label>
                             <input type="text" class="form-control" name="matricula" id="matricula" maxlength="7"
-                                placeholder="Matrícula" required>
+                                placeholder="Matrícula" value="<?php echo $matricula; ?>" required>
                             <br>
 
                             <label for="selectFacultad">Facultad/Escuela</label>
                             <select class="form-control" id="selectFacultad" name="selectFacultad">
+                            <option value="">Selecciona tu facultad/escuela</option>
                                 <?php foreach ($results as $option) : ?>
                                 <option value="<?php echo $option->idFacultad; ?>">
                                     <?php echo $option->nombreFacultad; ?></option>
@@ -77,22 +88,28 @@
 
                             <label for="bio">Descripción</label>
                             <textarea class="form-control" name="bio" id="bio" style="min-height: 65px;"
-                                placeholder="Escribe una breve biografía, descripción de tu trabajo o un mensaje para tus alumnos" maxlength="250"
-                                required></textarea>
+                                placeholder="Escribe una breve biografía, descripción de tu trabajo o un mensaje para tus alumnos" maxlength="250" required></textarea>
                             <br>
+
+                            <script>document.getElementById("bio").value = "<?php echo $descripcion; ?>";</script>
 
                             <label for="telefono">Número de teléfono</label>
                             <input type="text" class="form-control" name="telefono" id="telefono"
-                                placeholder="Número de teléfono de contacto" required>
+                                placeholder="Número de teléfono de contacto" value="<?php echo $telefono; ?>" required>
                             <br>
 
-                        </div>
-                        <br>
-                        <div class="col text-center">
-                            <button class="btn btn-success regular-button" style="position: absolute;" name="btnDatosCap" type="submit"
+                            <div class="col text-center">
+                            <button class="btn btn-secondary regular-button"  name="btnVolver" type="submit"
+                                id="btnVolver">
+                                Volver
+                            </button>
+                            <button class="btn btn-success regular-button"  name="btnDatosCap" type="submit"
                                 id="btnDatosCap">
                                 Actualizar perfil
                             </button>
+                        </div>
+
+                        
                         </div>
                     </div>
                 </form>
@@ -146,6 +163,18 @@
             return true;
         }
     </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      $('#btnVolver').click(function () {
+        window.location = "capellanes";
+      });
+    });
+  </script>
+
+  <div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+  </div>
 </body>
 
 </html>
