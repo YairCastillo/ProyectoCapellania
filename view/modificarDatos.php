@@ -3,6 +3,7 @@
   include('../controller/verificarSesion.php');
   include('../controller/comprobarVerificacion.php');
   include('../controller/validado.php');
+  include('../controller/verificarAlumno.php');
   include('../model/modificarDatosModel.php');
 ?>
 
@@ -51,7 +52,6 @@
             FechaNac: fechaNac
           },
           success: function (data) {
-            console.log(data);
             if (data == 'error' || data != '') {
               alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
             } else if (data == 'Error. Matricula ya existente') {
@@ -132,8 +132,8 @@
 
       if (edoCivil == '' || pais == '' || estado == '' || sexo == '' || prefSexual == '' || residencia == '') {
         alert('Completa todos los campos');
-      } else if ((pais == '42' && municipio == '') || (residencia == 'interno' && dormitorio == '') || (residencia ==
-          'externo' && direccion == '')) {
+      } else if ((pais == '42' && municipio == '') || (residencia == 'Interno' && dormitorio == '') || (residencia ==
+          'Externo' && direccion == '')) {
         alert('Completa todos los campos');
       } else {
         $.ajax({
@@ -715,8 +715,8 @@
           <label for="selectSituacion">Situación académica</label>
           <select class="form-control" id="selectSituacion" name="selectSituacion">
             <option value="">Selecciona tu situación académica</option>
-            <option value="regular">Regular</option>
-            <option value="irregular">Irregular</option>
+            <option value="Regular">Regular</option>
+            <option value="Irregular">Irregular</option>
           </select>
           <br>
         </div>
@@ -742,12 +742,12 @@
         <label for="estadoCivil">Estado civil</label>
         <select class="form-control" id="estadoCivil" name="estadoCivil">
           <option value="">Selecciona un estado civil</option>
-          <option value="Soltero">Soltero</option>
-          <option value="Casado">Casado</option>
-          <option value="Divorciado">Divorciado</option>
-          <option value="Separadro">Separado</option>
-          <option value="Viudo">Viudo</option>
-          <option value="Libre">En unión libre</option>
+          <option value="Soltero">Soltero(a)</option>
+          <option value="Casado">Casado(a)</option>
+          <option value="Divorciado">Divorciado(a)</option>
+          <option value="Separado">Separado(a)</option>
+          <option value="Viudo">Viudo(a)</option>
+          <option value="En unión libre">En unión libre</option>
         </select>
 
         <br>
@@ -791,8 +791,8 @@
         <label for="sexo">Sexo</label>
         <select class="form-control" id="sexo" name="sexo">
           <option value="">Selecciona tu sexo</option>
-          <option value="hombre">Hombre</option>
-          <option value="mujer">Mujer</option>
+          <option value="Hombre">Hombre</option>
+          <option value="Mujer">Mujer</option>
         </select>
 
         <br>
@@ -800,12 +800,12 @@
         <label for="prefsexual">Preferencia sexual</label>
         <select class="form-control" id="prefsexual" name="prefsexual">
           <option value="">Selecciona tu preferencia sexual</option>
-          <option value="hetero">Heterosexual</option>
-          <option value="homo">Homosexual</option>
-          <option value="bi">Bisexual</option>
-          <option value="a">Asexual</option>
-          <option value="otro">Otro</option>
-          <option value="nocontesto">Prefiero no contestar</option>
+          <option value="Heterosexual">Heterosexual</option>
+          <option value="Homosexual">Homosexual</option>
+          <option value="Bisexual">Bisexual</option>
+          <option value="Asexual">Asexual</option>
+          <option value="Otro">Otro</option>
+          <option value="Prefiero no contestar">Prefiero no contestar</option>
         </select>
 
         <br>
@@ -813,8 +813,8 @@
         <label for="residencia">Residencia actual</label>
         <select class="form-control" id="residencia" name="residencia">
           <option value="">Selecciona tu residencia actual</option>
-          <option value="interno">Interno</option>
-          <option value="externo">Externo</option>
+          <option value="Interno">Interno</option>
+          <option value="Externo">Externo</option>
         </select>
 
         <br>
@@ -862,12 +862,12 @@
         <label for="ecpadres">Estado civil de tus padres</label>
         <select class="form-control" id="ecpadres" name="ecpadres">
           <option value="">Selecciona el estado civil de tus padres</option>
-          <option value="casados">Casados</option>
-          <option value="divorciados">Divorciados</option>
-          <option value="separados">Separados</option>
-          <option value="viudo">Viudo(a)</option>
-          <option value="libre">En unión libre</option>
-          <option value="ninguno">Ninguno de los anteriores/No aplica</option>
+          <option value="Casados">Casados</option>
+          <option value="Divorciados">Divorciados</option>
+          <option value="Separados">Separados</option>
+          <option value="Viudo(a)">Viudo(a)</option>
+          <option value="En unión libre">En unión libre</option>
+          <option value="Ninguno/No aplica">Ninguno de los anteriores/No aplica</option>
         </select>
 
         <br>
@@ -907,14 +907,14 @@
         <label for="religion">Religión que practicas</label>
         <select class="form-control" id="religion" name="religion">
           <option value="">Selecciona la religión que practicas</option>
-          <option value="adventista">Adventista</option>
-          <option value="catolica">Católica</option>
-          <option value="testigo">Testigo de Jehová</option>
-          <option value="bautista">Bautista</option>
-          <option value="metodista">Metodista</option>
-          <option value="pentecostal">Pentecostal</option>
-          <option value="otra">Otra</option>
-          <option value="ninguna">Ninguna</option>
+          <option value="Adventista">Adventista</option>
+          <option value="Católica">Católica</option>
+          <option value="Testigo de Jehová">Testigo de Jehová</option>
+          <option value="Bautista">Bautista</option>
+          <option value="Metodista">Metodista</option>
+          <option value="Pentecostal">Pentecostal</option>
+          <option value="Otra">Otra</option>
+          <option value="Ninguna">Ninguna</option>
         </select>
         <br>
 
@@ -934,7 +934,7 @@
 
         <div class="form-group" style="display:none" id="feligresiaDiv">
           <label for="feligresia">Feligresía actual</label>
-          <input type="text" class="form-control" id="feligresia" name="feligresia"
+          <input type="text" style="text-transform: none;" class="form-control" id="feligresia" name="feligresia"
             placeholder="Iglesia en la que se encuentra actualmente tu feligresía">
         </div>
 
@@ -943,22 +943,22 @@
           <label for="iglesia">Iglesia a la que asistes</label>
           <select class="form-control" id="iglesia">
             <option value="">Selecciona la iglesia a la que asistes</option>
-            <option value="central">Central Universitaria</option>
-            <option value="zambrano">Zambrano</option>
-            <option value="sabinos">Los Sabinos</option>
-            <option value="estacion">La Estación</option>
-            <option value="mutualismo">Mutualismo</option>
-            <option value="leyva">Gil de Leyva</option>
-            <option value="centro">Centro</option>
-            <option value="alamedas">Las Alamedas</option>
-            <option value="naranjos">Los Naranjos</option>
-            <option value="enmedio">Hacienda de Enmedio</option>
-            <option value="maestro">Del Maestro</option>
-            <option value="zaragoza">Barrio Zaragoza</option>
-            <option value="ladrillera">La Ladrillera</option>
-            <option value="otra">Otra</option>
-            <option value="otranoa">Otra (no Adventista)</option>
-            <option value="ninguna">Ninguna</option>
+            <option value="Central">Central Universitaria</option>
+            <option value="Zambrano">Zambrano</option>
+            <option value="Los Sabinos">Los Sabinos</option>
+            <option value="La Estación">La Estación</option>
+            <option value="Mutualismo">Mutualismo</option>
+            <option value="Gil de Leyva">Gil de Leyva</option>
+            <option value="Centro">Centro</option>
+            <option value="Las Alamedas">Las Alamedas</option>
+            <option value="Los Naranjos">Los Naranjos</option>
+            <option value="Hacienda de Enmedio">Hacienda de Enmedio</option>
+            <option value="Del Maestro">Del Maestro</option>
+            <option value="Barrio Zaragoza">Barrio Zaragoza</option>
+            <option value="La Ladrillera">La Ladrillera</option>
+            <option value="Otra">Otra</option>
+            <option value="Otra no Adventista">Otra (no Adventista)</option>
+            <option value="Ninguna">Ninguna</option>
           </select>
           <br>
         </div>
@@ -974,8 +974,8 @@
           <label for="cultos">Culto al que asistes</label>
           <select class="form-control" id="cultos" name="cultos">
             <option value="">Selecciona el culto al que asistes</option>
-            <option value="primero">Primero</option>
-            <option value="segundo">Segundo</option>
+            <option value="Primero">Primero</option>
+            <option value="Segundo">Segundo</option>
           </select>
           <br>
         </div>
@@ -991,9 +991,9 @@
           <label for="es">Escuela Sabática a la que asistes</label>
           <select class="form-control" id="es">
             <option value="">Selecciona la Escuela Sabática a la que asistes</option>
-            <option value="uni">Iglesia Universitaria</option>
-            <option value="ingles">Inglés</option>
-            <option value="frances">Francés</option>
+            <option value="Iglesia Universitaria">Iglesia Universitaria</option>
+            <option value="Inglés">Inglés</option>
+            <option value="Francés">Francés</option>
           </select>
           <br>
         </div>
@@ -1001,11 +1001,11 @@
         <label for="ae">Actividad espiritual que más te gusta</label>
         <select class="form-control" id="ae" name="ae">
           <option value="">Selecciona la actividad espiritual que más te gusta</option>
-          <option value="sj">Sociedad de Jóvenes</option>
-          <option value="retiro">Retiro espiritual</option>
-          <option value="vigilia">Vigilia</option>
-          <option value="semana">Semana de oración</option>
-          <option value="otra">Otra</option>
+          <option value="Sociedad de Jóvenes">Sociedad de Jóvenes</option>
+          <option value="Retiro espiritual">Retiro espiritual</option>
+          <option value="Vigilia">Vigilia</option>
+          <option value="Semana de oración">Semana de oración</option>
+          <option value="Otra">Otra</option>
 
         </select>
         <br>
@@ -1040,14 +1040,14 @@
         <div id="tipoBecaDiv" style="display:none">
           <br>
           <label for="tipoBeca">Tipo de beca</label>
-          <input type="text" class="form-control" id="tipoBeca" name="tipoBeca" placeholder="Tipo de beca">
+          <input type="text" style="text-transform: none;" class="form-control" id="tipoBeca" name="tipoBeca" placeholder="Tipo de beca">
 
           <br>
         </div>
 
         <div id="departamentoDiv" style="display:none">
           <label for="departamento">Departamento en el que trabajas</label>
-          <input type="text" class="form-control" id="departamento" name="departamento" placeholder="Departamento">
+          <input type="text" style="text-transform: none;" class="form-control" id="departamento" name="departamento" placeholder="Departamento">
           <br>
         </div>
 
@@ -1113,16 +1113,28 @@
           <br>
           <label for="tipoClub">Club o ministerio al que perteneces o apoyas</label>
           <select class="form-control" id="tipoClub" name="tipoClub">
-            <option value="">Selecciona el club o ministerio al que perteneces o apoyas</option>
-            <option value="aventureros">Aventureros</option>
-            <option value="conquistadores">Conquistadores</option>
-            <option value="guias">Guías Mayores</option>
-            <option value="gma">Guías Mayores Avanzados</option>
-            <option value="medallones">Medallones</option>
-            <option value="lideres">Líderes</option>
-            <option value="santuario">Santuario</option>
-            <option value="drama">Drama mudo</option>
-            <option value="otro">Otro</option>
+          <option value="">Selecciona el club o ministerio al que perteneces o apoyas</option>
+            <option value="Directiva MJ">Directiva MJ</option>
+            <option value="Aventureros">Aventureros</option>
+            <option value="Conquistadores">Conquistadores</option>
+            <option value="Guías Mayores Junio">Guías Mayores Junior</option>
+            <option value="Guías Mayores Universitarios">Guías Mayores Universitarios</option>
+            <option value="Guías Mayores Avanzados">Guías Mayores Avanzados</option>
+            <option value="Guías Mayores Instructores">Guías Mayores Instructores</option>
+            <option value="Medallones">Medallones</option>
+            <option value="Líderes Juveniles">Líderes Juveniles</option>
+            <option value="AALMMA">AALMMA</option>
+            <option value="ABDA">ABDA</option>
+            <option value="CRAH">CRAH</option>
+            <option value="Drama mudo">Drama mudo</option>
+            <option value="Expresión celestial">Expresión Celestial</option>
+            <option value="Handmine">Handmine</option>
+            <option value="JAM">JAM</option>
+            <option value="Kerusso">Kerusso</option>
+            <option value="MOASAM">MOASAM</option>
+            <option value="Santuario">Santuario</option>
+            <option value="SensUM">SensUM</option>
+            <option value="Otro">Otro</option>
           </select>
           <br>
         </div>
@@ -1145,7 +1157,7 @@
 
         <div class="form-group" style="display:none" id="lugarPlanDiv">
           <label for="lugarPlan">Lugar donde te gustaría participar</label>
-          <input type="text" class="form-control" id="lugarPlan" name="lugarPlan"
+          <input type="text" style="text-transform: none;" class="form-control" id="lugarPlan" name="lugarPlan"
             placeholder="Escribe el lugar donde te gustaría participar">
         </div>
 
@@ -1186,10 +1198,10 @@
           <br>
           <label for="formatoBiblia">Formato de Biblia que posees</label>
           <select class="form-control" id="formatoBiblia" name="formatoBiblia">
-            <option value="">Selecciona el formato en el que posees tu Biblia</option>
-            <option value="fisica">Física</option>
-            <option value="digital">Digital</option>
-            <option value="ambos">Ambos</option>
+          <option value="">Selecciona el formato en el que posees tu Biblia</option>
+            <option value="Físico">Físico</option>
+            <option value="Digital">Digital</option>
+            <option value="Ambos, físico y digital">Ambos</option>
           </select>
         </div>
 
@@ -1197,10 +1209,10 @@
           <br>
           <label for="formatoEs">Formato de Lección de Escuela Sabática que posees</label>
           <select class="form-control" id="formatoEs" name="formatoEs">
-            <option value="">Selecciona el formato en el que posees tu Lección de Escuela Sabática</option>
-            <option value="fisica">Física</option>
-            <option value="digital">Digital</option>
-            <option value="ambos">Ambos</option>
+          <option value="">Selecciona el formato en el que posees tu Lección de Escuela Sabática</option>
+            <option value="Físico">Físico</option>
+            <option value="Digital">Digital</option>
+            <option value="Ambos, físico y digital">Ambos</option>
           </select>
         </div>
 
@@ -1280,11 +1292,11 @@
           <label for="deporte">Deporte que practicas</label>
           <select class="form-control" id="deporte">
             <option value="">Selecciona el deporte que practicas</option>
-            <option value="futbol">Fútbol</option>
-            <option value="basquetbol">Básquetbol</option>
-            <option value="voleibol">Vóleibol</option>
-            <option value="beisbol">Béisbol</option>
-            <option value="otro">Otro</option>
+            <option value="Futbol">Fútbol</option>
+            <option value="Basquetbol">Básquetbol</option>
+            <option value="Voleibol">Vóleibol</option>
+            <option value="Beisbol">Béisbol</option>
+            <option value="Otro">Otro</option>
           </select>
           <br>
         </div>
@@ -1460,11 +1472,11 @@
 
   $(document).ready(function () {
     $('#residencia').on('change', function () {
-      if (this.value == 'interno') {
+      if (this.value == 'Interno') {
         $("#dormitorioDiv").show();
         $("#direccionDiv").hide();
         document.getElementById("direccion").value = '';
-      } else if (this.value == 'externo') {
+      } else if (this.value == 'Externo') {
         $("#dormitorioDiv").hide();
         document.getElementById("dormitorio").value = '';
         $("#direccionDiv").show();
@@ -1479,7 +1491,7 @@
 
   $(document).ready(function () {
     $('#religion').on('change', function () {
-      if (this.value == 'adventista') {
+      if (this.value == 'Adventista') {
         $("#bautizadoDiv").show();
       } else {
         $("#bautizadoDiv").hide();
@@ -1518,7 +1530,7 @@
       document.getElementById("cultos").value = '';
       document.getElementById("es").value = '';
 
-      if (this.value == 'central') {
+      if (this.value == 'Central') {
         $("#cultosAsistenciaDiv").show();
         $("#cultosDiv").hide();
         $("#esAsistenciaDiv").show();
@@ -1537,10 +1549,10 @@
 
   $(document).ready(function () {
     $('#cultosAsistencia').on('change', function () {
-      if (document.getElementById("iglesia").value == 'central' && this.checked == true) {
+      if (document.getElementById("iglesia").value == 'Central' && this.checked == true) {
         $("#cultosDiv").show();
 
-      } else if (document.getElementById("iglesia").value == 'central' && this.checked == false) {
+      } else if (document.getElementById("iglesia").value == 'Central' && this.checked == false) {
         $("#cultosDiv").hide();
         document.getElementById("cultos").value = '';
       }
@@ -1549,10 +1561,10 @@
 
   $(document).ready(function () {
     $('#esAsistencia').on('change', function () {
-      if (document.getElementById("iglesia").value == 'central' && this.checked == true) {
+      if (document.getElementById("iglesia").value == 'Central' && this.checked == true) {
         $("#esDiv").show();
 
-      } else if (document.getElementById("iglesia").value == 'central' && this.checked == false) {
+      } else if (document.getElementById("iglesia").value == 'Central' && this.checked == false) {
         $("#esDiv").hide();
         document.getElementById("es").value = '';
       }

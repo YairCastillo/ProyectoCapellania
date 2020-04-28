@@ -52,7 +52,6 @@
             FechaNac: fechaNac
           },
           success: function (data) {
-            console.log(data);
             if (data == 'error' || data != '') {
               alert('¡Oops! Ocurrió un error. Los datos no se guardaron. Inténtalo de nuevo más tarde.');
             } else if (data == 'Error. Matricula ya existente') {
@@ -133,8 +132,8 @@
 
       if (edoCivil == '' || pais == '' || estado == '' || sexo == '' || prefSexual == '' || residencia == '') {
         alert('Completa todos los campos');
-      } else if ((pais == '42' && municipio == '') || (residencia == 'interno' && dormitorio == '') || (residencia ==
-          'externo' && direccion == '')) {
+      } else if ((pais == '42' && municipio == '') || (residencia == 'Interno' && dormitorio == '') || (residencia ==
+          'Externo' && direccion == '')) {
         alert('Completa todos los campos');
       } else {
         $.ajax({
@@ -720,7 +719,7 @@
           <option value="Soltero">Soltero(a)</option>
           <option value="Casado">Casado(a)</option>
           <option value="Divorciado">Divorciado(a)</option>
-          <option value="Separadro">Separado(a)</option>
+          <option value="Separado">Separado(a)</option>
           <option value="Viudo">Viudo(a)</option>
           <option value="En unión libre">En unión libre</option>
         </select>
@@ -840,7 +839,7 @@
           <option value="Casados">Casados</option>
           <option value="Divorciados">Divorciados</option>
           <option value="Separados">Separados</option>
-          <option value="Viudo">Viudo(a)</option>
+          <option value="Viudo(a)">Viudo(a)</option>
           <option value="En unión libre">En unión libre</option>
           <option value="Ninguno/No aplica">Ninguno de los anteriores/No aplica</option>
         </select>
@@ -909,7 +908,7 @@
 
         <div class="form-group" style="display:none" id="feligresiaDiv">
           <label for="feligresia">Feligresía actual</label>
-          <input type="text" class="form-control" id="feligresia" name="feligresia"
+          <input type="text" style="text-transform: none;" class="form-control" id="feligresia" name="feligresia"
             placeholder="Iglesia en la que se encuentra actualmente tu feligresía">
         </div>
 
@@ -929,8 +928,8 @@
             <option value="Naranjos">Los Naranjos</option>
             <option value="Hacienda de Enmedio">Hacienda de Enmedio</option>
             <option value="Del Maestro">Del Maestro</option>
-            <option value="Zaragoza">Barrio Zaragoza</option>
-            <option value="Ladrillera">La Ladrillera</option>
+            <option value="Barrio Zaragoza">Barrio Zaragoza</option>
+            <option value="La Ladrillera">La Ladrillera</option>
             <option value="Otra">Otra</option>
             <option value="Otra no adventista">Otra (no Adventista)</option>
             <option value="Ninguna">Ninguna</option>
@@ -1132,7 +1131,7 @@
 
         <div class="form-group" style="display:none" id="lugarPlanDiv">
           <label for="lugarPlan">Lugar donde te gustaría participar</label>
-          <input type="text" class="form-control" id="lugarPlan" name="lugarPlan"
+          <input type="text" style="text-transform: none;" class="form-control" id="lugarPlan" name="lugarPlan"
             placeholder="Escribe el lugar donde te gustaría participar">
         </div>
 
@@ -1447,11 +1446,11 @@
 
   $(document).ready(function () {
     $('#residencia').on('change', function () {
-      if (this.value == 'interno') {
+      if (this.value == 'Interno') {
         $("#dormitorioDiv").show();
         $("#direccionDiv").hide();
         document.getElementById("direccion").value = '';
-      } else if (this.value == 'externo') {
+      } else if (this.value == 'Externo') {
         $("#dormitorioDiv").hide();
         document.getElementById("dormitorio").value = '';
         $("#direccionDiv").show();
@@ -1466,7 +1465,7 @@
 
   $(document).ready(function () {
     $('#religion').on('change', function () {
-      if (this.value == 'adventista') {
+      if (this.value == 'Adventista') {
         $("#bautizadoDiv").show();
       } else {
         $("#bautizadoDiv").hide();
@@ -1505,7 +1504,7 @@
       document.getElementById("cultos").value = '';
       document.getElementById("es").value = '';
 
-      if (this.value == 'central') {
+      if (this.value == 'Central') {
         $("#cultosAsistenciaDiv").show();
         $("#cultosDiv").hide();
         $("#esAsistenciaDiv").show();
@@ -1524,10 +1523,10 @@
 
   $(document).ready(function () {
     $('#cultosAsistencia').on('change', function () {
-      if (document.getElementById("iglesia").value == 'central' && this.checked == true) {
+      if (document.getElementById("iglesia").value == 'Central' && this.checked == true) {
         $("#cultosDiv").show();
 
-      } else if (document.getElementById("iglesia").value == 'central' && this.checked == false) {
+      } else if (document.getElementById("iglesia").value == 'Central' && this.checked == false) {
         $("#cultosDiv").hide();
         document.getElementById("cultos").value = '';
       }
@@ -1536,10 +1535,10 @@
 
   $(document).ready(function () {
     $('#esAsistencia').on('change', function () {
-      if (document.getElementById("iglesia").value == 'central' && this.checked == true) {
+      if (document.getElementById("iglesia").value == 'Central' && this.checked == true) {
         $("#esDiv").show();
 
-      } else if (document.getElementById("iglesia").value == 'central' && this.checked == false) {
+      } else if (document.getElementById("iglesia").value == 'Central' && this.checked == false) {
         $("#esDiv").hide();
         document.getElementById("es").value = '';
       }
