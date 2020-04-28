@@ -1,13 +1,34 @@
 <?php
 header('Content-Type: application/json');
 
-require("../controller/conexion.php");
+include("../controller/conexion.php");
+include('../controller/verificarSesion.php');
+
+$sql = "SELECT tipoUsuario from usuarios where usuario = '$nombre'";
+$result = mysqli_query($con,$sql);
+$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+$tipoUsuario = $row['tipoUsuario'];
+
+if($tipoUsuario == 'Capellán'){
+    $sql2 = "SELECT idFacultad from capellanes where usuario = '$nombre'";
+}else if($tipoUsuario == 'Alumno'){
+    $sql2 = "SELECT datosacademicos.idFacultad from datosacademicos
+    INNER JOIN alumnos ON datosacademicos.matricula = alumnos.matricula
+    and alumnos.usuario = '$nombre'";
+}
+
+$result2 = mysqli_query($con,$sql2);
+$row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC);
+
+$idFacultad = $row2['idFacultad'];
+
 
 $conexion = $con;
 
 switch ($_GET['accion']) {
     case 'listar':
-        $datos = mysqli_query($conexion, "select id_evento as id,
+        $datos = mysqli_query($conexion, "SELECT id_evento as id,
                                                  titulo as title,
                                                  descripcion,
                                                  inicio as start,
@@ -20,7 +41,7 @@ switch ($_GET['accion']) {
         break;
 
     case 'agregar':
-        $respuesta = mysqli_query($conexion, "insert into eventos(titulo,descripcion,inicio,fin,colortexto,colorfondo) values 
+        $respuesta = mysqli_query($conexion, "INSERT into eventos(titulo,descripcion,inicio,fin,colortexto,colorfondo) values 
                                                 ('$_POST[titulo]','$_POST[descripcion]','$_POST[inicio]','$_POST[fin]','$_POST[colortexto]','$_POST[colorfondo]')");
         echo json_encode($respuesta);
         break;
