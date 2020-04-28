@@ -137,5 +137,114 @@
             </div>
           </div>
       </div>
+      <div class="container pt-3">
+          <div class="row justify-content-md-center">
+              <div class="col col-md-6">
+                <h2 style="text-align:center">Datos Familiares</h2>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col table-responsive">
+              <table class="table" style="width:100%">
+               <tr>
+                <th>Estado civil de tus padres:</th>
+                <td>carreras</td>
+                <th>Soy hijo(a) de empleado UM:</th>
+                <td>soyhijo</td>
+               </tr>
+
+               <tr>
+                <th>Soy hijo(a) de obrero adventista:</th>
+                <td>soyhijo</td>
+                <th>Tengo hermanos en la UM:</th>
+                <td>hermanos</td>
+               </tr>
+              </table>
+            </div>
+          </div>
+      </div>
+      <div class="container pt-3">
+          <div class="row justify-content-md-center">
+              <div class="col col-md-6">
+                <h2 style="text-align:center">Datos Religiosos</h2>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col table-responsive">
+              <table class="table" style="width:100%">
+               <tr>
+                <th>Religión que practicas:</th>
+                <td>religión</td>
+                <th>Soy bautizado:</th>
+                <td>bautizado</td>
+               </tr>
+
+               <tr>
+                <th>Fecha de tu bautismo:</th>
+                <td>fecha</td>
+                <th>Feligresía actual:</th>
+                <td>feligresia</td>
+               </tr>
+               <tr>
+                <th colspan="2">Iglesia a la que asistes:</th>
+                <td colspan="2">iglesia</td>
+               </tr>
+               <tr>
+                <th>Asisto a los cultos:</th>
+                <td>asistencia</td>
+                <th>Culto al que asistes:</th>
+                <td>culto</td>
+               </tr>
+               <tr>
+                <th>Asisto a la Escuela Sabática:</th>
+                <td>asistencia</td>
+                <th>Escuela Sabática a la que asistes:</th>
+                <td>esab</td>
+               </tr>
+               <tr>
+                <th colspan="2">Actividad espiritual que más te gusta:</th>
+                <td colspan="2">actividad</td>
+               </tr>
+              </table>
+            </div>
+          </div>
+      </div>
+      <div class="container pt-3">
+          <div class="row justify-content-md-center">
+              <div class="col col-md-6">
+                <h2 style="text-align:center">Datos de Servicio Becario</h2>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col table-responsive">
+              <table class="table" style="width:100%">
+               <tr>
+                <th>Soy becado:</th>
+                <td>soybecado</td>
+                <th>Tipo de beca:</th>
+                <td>tipo</td>
+               </tr>
+               <tr>
+                <th>Departamento en el que trabajas:</th>
+                <td>departamento</td>
+                <th>Horas de trabajo diario:</th>
+                <td>horas</td>
+               </tr>
+               <tr>
+                <th>He colportado:</th>
+                <td>colportado</td>
+                <th>He colportado intersemestralmente:</th>
+                <td>intersemestral</td>
+               </tr>
+               <tr>
+                <th>Veranos colportados:</th>
+                <td>veranos</td>
+                <th>inviernos colportados:</th>
+                <td>inviernos</td>
+               </tr>
+              </table>
+            </div>
+          </div>
+      </div>
 </body>
 </html>
