@@ -246,5 +246,124 @@
             </div>
           </div>
       </div>
+      <div class="container pt-3">
+          <div class="row justify-content-md-center">
+              <div class="col col-md-6">
+                <h2 style="text-align:center">Actividades Devocionales</h2>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col table-responsive">
+              <table class="table" style="width:100%">
+               <tr>
+                <th>Tengo Biblia:</th>
+                <td>tengo</td>
+                <th>Formato de Biblia que posees:</th>
+                <td>formato</td>
+               </tr>
+               <tr>
+                <th>Tengo Lección de Escuela Sabática:</th>
+                <td>tengo</td>
+                <th>Formato de Lección de Escuela Sabática que posees:</th>
+                <td>formato</td>
+               </tr>
+               <tr>
+                <th>Tengo un plan de estudio devocional:</th>
+                <td>plan</td>
+                <th>Días a la semana que lees la Biblia:</th>
+                <td>dias</td>
+               </tr>
+               <tr>
+                <th>Tema de la Biblia que te gustaría conocer más:</th>
+                <td>tema</td>
+                <th>Me gustaría estudiar más la Biblia:</th>
+                <td>megustaría</td>
+               </tr>
+              </table>
+            </div>
+          </div>
+      </div>
+      <div class="container pt-3">
+          <div class="row justify-content-md-center">
+              <div class="col col-md-6">
+                <h2 style="text-align:center">Actividades JA</h2>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col table-responsive">
+              <table class="table" style="width:100%">
+               <tr>
+                <th>Perteneczo o apoyo a algún club o ministerio:</th>
+                <td>siono</td>
+                <th>Club o ministerio al que perteneces o apoyas:</th>
+                <td>club</td>
+               </tr>
+               <tr>
+                <th>Soy líder:</th>
+                <td>soylider</td>
+                <th>Soy aspirante:</th>
+                <td>soyaspirante</td>
+               </tr>
+               <tr>
+                <th>Me gustaría participar en un plan misionero:</th>
+                <td>plan</td>
+                <th>Lugar donde te gustarpia participar:</th>
+                <td>lugar</td>
+               </tr>
+              </table>
+            </div>
+          </div>
+      </div>
+      <div class="container pt-3">
+          <div class="row justify-content-md-center">
+              <div class="col col-md-6">
+                <h2 style="text-align:center">Datos de Salud</h2>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col table-responsive">
+              <table class="table" style="width:100%">
+               <tr>
+                <th>Cantidad de comidas que tienes al día:</th>
+                <td>cantidad</td>
+                <th>Cantidad de días que comes a la semana:</th>
+                <td>cantidad</td>
+               </tr>
+               <tr>
+                <th colspan="2">Cantidad de días que haces ejercicio a la semana:</th>
+                <td colspan="2">cantidad</td>
+               </tr>
+               <tr>
+                <th>Practico algún deporte:</th>
+                <td>practica</td>
+                <th>Deporte que practicas:</th>
+                <td>deporte</td>
+               </tr>
+               <tr>
+                <th>Consumo alcohol:</th>
+                <td>consumo</td>
+                <th>Consumo tabaco:</th>
+                <td>consumo</td>
+               </tr>
+               <tr>
+                <th>Consumo droga(s):</th>
+                <td>consumo</td>
+                <th>Sustancia(s) que consumes:</th>
+                <td>sustancia</td>
+               </tr>
+               <tr>
+                <th>Padezco alguna enfermedad:</th>
+                <td>padece</td>
+                <th>Enfermedad(es) que padeces:</th>
+                <td>enfermedades</td>
+               </tr>
+               <tr>
+                <th colspan="2">Tratamiento(s) que sigues:</th>
+                <td colspan="2">tratamientos</td>
+               </tr>
+              </table>
+            </div>
+          </div>
+      </div>
 </body>
 </html>
