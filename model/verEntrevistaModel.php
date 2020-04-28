@@ -79,9 +79,8 @@
 
           if($pais == 'México'){
                $sql_mun = "SELECT Municipio from municipios where idMunicipio = '$municipio'";
-               $result2 = mysqli_query($con,$sql1);
-               $row2 = mysqli_fetch_all($result1,MYSQLI_ASSOC);
-               $count2 = mysqli_num_rows($result1);
+               $result2 = mysqli_query($con,$sql_mun);
+               $row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC);
 
                $municipio = $row2['Municipio'];
           }
