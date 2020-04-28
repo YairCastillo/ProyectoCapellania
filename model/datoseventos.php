@@ -6,7 +6,7 @@ include("../controller/conexion.php");
 include('../controller/verificarSesion.php');
 
 $conexion = $con;
-
+$usuario = $nombre;
 $sql = "SELECT tipoUsuario from usuarios where nombre = '$nombre'";
             $result = mysqli_query($conexion,$sql);
             $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -29,6 +29,7 @@ $sql = "SELECT tipoUsuario from usuarios where nombre = '$nombre'";
 switch ($_GET['accion']) {
         case 'listar':
             $datos = mysqli_query($conexion, "SELECT id_evento as id,
+                                                    usuario = '$usuario',
                                                      titulo as title,
                                                      descripcion,
                                                      inicio as start,
@@ -40,10 +41,11 @@ switch ($_GET['accion']) {
             echo json_encode($resultado);
             break;
     
-        case 'agregar':
-            $respuesta = mysqli_query($conexion, "INSERT into eventos(idFacultad,titulo,descripcion,inicio,fin,colortexto,colorfondo) values 
-                                                    ('$idFacultad','$_POST[titulo]','$_POST[descripcion]','$_POST[inicio]','$_POST[fin]','$_POST[colortexto]','$_POST[colorfondo]')");
+        case 'agregar':            
+            $respuesta = mysqli_query($conexion, "INSERT into eventos(idFacultad,usuario,titulo,descripcion,inicio,fin,colortexto,colorfondo) values 
+                                                    ('$idFacultad','$usuario','$_POST[titulo]','$_POST[descripcion]','$_POST[inicio]','$_POST[fin]','$_POST[colortexto]','$_POST[colorfondo]')");
             echo json_encode($respuesta);
+            
             break;
 
         case 'modificar':
