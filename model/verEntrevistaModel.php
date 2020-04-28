@@ -75,6 +75,7 @@
           $amigo = $row1['tieneAmigoEspecial'];
           $pais = $row1['paisnombre'];
           $estado = $row1['estadonombre'];
+          $municipio = $row1['municipio'];
 
           if($pais == 'México'){
                $sql_mun = "SELECT Municipio from municipios where idMunicipio = '$municipio'";
@@ -85,7 +86,6 @@
                $municipio = $row2['Municipio'];
           }
 
-          $municipio = $row1['municipio'];
           $sexo = $row1['sexo'];
           $prefSexual = $row1['preferenciaSexual'];
           $residencia = $row1['residencia'];
