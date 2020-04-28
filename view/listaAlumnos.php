@@ -124,7 +124,7 @@ include('../model/listaAlumnosModel.php');
                   <td>$edadAlumno</td>
                   <td>$correoAlumno</td>
                   <td>$nombreCarreraAlumno</td>
-                  <td><a class='fas fa-eye' href='verEntrevista'></a></td>
+                  <td><a class='fas fa-eye' href='verEntrevista?matricula=$matriculaAlumno'></a></td>
                   </tr>";
                 }
                 
