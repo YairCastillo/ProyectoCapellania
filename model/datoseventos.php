@@ -6,7 +6,7 @@ include("../controller/conexion.php");
 include('../controller/verificarSesion.php');
 
 $conexion = $con;
-$usuario = $nombre;
+
 $sql = "SELECT tipoUsuario from usuarios where nombre = '$nombre'";
             $result = mysqli_query($conexion,$sql);
             $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -25,11 +25,17 @@ $sql = "SELECT tipoUsuario from usuarios where nombre = '$nombre'";
             $row2 = mysqli_fetch_array($result2,MYSQLI_ASSOC);
 
             $idFacultad = $row2['idFacultad'];
+            
+
+$sql3= "SELECT usuario FROM eventos where usuario= '$usuario'";
+            $result3 = mysqli_query($conexion, $sql3);            
+            $row3 = mysqli_fetch_array($result3, MYSQLI_ASSOC);
+            $value = $row3['usuario'];
 
 switch ($_GET['accion']) {
         case 'listar':
             $datos = mysqli_query($conexion, "SELECT id_evento as id,
-                                                    usuario = '$usuario',
+                                                    usuario = '$nombre',
                                                      titulo as title,
                                                      descripcion,
                                                      inicio as start,
@@ -43,12 +49,12 @@ switch ($_GET['accion']) {
     
         case 'agregar':            
             $respuesta = mysqli_query($conexion, "INSERT into eventos(idFacultad,usuario,titulo,descripcion,inicio,fin,colortexto,colorfondo) values 
-                                                    ('$idFacultad','$usuario','$_POST[titulo]','$_POST[descripcion]','$_POST[inicio]','$_POST[fin]','$_POST[colortexto]','$_POST[colorfondo]')");
+                                                    ('$idFacultad','$nombre','$_POST[titulo]','$_POST[descripcion]','$_POST[inicio]','$_POST[fin]','$_POST[colortexto]','$_POST[colorfondo]')");
             echo json_encode($respuesta);
-            
             break;
 
-        case 'modificar':
+        case 'modificar':            
+            echo $value == $nombre;
             $respuesta = mysqli_query($conexion, "update eventos set titulo='$_POST[titulo]',
                                                                      descripcion='$_POST[descripcion]',
                                                                      inicio='$_POST[inicio]',
@@ -56,10 +62,11 @@ switch ($_GET['accion']) {
                                                                      colortexto='$_POST[colortexto]',
                                                                      colorfondo='$_POST[colorfondo]'
                                                                 where id_evento=$_POST[id_evento]");
-            echo json_encode($respuesta);
+            echo json_encode($respuesta);            
             break;
     
         case 'borrar':
+            echo $value == $nombre;
             $respuesta = mysqli_query($conexion, "delete from eventos where id_evento=$_POST[id_evento]");
             echo json_encode($respuesta);
             break;
