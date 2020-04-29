@@ -98,19 +98,16 @@ include('../model/calendarModel.php');
     </div>
   </nav>
 
-  <div class="container-fluid">
-    <section class="content-header">
-
-    </section>
-
-    <div class="row">
-
-      <div id="calendar-container">
-        <div id="Calendario1" style="border: 0px solid #000;padding:50px"></div>
+<div class="container pt-3">
+  <div class="row">
+    <div id="calendar-container">
+      <div id="Calendario1" style="border: 0px solid #000;">
       </div>
-
-      <div class="col-2">
-        <div id='external-events'
+    </div>
+  </div>
+  <div class="row align-items-center">
+    <div class="col col-md-6">
+      <div id='external-events'
           style="margin-top:7em;margin-bottom:1em; height: 350px; border: 2px solid #DADFE2; overflow: auto;padding:1em">
           <h4 class="text-center">Eventos predefinidos</h4>
           <div id='listaeventospredefinidos'>
@@ -127,19 +124,24 @@ include('../model/calendarModel.php');
 
             ?>
           </div>
-        </div>
-        <hr>
-        <div style="text-align:center"><button type="button" id="BotonEventosPredefinidos"
-            class="btn btn-success">Administrar eventos predefinidos</button>
-        </div>
-        <hr>
-        <div style="text-align:center">*Para agendar una cita da click sobre cualquier día<br><br>
-        *Para agregar un evento predefinido arrástralo a cualquier día
-        </div>
       </div>
-
     </div>
-  </div>
+    <br>
+    <br>
+    <br>
+    <div class="col col-md-6">
+      <div style="text-align:center"><button type="button" id="BotonEventosPredefinidos"
+            class="btn btn-success">Administrar eventos predefinidos</button>
+      </div>
+        <hr>
+      <div style="text-align:center">*Para agendar una cita da click sobre cualquier día<br><br>
+        *Para agregar un evento predefinido arrástralo a cualquier día
+      </div>
+      
+    </div>
+  </div>    
+</div>
+
 
 
   <!-- FormularioEventos -->

@@ -31,12 +31,21 @@ include('../controller/verificarPerfilInicial.php');
   <script src='../js/moment-with-locales.js'></script>
 </head>
 
-<body style="font-family: 'Montserrat', sans-serif;">
-  <div class="container">
-    <div class="row">
+<body style="font-family: 'Montserrat', sans-serif; background-color: #fbfcf7;">
+  <!-- <div class="container pt-3">
+    <div class="row justify-content-md-center">
       <div class="col-12">
         <br>
+        <h2 style="text-align:center">Eventos predefinidos</h2> -->
+
+<div class="container pt-3">
+    <div class="row justify-content-md-center">
+      <div class="col col-md-6">
         <h2 style="text-align:center">Eventos predefinidos</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col table-responsive">
         <table class="table table-striped table-bordered table-hover" id="tbleventos">
           <thead>
             <tr>
@@ -50,6 +59,9 @@ include('../controller/verificarPerfilInicial.php');
             </tr>
           </thead>
         </table>
+      </div>
+    </div>
+</div>
 
         <!-- FormularioEventosPredefinidos -->
         <div class="modal fade" id="FormularioEventosPredefinidos" tabindex="-1" role="dialog">
@@ -96,17 +108,20 @@ include('../controller/verificarPerfilInicial.php');
               <div class="modal-footer">
 
                 <button type="submit" id="BotonConfirmarAgregar" class="btn btn-success">Confirmar</button>
-                <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
 
               </div>
             </div>
           </div>
         </div>
 
-        <div><button type="button" id="BotonAgregar" class="btn btn-success">Nuevo evento predefinido</button></div>
+        <div style="text-align:center">
         <hr>
-        <div style="text-align:center"><button type="button" id="BotonSalir" class="btn btn-primary">Regresar al
+        <button type="button" id="BotonAgregar" class="btn btn-success">Nuevo evento predefinido</button>
+        <hr>
+        <button type="button" id="BotonSalir" class="btn btn-primary">Regresar al
             calendario</button>
+            <hr>
         </div>
 
       </div>
