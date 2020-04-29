@@ -26,12 +26,6 @@ $sql = "SELECT tipoUsuario from usuarios where nombre = '$nombre'";
 
             $idFacultad = $row2['idFacultad'];
             
-
-$sql3= "SELECT usuario FROM eventos where usuario= '$usuario'";
-            $result3 = mysqli_query($conexion, $sql3);            
-            $row3 = mysqli_fetch_array($result3, MYSQLI_ASSOC);
-            $value = $row3['usuario'];
-
 switch ($_GET['accion']) {
         case 'listar':
             $datos = mysqli_query($conexion, "SELECT id_evento as id,
@@ -53,21 +47,20 @@ switch ($_GET['accion']) {
             echo json_encode($respuesta);
             break;
 
-        case 'modificar':            
-            echo $value == $nombre;
+        case 'modificar':
+
             $respuesta = mysqli_query($conexion, "update eventos set titulo='$_POST[titulo]',
                                                                      descripcion='$_POST[descripcion]',
                                                                      inicio='$_POST[inicio]',
                                                                      fin='$_POST[fin]',
                                                                      colortexto='$_POST[colortexto]',
                                                                      colorfondo='$_POST[colorfondo]'
-                                                                where id_evento=$_POST[id_evento]");
+                                                                where id_evento=$_POST[id_evento] and usuario = '$nombre'");
             echo json_encode($respuesta);            
             break;
     
-        case 'borrar':
-            echo $value == $nombre;
-            $respuesta = mysqli_query($conexion, "delete from eventos where id_evento=$_POST[id_evento]");
+        case 'borrar':   
+            $respuesta = mysqli_query($conexion, "delete from eventos where id_evento=$_POST[id_evento] and usuario='$nombre'");
             echo json_encode($respuesta);
             break;
     }
