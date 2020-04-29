@@ -26,6 +26,12 @@ $sql = "SELECT tipoUsuario from usuarios where nombre = '$nombre'";
 
             $idFacultad = $row2['idFacultad'];
             
+
+$sql3= "SELECT usuario FROM eventos where usuario= '$usuario'";
+            $result3 = mysqli_query($conexion, $sql3);            
+            $row3 = mysqli_fetch_array($result3, MYSQLI_ASSOC);
+            $value = $row3['usuario'];
+
 switch ($_GET['accion']) {
         case 'listar':
             $datos = mysqli_query($conexion, "SELECT id_evento as id,
@@ -47,25 +53,21 @@ switch ($_GET['accion']) {
             echo json_encode($respuesta);
             break;
 
-        case 'modificar':
-
+        case 'modificar':            
+            echo $value == $nombre;
             $respuesta = mysqli_query($conexion, "update eventos set titulo='$_POST[titulo]',
                                                                      descripcion='$_POST[descripcion]',
                                                                      inicio='$_POST[inicio]',
                                                                      fin='$_POST[fin]',
                                                                      colortexto='$_POST[colortexto]',
                                                                      colorfondo='$_POST[colorfondo]'
-<<<<<<< HEAD
                                                                 where id_evento=$_POST[id_evento]");
             echo json_encode($respuesta);           
-=======
-                                                                where id_evento=$_POST[id_evento] and usuario = '$nombre'");
-            echo json_encode($respuesta);            
->>>>>>> f5b5294af0b3bf7f58f1720f1b26544dd89c7bf0
             break;
     
-        case 'borrar':   
-            $respuesta = mysqli_query($conexion, "delete from eventos where id_evento=$_POST[id_evento] and usuario='$nombre'");
+        case 'borrar':
+            echo $value == $nombre;
+            $respuesta = mysqli_query($conexion, "delete from eventos where id_evento=$_POST[id_evento]");
             echo json_encode($respuesta);
             break;
     }
