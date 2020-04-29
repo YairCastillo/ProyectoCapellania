@@ -109,7 +109,7 @@ include('../model/capellanesModel.php');
           </tr>
 
           <tr>
-            <th>DESCRIPCIÓN:</th>
+            <th>SALUDO:</th>
             <td><?php echo $descripcion; ?></td>
           </tr>
 

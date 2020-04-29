@@ -86,7 +86,7 @@
                             </select>
                             <br>
 
-                            <label for="bio">Descripción</label>
+                            <label for="bio">Saludo o Mensaje</label>
                             <textarea class="form-control" name="bio" id="bio" style="min-height: 65px;"
                                 placeholder="Escribe una breve biografía, descripción de tu trabajo o un mensaje para tus alumnos" maxlength="250" required></textarea>
                             <br>
