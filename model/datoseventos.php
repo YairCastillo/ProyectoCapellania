@@ -62,7 +62,7 @@ switch ($_GET['accion']) {
                                                                      colortexto='$_POST[colortexto]',
                                                                      colorfondo='$_POST[colorfondo]'
                                                                 where id_evento=$_POST[id_evento]");
-            echo json_encode($respuesta);            
+            echo json_encode($respuesta);           
             break;
     
         case 'borrar':
