@@ -1,8 +1,6 @@
 <?php
 header('Content-Type: application/json');
-
 include("../controller/conexion.php");
-
 include('../controller/verificarSesion.php');
 
 $conexion = $con;
