@@ -1,5 +1,5 @@
 <?php
-                    include('conexion.php');
+                    include('../controller/conexion.php');
 
 
                     if(isset($_GET['hash']) && !empty($_GET['hash'])){

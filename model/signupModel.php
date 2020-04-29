@@ -89,7 +89,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             Tu cuenta ha sido creada en el sistema de Capellanía de la Universidad de Montemorelos. Confirma tu dirección de correo electrónico para informarnos que eres el propietario de esta cuenta.
             
             Por favor, haz click en el siguiente enlace para verificar tu cuenta:
-            http://localhost/proyecto/verificar?hash=$hash"; // Our message above including the link
+            http://localhost/proyecto/proyectocapellania/view/verificar?hash=$hash"; // Our message above including the link
                                 
             $headers = 'From: <pabloyair993@gmail.com>' . "\r\n"; // Set from headers
 
